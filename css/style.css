@@ -357,24 +357,21 @@ button {
 }
 
 .text-sticker {
-  display: inline-grid;
-  grid-template-areas: "text";
-  place-items: center;
+  display: inline;
   position: relative;
+  font-weight: inherit;
+  color: var(--primary);
 }
 
 .text-sticker span {
-  background: linear-gradient(135deg, #2cb3bf 0%, #149cb0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--primary);
 }
 
 .text-sticker::before {
-  content: attr(data-text);
-  grid-area: text;
-  -webkit-text-stroke: 4px #ffffff;
-  z-index: -1;
+  display: none;
 }
 
 .primary-button {
@@ -502,6 +499,10 @@ button {
   color: #181818;
   line-height: 1.18;
   margin-bottom: 15px;
+}
+
+.hero-heading span {
+  color: var(--primary);
 }
 
 .hero-subtext {
@@ -705,6 +706,7 @@ button {
    ========================================================================= */
 .hero-bottom-cards {
   margin-top: -30px;
+  padding-bottom: 50px;
   position: relative;
   z-index: 20;
 }
@@ -847,7 +849,7 @@ button {
    COMMON HEALTH PROBLEMS (HORIZONTAL SCROLL / CAROUSEL)
    ========================================================================= */
 .section-padding {
-  padding: 60px 0;
+  padding: 70px 0;
 }
 
 .section-header-row {
@@ -1035,9 +1037,9 @@ button {
    ========================================================================= */
 .doctors-section {
   position: relative;
-  padding: 80px 0;
-  background-color: #f7fdfd;
-  background-image: radial-gradient(#d3f4f8 0.85px, transparent 0.85px);
+  padding: 70px 0;
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(30, 64, 175, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -1481,7 +1483,7 @@ button {
    ABOUT US - VISION & MISSION
    ========================================================================= */
 .about-section {
-  padding: 80px 0;
+  padding: 70px 0;
   background: #ffffff;
 }
 
@@ -1608,7 +1610,7 @@ button {
    PATIENT TESTIMONIALS
    ========================================================================= */
 .testimonials-section {
-  padding: 80px 0;
+  padding: 70px 0;
   background: #ffffff;
 }
 
@@ -1808,7 +1810,7 @@ button {
    FAQ ACCORDION
    ========================================================================= */
 .faq-section {
-  padding: 80px 0;
+  padding: 70px 0;
   background: #ffffff;
 }
 
@@ -1893,8 +1895,8 @@ button {
    LATEST BLOG ARTICLES
    ========================================================================= */
 .blog-section {
-  padding: 80px 0;
-  background: #f7fdfd;
+  padding: 70px 0;
+  background: #f8fafc;
 }
 
 .blog-grid {
@@ -2565,6 +2567,28 @@ button {
 }
 
 @media (max-width: 768px) {
+  .section-padding,
+  .doctors-section,
+  .about-section,
+  .testimonials-section,
+  .faq-section,
+  .blog-section {
+    padding: 45px 0;
+  }
+  .hero-section {
+    padding-top: 25px;
+    padding-bottom: 60px;
+  }
+  .hero-bottom-cards {
+    margin-top: -24px;
+    padding-bottom: 35px;
+  }
+  .section-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
   .hero-search-inner {
     flex-direction: column;
     padding: 12px;
