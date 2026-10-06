@@ -1,55 +1,40 @@
-# MediQ Connect Global Healthcare
+# MediQ Weight Loss & Obesity Care Global
 
-An exact, high-performance static website replica of [MediQ Connect Healthcare](https://mediqconnecthealthcare.com/), engineered specifically for **global clients** with **real doctor photos & names**, **multi-currency support**, **zero database dependency**, and **100% responsive performance**.
+A high-performance, specialized static website engineered exclusively for **weight loss and obesity patients**, featuring **bariatric surgeons**, **obesity medicine physicians**, **GLP-1 therapy specialists**, and **clinical nutritionists**. Designed with a modern royal dark blue theme, **100% free consultation workflow**, **zero database dependency**, and **100% responsive performance**.
 
 ---
 
-## 🌟 Key Features for Global Clients
+## 🌟 Key Features for Weight Loss & Obesity Patients
 
-1. **Exact MediQ Connect Brand Aesthetics & UI Components**:
-   - Signature MediQ Teal (`#3fc3cf`) and Crimson Red (`#e72734`) design system.
-   - Poppins & Urbanist modern typography.
-   - Text Sticker headline effects (`data-text` gradient overlays).
-   - Glassmorphic navigation bar (`backdrop-filter: blur(18px)`).
-   - Angled polygon search bar with location hub selector.
-   - 4 Hero Action Cards with highlighted first letters, real prices, and capsule badges.
-   - Doctor Cards with qualification degrees, experience medals, hospital affiliations, and dual booking buttons (Hospital Visit & 4K Video Consult).
-   - Hospital Cards with facility photos, direct call concierge buttons, and Google Maps directions.
-   - Vision & Mission showcase with cyan indicator bars.
-   - Medical Video Insights podcast player.
-   - Patient reviews with verified star ratings.
-   - Download App promo box with phone mockups and QR scan badges.
-   - Interactive FAQ Accordion.
-   - Full footer with social links and back-to-top button.
+1. **Focused Exclusively on Weight Loss & Obesity Medicine**:
+   - Tailored specifically for individuals battling severe obesity (BMI 35+), metabolic syndrome, PCOS-related weight resistance, and weight loss plateaus.
+   - Comprehensive multidisciplinary care covering: Bariatric Surgery, Medical Weight Loss & GLP-1, Metabolic Endocrinology, Clinical Nutrition, PCOS Weight Reset, and Mindset Psychology.
+   - 100% Free Consultation model with zero payment barriers or consultation fees.
 
-2. **Real Doctors with Real Photos & Verified Credentials**:
-   - **Dr. Bahul Vekaria**: MS, MCh - Cardiothoracic Surgeon (4 Years Exp, Shree Giriraj Hospital)
-   - **Dr. Kopal Patel**: MBBS, DGO - Gynecologist & High-Risk Obstetrics (15 Years Exp, Apex Gastro Clinic)
-   - **Dr. Krupen Tailor**: MS - Orthopedic & Joint Surgeon (6 Years Exp, Shree Giriraj Hospital)
-   - **Dr. Shitanshu Shekhar**: MS, DrNB - Surgical Oncology (12 Years Exp, Premier Cancer Institute)
-   - **Dr. Shraddha Jivani**: MB, DCH - Pediatric Specialist (5 Years Exp, Orange Children Hospital)
-   - **Dr. Bhumi Patel**: MS, DNB Ophthal - Eye Specialist (6 Years Exp, Aksha Eye Hospital)
-   - **Dr. Swati Braroo**: DPM, DNB, FIPS - Consultant Psychiatrist (15 Years Exp, Asha Neuro Psychiatry)
-   - **Dr. Sarah Jenkins**: MD, FACC - Cardiologist (14 Years Exp, Mount Sinai New York)
-   - **Dr. Alexander Wright**: MBBS, FRCS - Neurosurgeon (18 Years Exp, King's College Hospital London)
-   - **Dr. Marcus Chen**: MBBS, FRACP - Gastroenterologist (16 Years Exp, Mount Elizabeth Singapore)
-   - **Dr. Elena Rostova**: MD, FMH - Reproductive Medicine & IVF (13 Years Exp, Zurich Switzerland)
-   - **Dr. Tariq Al-Mansoor**: MD, FAAP - Pediatric Specialist (15 Years Exp, Cleveland Clinic Abu Dhabi)
+2. **Real Specialists with Verified Credentials**:
+   - **Dr. Bahul Vekaria**: MS, FMBS - Bariatric & Metabolic Surgeon (8 Years Exp, Shree Giriraj Bariatric Hospital)
+   - **Dr. Sarah Jenkins**: MD, DABOM - Obesity Medicine Specialist (14 Years Exp, Mount Sinai New York)
+   - **Dr. Kopal Patel**: MBBS, DGO - PCOS & Hormonal Weight Specialist (15 Years Exp, Apex Endocrine Clinic)
+   - **Dr. Alexander Wright**: MBBS, FRCS - Senior Bariatric Consultant (18 Years Exp, King's Bariatric Hospital London)
+   - **Dr. Krupen Tailor**: MS - Weight-Related Joint & Mobility Care (10 Years Exp, Shree Giriraj Metabolic Center)
+   - **Dr. Marcus Chen**: MBBS, FRACP - Endoscopic Weight Loss & Gastro (16 Years Exp, Mount Elizabeth Singapore)
+   - **Dr. Shitanshu Shekhar**: MS, DNB - Advanced Metabolic & Bariatric Surgery (12 Years Exp, Premier Metabolic Institute)
+   - **Dr. Elena Rostova**: MD, FMH - Clinical Nutrition & Medical Weight Loss (13 Years Exp, Zurich Switzerland)
+   - **Dr. Shraddha Jivani**: MB, DCH - Pediatric & Adolescent Weight Specialist (8 Years Exp, Orange Children Metabolic Clinic)
+   - **Dr. Tariq Al-Mansoor**: MD, FAAP, DABOM - Medical Weight Loss & GLP-1 Expert (15 Years Exp, Cleveland Clinic Abu Dhabi)
+   - **Dr. Bhumi Patel**: MS, RD, CDE - Lead Clinical Dietitian & Nutritionist (9 Years Exp, Aksha Metabolic Care)
+   - **Dr. Swati Braroo**: DPM, DNB, FIPS - Bariatric & Mindset Psychologist (15 Years Exp, Asha Mind & Metabolic Clinic)
 
-3. **Multi-Currency Dynamic Conversion**:
-   - Instant real-time conversion between **USD ($)**, **EUR (€)**, **GBP (£)**, **AED (AED)**, **INR (₹)**, and **SGD (S$)**.
-   - Dynamically updates consultation fees, hero cards, and booking passes.
-
-4. **Zero Database Dependency**:
+3. **Zero Database Dependency**:
    - 100% static client-side architecture.
-   - Live instantaneous search across doctors, specialties, and medical hubs.
+   - Live instantaneous search across weight loss specialists, bariatric procedures, and medical hubs.
    - Interactive booking workflow generates a verified Booking Pass ID (e.g. `MQ-892144`) stored in browser `localStorage`.
-   - "My Appointments" slide-out drawer allows clients to view and cancel active bookings without any server database.
+   - "My Consultations" slide-out drawer allows patients to view and cancel active bookings without any server database.
    - Simulated WhatsApp / Mobile 4-digit OTP sign-in.
 
-5. **Ready for Instant Static Deployment**:
+4. **Ready for Instant Static Deployment**:
    - Works immediately by opening `index.html` in any web browser.
-   - Can be deployed with 1 click to GitHub Pages, Vercel, Netlify, or Cloudflare Pages.
+   - Deployed live to Vercel and GitHub.
 
 ---
 
