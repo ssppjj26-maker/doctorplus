@@ -22,335 +22,328 @@ let currentSpecFilter = 'ALL';
 
 // Format price with active currency
 function formatPrice(inrAmount) {
-  if (inrAmount === null || inrAmount === undefined || inrAmount === '') return 'Complimentary';
-  if (typeof inrAmount === 'string' && inrAmount.toLowerCase().includes('soon')) return inrAmount;
-  const num = typeof inrAmount === 'string' ? parseFloat(inrAmount.replace(/[^\d.]/g, '')) : inrAmount;
-  if (isNaN(num)) return inrAmount;
-  
-  const curr = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.USD;
-  const converted = Math.round(num * curr.rate);
-  return `${curr.symbol}${converted.toLocaleString()}`;
+  return 'FREE';
 }
 
 // =========================================================================
-// STATIC DOCTORS DATABASE (Focused Exclusively on Weight Loss & Obesity)
+// STATIC DOCTORS DATABASE (Stored in Memory / Zero External DB)
 // =========================================================================
 const DOCTORS = [
   // 1. Dr. Bahul Vekaria
   {
     id: 'dr-bahul-vekaria',
     name: 'Dr. Bahul Vekaria',
-    degree: 'MS, FMBS - Bariatric & Metabolic Surgery',
-    experience: '8 Years Exp',
-    specialty: 'Bariatric & Metabolic Surgeon',
-    category: 'bariatric',
-    hospital: 'Shree Giriraj Bariatric Hospital',
+    degree: 'MS, MCh - Cardiothoracic',
+    experience: '4 Years Exp',
+    specialty: 'Cardiologist',
+    category: 'cardio',
+    hospital: 'Shree Giriraj Hospital',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-bahul-vekaria.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 1100,
+    feeVideoINR: 1100,
     rating: 4.9,
-    reviews: 184,
-    bio: 'Leading laparoscopic bariatric surgeon specializing in sleeve gastrectomy, gastric bypass, and long-term metabolic weight restoration.'
+    reviews: 142,
+    bio: 'Specialist in complex cardiothoracic surgeries, coronary artery disease management, and minimally invasive cardiac procedures.'
   },
   // 2. Dr. Sarah Jenkins (Global - New York)
   {
     id: 'dr-sarah-jenkins',
     name: 'Dr. Sarah Jenkins',
-    degree: 'MD, DABOM - Harvard Medical',
+    degree: 'MD, FACC - Harvard Medical',
     experience: '14 Years Exp',
-    specialty: 'Obesity Medicine Specialist',
-    category: 'medical',
-    hospital: 'Mount Sinai Center for Weight Health',
+    specialty: 'Cardiologist',
+    category: 'cardio',
+    hospital: 'Mount Sinai Heart Center',
     city: 'New York',
     country: 'USA',
     hub: 'USA',
     flag: '🇺🇸',
     photo: 'assets/doctors/dr-sarah-jenkins.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 8500,
+    feeVideoINR: 6200,
     rating: 5.0,
-    reviews: 312,
-    bio: 'American Board of Obesity Medicine (ABOM) certified physician specializing in clinical GLP-1 therapy, cardiometabolic risk reduction, and individualized obesity protocols.'
+    reviews: 298,
+    bio: 'Board-certified American cardiologist specializing in preventative cardiology, hypertension, valvular heart disease and tele-cardiology.'
   },
   // 3. Dr. Kopal Patel
   {
     id: 'dr-kopal-patel',
     name: 'Dr. Kopal Patel',
-    degree: 'MBBS, DGO - Hormonal Weight & PCOS',
+    degree: 'MBBS, DGO - Gynecology',
     experience: '15 Years Exp',
-    specialty: 'PCOS & Hormonal Weight Specialist',
-    category: 'pcos',
-    hospital: 'Apex Endocrine & Women’s Health Clinic',
+    specialty: 'Gynecologist',
+    category: 'gynec',
+    hospital: 'Apex Gastro Clinic & Hospital',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-kopal-patel.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 800,
+    feeVideoINR: 1000,
     rating: 4.8,
-    reviews: 326,
-    bio: 'Specialist in reversing weight gain associated with PCOS, thyroid dysfunction, insulin resistance, and post-partum metabolic shifts in women.'
+    reviews: 310,
+    bio: 'Expert in high-risk obstetrics, laparoscopic gynecological surgeries, hormonal imbalances, and adolescent women health.'
   },
   // 4. Dr. Alexander Wright (Global - London)
   {
     id: 'dr-alexander-wright',
     name: 'Dr. Alexander Wright',
-    degree: 'MBBS, FRCS - Oxford Weight Surgery',
+    degree: 'MBBS, FRCS - Oxford',
     experience: '18 Years Exp',
-    specialty: 'Senior Bariatric Consultant',
-    category: 'bariatric',
-    hospital: "King's Bariatric & Metabolic Hospital",
+    specialty: 'Neurosurgeon',
+    category: 'neuro',
+    hospital: "King's College Hospital",
     city: 'London',
     country: 'United Kingdom',
     hub: 'UK',
     flag: '🇬🇧',
     photo: 'assets/doctors/dr-alexander-wright.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 12000,
+    feeVideoINR: 7500,
     rating: 4.9,
-    reviews: 248,
-    bio: "Consultant bariatric surgeon at King's, recognized pioneer in robotic gastric sleeve, revisional bariatric surgery, and surgical obesity remissions."
+    reviews: 215,
+    bio: 'Senior Consultant Neurosurgeon in London focusing on cranial microsurgery, spine disorders, and second-opinion neurological evaluations.'
   },
   // 5. Dr. Krupen Tailor
   {
     id: 'dr-krupen-tailor',
     name: 'Dr. Krupen Tailor',
-    degree: 'MS - Orthopedic & Mobility Care',
-    experience: '10 Years Exp',
-    specialty: 'Weight-Related Joint & Mobility Care',
-    category: 'metabolic',
-    hospital: 'Shree Giriraj Metabolic Center',
+    degree: 'MS - Orthopedic',
+    experience: '6 Years Exp',
+    specialty: 'Orthopedic',
+    category: 'ortho',
+    hospital: 'Shree Giriraj Hospital',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-krupen-tailor.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 700,
+    feeVideoINR: 700,
     rating: 4.7,
-    reviews: 195,
-    bio: 'Expert in joint restoration, mobility enhancement, and safe biomechanical physical rehabilitation programs for individuals with severe obesity.'
+    reviews: 184,
+    bio: 'Specialist in joint replacement, sports injury reconstruction, arthroscopy, and complex bone trauma management.'
   },
   // 6. Dr. Marcus Chen (Global - Singapore)
   {
     id: 'dr-marcus-chen',
     name: 'Dr. Marcus Chen',
-    degree: 'MBBS, FRACP - Singapore Metabolic Care',
+    degree: 'MBBS, FRACP - Singapore',
     experience: '16 Years Exp',
-    specialty: 'Endoscopic Weight Loss & Gastro',
-    category: 'bariatric',
-    hospital: 'Mount Elizabeth Weight & Digestive Center',
+    specialty: 'Gastroenterologist',
+    category: 'gastro',
+    hospital: 'Mount Elizabeth Hospital',
     city: 'Singapore',
     country: 'Singapore',
     hub: 'SINGAPORE',
     flag: '🇸🇬',
     photo: 'assets/doctors/dr-marcus-chen.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 9500,
+    feeVideoINR: 6800,
     rating: 4.9,
-    reviews: 355,
-    bio: 'Specialist in non-surgical endoscopic gastric balloon placement, endoscopic sleeve gastroplasty (ESG), and fatty liver disease (NASH) reversal.'
+    reviews: 340,
+    bio: 'Fellow of the Royal Australasian College of Physicians, specializing in advanced therapeutic endoscopy and liver health.'
   },
   // 7. Dr. Shitanshu Shekhar
   {
     id: 'dr-shitanshu-shekhar',
     name: 'Dr. Shitanshu Shekhar',
-    degree: 'MS, DNB - Advanced Metabolic Surgery',
+    degree: 'MS, DrNB Surgical Oncology',
     experience: '12 Years Exp',
-    specialty: 'Metabolic & Bariatric Surgeon',
-    category: 'bariatric',
-    hospital: 'Premier Institute of Metabolic Surgery',
+    specialty: 'Oncosurgeon',
+    category: 'critical',
+    hospital: 'Premier Cancer Institute',
     city: 'Ahmedabad',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-shitanshu-shekhar.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 1500,
+    feeVideoINR: 1500,
     rating: 4.9,
-    reviews: 230,
-    bio: 'Specializes in mini gastric bypass, duodenal switch procedures, and rapid reversal of severe Type 2 diabetes through metabolic surgery.'
+    reviews: 220,
+    bio: 'Renowned cancer surgeon with special interest in head and neck, gastrointestinal, and breast oncological resections.'
   },
   // 8. Dr. Elena Rostova (Global - Zurich)
   {
     id: 'dr-elena-rostova',
     name: 'Dr. Elena Rostova',
-    degree: 'MD, FMH - Univ of Zurich Metabolic Care',
+    degree: 'MD, FMH - Univ of Zurich',
     experience: '13 Years Exp',
-    specialty: 'Clinical Nutrition & Medical Weight Loss',
-    category: 'nutrition',
-    hospital: 'Hirslanden Center for Weight Management',
+    specialty: 'Reproductive Medicine & IVF',
+    category: 'gynec',
+    hospital: 'Hirslanden Medical Centre',
     city: 'Zurich',
     country: 'Switzerland',
     hub: 'SWITZERLAND',
     flag: '🇨🇭',
     photo: 'assets/doctors/dr-elena-rostova.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 11000,
+    feeVideoINR: 7200,
     rating: 5.0,
-    reviews: 210,
-    bio: 'Swiss specialist delivering precision metabolic nutrition, bio-impedance body composition analysis, and individualized medical weight loss regimens.'
+    reviews: 195,
+    bio: 'Swiss board-certified reproductive endocrinologist guiding international couples through fertility optimization and IVF protocols.'
   },
   // 9. Dr. Shraddha Jivani
   {
     id: 'dr-shraddha-jivani',
     name: 'Dr. Shraddha Jivani',
-    degree: 'MB (DCH) - Pediatric & Adolescent Weight',
-    experience: '8 Years Exp',
-    specialty: 'Pediatric Obesity Specialist',
-    category: 'medical',
-    hospital: 'Orange Children & Adolescent Metabolic Clinic',
+    degree: 'MB (DCH) - Pediatrics',
+    experience: '5 Years Exp',
+    specialty: 'Child Specialist',
+    category: 'pediatric',
+    hospital: 'Orange Children Hospital',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-shraddha-jivani.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 300,
+    feeVideoINR: 300,
     rating: 4.8,
-    reviews: 178,
-    bio: 'Dedicated to guiding children, teens, and families through healthy weight transformation, childhood obesity prevention, and metabolic wellness.'
+    reviews: 165,
+    bio: 'Compassionate pediatric care specialist experienced in neonatal care, infant nutrition, developmental milestones and vaccinations.'
   },
   // 10. Dr. Tariq Al-Mansoor (Global - Dubai/Abu Dhabi)
   {
     id: 'dr-tariq-almansoor',
     name: 'Dr. Tariq Al-Mansoor',
-    degree: 'MD, FAAP, DABOM - Johns Hopkins Fellow',
+    degree: 'MD, FAAP - Johns Hopkins Fellow',
     experience: '15 Years Exp',
-    specialty: 'Medical Weight Loss & GLP-1 Expert',
-    category: 'medical',
-    hospital: 'Cleveland Clinic Abu Dhabi - Bariatric Dept',
+    specialty: 'Pediatric Specialist',
+    category: 'pediatric',
+    hospital: 'Cleveland Clinic Abu Dhabi',
     city: 'Dubai & Abu Dhabi',
     country: 'UAE',
     hub: 'UAE',
     flag: '🇦🇪',
     photo: 'assets/doctors/dr-tariq-almansoor.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 8800,
+    feeVideoINR: 5800,
     rating: 4.9,
-    reviews: 285,
-    bio: 'Johns Hopkins fellow and obesity specialist leading GLP-1 receptor agonist clinical programs (Semaglutide/Tirzepatide) and metabolic tele-care across the Gulf.'
+    reviews: 260,
+    bio: 'American Board of Pediatrics certified consultant, recognized leader in pediatric allergy, asthma, and remote child telehealth.'
   },
   // 11. Dr. Bhumi Patel
   {
     id: 'dr-bhumi-patel',
     name: 'Dr. Bhumi Patel',
-    degree: 'MS, RD, CDE - Clinical Dietetics & Diabetes',
-    experience: '9 Years Exp',
-    specialty: 'Lead Clinical Dietitian & Nutritionist',
-    category: 'nutrition',
-    hospital: 'Aksha Metabolic & Nutrition Care',
+    degree: 'MS, DNB (Ophthal)',
+    experience: '6 Years Exp',
+    specialty: 'EYE Specialist',
+    category: 'eye',
+    hospital: 'Aksha Eye Hospital',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-bhumi-patel.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 400,
+    feeVideoINR: 400,
     rating: 4.9,
-    reviews: 260,
-    bio: 'Clinical dietitian specializing in medical weight loss meal planning, ketogenic and low-glycemic diets, breaking weight loss plateaus, and sustainable fat loss.'
+    reviews: 240,
+    bio: 'Ophthalmologist specializing in cataract phacoemulsification, computer vision syndrome, glaucoma, and refractive vision correction.'
   },
   // 12. Dr. Swati Braroo
   {
     id: 'dr-swati-braroo',
     name: 'Dr. Swati Braroo',
-    degree: 'DPM, DNB, FIPS - Behavioral Health & Eating Psychology',
+    degree: 'DPM, DNB, FIPS - Psychiatry',
     experience: '15 Years Exp',
-    specialty: 'Bariatric & Mindset Psychologist',
-    category: 'behavioral',
-    hospital: 'Asha Mind & Metabolic Wellness Clinic',
+    specialty: 'Psychiatrist',
+    category: 'mental',
+    hospital: 'Asha Neuro Psychiatry Clinic',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     flag: '🇮🇳',
     photo: 'assets/doctors/dr-swati-braroo.webp',
-    feeVisitINR: 0,
-    feeVideoINR: 0,
+    feeVisitINR: 800,
+    feeVideoINR: 1000,
     rating: 4.9,
-    reviews: 435,
-    bio: 'Specialist in emotional eating, binge eating disorder, bariatric pre-op psychological evaluations, and behavioral weight management cognitive therapy.'
+    reviews: 410,
+    bio: 'Consultant psychiatrist addressing mental wellness, anxiety, mood disorders, adult ADHD, and stress management via private telehealth.'
   }
 ];
 
 // =========================================================================
-// STATIC HOSPITALS DATABASE (Accredited Bariatric & Weight Management Centers)
+// STATIC HOSPITALS DATABASE
 // =========================================================================
 const HOSPITALS = [
   {
     id: 'kings-college-hospital',
-    name: "King's Bariatric & Metabolic Hospital",
+    name: "King's College Hospital",
     city: 'London',
     country: 'United Kingdom',
     hub: 'UK',
     address: 'Denmark Hill, London SE5 9RS, United Kingdom',
     photo: 'assets/hospitals/kings-college-hospital.webp',
-    specialties: ['Robotic Bariatric Surgery', 'Gastric Sleeve & Bypass', 'GLP-1 Programs', 'Post-Op Nutrition'],
+    specialties: ['Cardiology', 'Neurosurgery', 'Liver Centre', 'Critical Care'],
     phone: '+44 20 3299 9000',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kings+College+Hospital+London'
   },
   {
     id: 'mount-elizabeth',
-    name: 'Mount Elizabeth Weight & Digestive Center',
+    name: 'Mount Elizabeth Hospital',
     city: 'Singapore',
     country: 'Singapore',
     hub: 'SINGAPORE',
     address: '3 Mount Elizabeth, Orchard, Singapore 228510',
     photo: 'assets/hospitals/mount-elizabeth.webp',
-    specialties: ['Endoscopic Gastric Balloon', 'Metabolic Endocrinology', 'Fatty Liver Reversal', 'Medical Weight Loss'],
+    specialties: ['Gastroenterology', 'Oncology', 'Cardiovascular', 'Orthopedics'],
     phone: '+65 6737 2666',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Mount+Elizabeth+Hospital+Singapore'
   },
   {
     id: 'cleveland-clinic-ad',
-    name: 'Cleveland Clinic Bariatric Institute',
+    name: 'Cleveland Clinic Abu Dhabi',
     city: 'Abu Dhabi & Dubai',
     country: 'UAE',
     hub: 'UAE',
     address: 'Al Maryah Island, Abu Dhabi, United Arab Emirates',
     photo: 'assets/hospitals/cleveland-clinic-ad.webp',
-    specialties: ['Advanced Bariatrics', 'GLP-1 Tele-Clinic', 'Comprehensive Obesity Care', 'Metabolic Surgery'],
+    specialties: ['Pediatrics', 'Heart & Vascular', 'Neurological', 'Eye Care'],
     phone: '+971 800 82223',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cleveland+Clinic+Abu+Dhabi'
   },
   {
     id: 'shree-giriraj-hospital',
-    name: 'Shree Giriraj Bariatric Hospital & ICU',
+    name: 'Shree Giriraj Hospital & ICU',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     address: '150 Feet Ring Road, Rajkot, Gujarat, India',
     photo: 'assets/hospitals/omega-hospital.webp',
-    specialties: ['Laparoscopic Gastric Sleeve', 'Mini Gastric Bypass', 'Metabolic ICU', 'Clinical Dietetics'],
+    specialties: ['Cardiothoracic', 'Orthopedic', 'Critical Care', 'Emergency'],
     phone: '+91 81411 24181',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Shree+Giriraj+Hospital+Rajkot'
   },
   {
     id: 'pragna-homeopathy-clinic',
-    name: 'Pragna Metabolic Health & Weight Clinic',
+    name: 'Pragna Clinic & Healthcare',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     address: 'Amin Marg, Beside Patel Boarding, Rajkot, Gujarat',
     photo: 'assets/hospitals/pragna-clinic.webp',
-    specialties: ['Medical Weight Loss', 'PCOS & Hormone Reset', 'Insulin Resistance', 'Lifestyle Medicine'],
+    specialties: ['Holistic Medicine', 'Chronic Care', 'Wellness', 'Physiotherapy'],
     phone: '+91 81411 24181',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pragna+Clinic+Rajkot'
   },
   {
     id: 'asha-neuro-psychiatry',
-    name: 'Asha Behavioral & Weight Wellness Center',
+    name: 'Asha Neuro Psychiatry Clinic',
     city: 'Rajkot',
     country: 'India',
     hub: 'INDIA',
     address: 'Tagore Road, Near Galaxy Tower, Rajkot, Gujarat',
     photo: 'assets/hospitals/asha-clinic.webp',
-    specialties: ['Bariatric Psychology Clearance', 'Emotional Eating Therapy', 'Behavioral Mindset', 'Habit Coaching'],
+    specialties: ['Psychiatry', 'Neuro-Counseling', 'Sleep Clinic', 'Addiction Care'],
     phone: '+91 81411 24181',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Asha+Neuro+Psychiatry+Clinic+Rajkot'
   }
@@ -468,8 +461,8 @@ function renderDoctors(filterCategory = 'ALL', hub = 'ALL', searchQuery = '') {
       <div class="divider-line"></div>
 
       <div class="booking-buttons-row">
-        <button class="btn-free-consult" onclick="openBookingModal('${doc.id}', 'free')">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <button class="btn-free-consult" onclick="openBookingModal('${doc.id}', 'video')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>Free Consultation</span>
         </button>
       </div>
@@ -589,7 +582,7 @@ function closeBookingModal() {
 }
 
 function updateConsultTypeDisplay(type) {
-  currentConsultType = (type === 'hospital') ? 'hospital' : 'video';
+  currentConsultType = type;
   const visitOpt = document.getElementById('optVisitType');
   const videoOpt = document.getElementById('optVideoType');
   const feeDisplay = document.getElementById('modalFeeAmount');
@@ -604,7 +597,7 @@ function updateConsultTypeDisplay(type) {
     }
   }
   if (feeDisplay) {
-    feeDisplay.textContent = '100% FREE';
+    feeDisplay.textContent = 'FREE';
   }
 }
 
@@ -641,7 +634,7 @@ function handleBookingSubmit(e) {
     hospital: currentBookingDoctor.hospital,
     city: currentBookingDoctor.city,
     country: currentBookingDoctor.country,
-    type: currentConsultType === 'hospital' ? 'In-Person Hospital Visit (Free)' : '4K Video Consult (Free)',
+    type: currentConsultType === 'hospital' ? 'In-Person Hospital Visit' : '4K Telehealth Video Consult',
     date: bookingDate,
     time: selectedSlot,
     patientName: patientName,
@@ -649,7 +642,7 @@ function handleBookingSubmit(e) {
     patientEmail: patientEmail,
     reason: reason,
     feeINR: 0,
-    feeFormatted: '100% FREE',
+    feeFormatted: 'FREE',
     status: 'Confirmed',
     bookedAt: new Date().toLocaleString()
   };
@@ -673,7 +666,7 @@ function showBookingSuccessModal(appt) {
   document.getElementById('successDocName').textContent = appt.doctorName;
   document.getElementById('successDateTime').textContent = `${appt.date} • ${appt.time}`;
   document.getElementById('successType').textContent = appt.type;
-  document.getElementById('successFee').textContent = appt.feeFormatted;
+  document.getElementById('successFee').textContent = 'FREE';
 
   modal.classList.add('active');
 }
@@ -732,8 +725,8 @@ function renderAppointmentsDrawer() {
           <div style="font-weight: 600; color: #181818;">${a.date} at ${a.time}</div>
         </div>
         <div style="text-align: right;">
-          <div style="color: #94a3b8; font-size: 11px;">CONSULTATION FEE</div>
-          <div style="font-weight: 700; color: #16a34a;">${a.feeFormatted || '100% FREE'}</div>
+          <div style="color: #94a3b8; font-size: 11px;">CONSULTATION</div>
+          <div style="font-weight: 700; color: #16a34a;">FREE</div>
         </div>
       </div>
       <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 4px;">
@@ -1034,13 +1027,13 @@ function setCurrency(currCode) {
 function updateHeroCardPrices() {
   const p1 = document.getElementById('heroCard1Price');
   const p1Old = document.getElementById('heroCard1Old');
-  if (p1) p1.textContent = '100% Free';
-  if (p1Old) p1Old.textContent = '';
+  if (p1) p1.textContent = 'Free Consultation';
+  if (p1Old) p1Old.style.display = 'none';
 
   const p2 = document.getElementById('heroCard2Price');
   const p2Old = document.getElementById('heroCard2Old');
-  if (p2) p2.textContent = 'Free';
-  if (p2Old) p2Old.textContent = '';
+  if (p2) p2.textContent = 'Free Consultation';
+  if (p2Old) p2Old.style.display = 'none';
 }
 
 // =========================================================================
