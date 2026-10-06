@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap');
 
 :root {
-  --primary: #3fc3cf;
-  --primary-dark: #2baab6;
-  --primary-light: #eaf8fa;
-  --primary-glow: rgba(63, 195, 207, 0.35);
+  --primary: #1e40af;
+  --primary-dark: #172554;
+  --primary-light: #eff6ff;
+  --primary-glow: rgba(30, 64, 175, 0.25);
   --accent-red: #e72734;
   --text-dark: #181818;
   --text-muted: #667085;
-  --bg-gradient: radial-gradient(ellipse at center, #eaf8fa 0%, #d0f9ff 100%);
+  --bg-gradient: radial-gradient(ellipse at center, #eff6ff 0%, #dbeafe 100%);
   --white: #ffffff;
   --border-light: rgba(24, 24, 24, 0.08);
   --card-shadow: 0 10px 30px -4px rgba(16, 24, 40, 0.08);
-  --card-hover-shadow: 0 20px 40px -4px rgba(63, 195, 207, 0.22);
+  --card-hover-shadow: 0 20px 40px -4px rgba(30, 64, 175, 0.18);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -34,7 +34,7 @@ html {
 body {
   font-family: var(--font-main);
   color: var(--text-dark);
-  background-color: #fafdfd;
+  background-color: #f8fafc;
   line-height: 1.5;
   overflow-x: hidden !important;
   -webkit-font-smoothing: antialiased;
@@ -79,14 +79,14 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
-  border: 1px solid rgba(63, 195, 207, 0.2);
+  border: 1px solid rgba(30, 64, 175, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
 .sticky-btn:hover {
   transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 8px 24px rgba(63, 195, 207, 0.3);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
 }
 
 .sticky-btn.whatsapp {
@@ -95,7 +95,7 @@ button {
 }
 
 .sticky-btn.call {
-  background: #3fc3cf;
+  background: #1e40af;
   color: #fff;
 }
 
@@ -127,7 +127,7 @@ button {
 }
 
 .top-notice-bar .badge-global {
-  background: #3fc3cf;
+  background: #1e40af;
   color: #0b373d;
   font-weight: 700;
   font-size: 11px;
@@ -173,8 +173,8 @@ button {
   padding: 6px;
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.9);
-  background: rgba(63, 195, 207, 0.35);
-  box-shadow: 0 10px 30px rgba(63, 195, 207, 0.15);
+  background: rgba(30, 64, 175, 0.35);
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.15);
   transition: all 0.3s ease;
 }
 
@@ -204,7 +204,7 @@ button {
 }
 
 .brand-badge {
-  background: linear-gradient(135deg, #3fc3cf 0%, #008899 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #172554 100%);
   color: white;
   font-family: var(--font-heading);
   font-size: 10px;
@@ -272,7 +272,7 @@ button {
   border-radius: 14px;
   border: 1px solid #ffffff;
   background: var(--primary);
-  box-shadow: 0 4px 12px rgba(63, 195, 207, 0.35);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.35);
   cursor: pointer;
   color: #ffffff;
   font-family: var(--font-heading);
@@ -291,7 +291,7 @@ button {
 .nav-currency-select {
   padding: 6px 10px;
   border-radius: 14px;
-  border: 1.5px solid rgba(63, 195, 207, 0.4);
+  border: 1.5px solid rgba(30, 64, 175, 0.4);
   background: #ffffff;
   color: #1e293b;
   font-family: var(--font-heading);
@@ -305,7 +305,7 @@ button {
 .nav-currency-select:hover,
 .nav-currency-select:focus {
   border-color: var(--primary);
-  box-shadow: 0 2px 8px rgba(63, 195, 207, 0.2);
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
 }
 
 .currency-badge-btn {
@@ -385,7 +385,7 @@ button {
   border-radius: 14px;
   border: 1px solid #ffffff;
   background: var(--primary);
-  box-shadow: 0 4px 14px rgba(63, 195, 207, 0.35);
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.35);
   padding: 10px 24px;
   color: #ffffff;
   font-family: var(--font-heading);
@@ -399,7 +399,7 @@ button {
 
 .primary-button:hover {
   background: var(--primary-dark);
-  box-shadow: 0 6px 18px rgba(63, 195, 207, 0.45);
+  box-shadow: 0 6px 18px rgba(30, 64, 175, 0.45);
   transform: translateY(-2px);
 }
 
@@ -414,7 +414,7 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(63, 195, 207, 0.25);
+  border: 1px solid rgba(30, 64, 175, 0.25);
   transition: all 0.2s ease;
 }
 
@@ -482,8 +482,8 @@ button {
   border-radius: 30px;
   font-size: 13px;
   font-weight: 600;
-  color: #176571;
-  box-shadow: 0 4px 14px rgba(63, 195, 207, 0.2);
+  color: #1e40af;
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.2);
   margin-bottom: 18px;
 }
 
@@ -525,7 +525,7 @@ button {
   padding: 8px 12px 8px 18px;
   border-radius: 20px;
   border: 2.5px solid var(--primary);
-  box-shadow: 0 8px 30px rgba(63, 195, 207, 0.25);
+  box-shadow: 0 8px 30px rgba(30, 64, 175, 0.25);
   position: relative;
 }
 
@@ -685,10 +685,10 @@ button {
   padding: 5px 13px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(63, 195, 207, 0.4);
+  border: 1px solid rgba(30, 64, 175, 0.4);
   font-size: 12.5px;
   font-weight: 500;
-  color: #134e56;
+  color: #1e40af;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -733,8 +733,8 @@ button {
 
 .action-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 18px 45px rgba(63, 195, 207, 0.25);
-  border-color: rgba(63, 195, 207, 0.4);
+  box-shadow: 0 18px 45px rgba(30, 64, 175, 0.25);
+  border-color: rgba(30, 64, 175, 0.4);
 }
 
 .action-card .card-top-icon {
@@ -817,10 +817,10 @@ button {
   gap: 5px;
   padding: 3px 8px;
   border-radius: 10px;
-  background: #f2fbfb;
-  border: 1px solid rgba(63, 195, 207, 0.35);
+  background: #eff6ff;
+  border: 1px solid rgba(30, 64, 175, 0.35);
   font-size: 11px;
-  color: #126874;
+  color: #1e40af;
   font-weight: 600;
 }
 
@@ -896,8 +896,8 @@ button {
 
 .problem-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(63, 195, 207, 0.2);
-  border-color: rgba(63, 195, 207, 0.4);
+  box-shadow: 0 16px 32px rgba(30, 64, 175, 0.2);
+  border-color: rgba(30, 64, 175, 0.4);
 }
 
 .problem-card .icon-holder {
@@ -948,8 +948,8 @@ button {
   padding: 7px 12px;
   border-radius: 12px;
   border: 1px solid rgba(24, 24, 24, 0.15);
-  background: rgba(63, 195, 207, 0.08);
-  color: #178996;
+  background: rgba(30, 64, 175, 0.08);
+  color: #1e40af;
   font-family: var(--font-heading);
   font-size: 12.5px;
   font-weight: 700;
@@ -1023,7 +1023,7 @@ button {
 .spec-category-item:hover .label-pill {
   border-color: var(--primary);
   color: var(--primary);
-  box-shadow: 0 6px 18px rgba(63, 195, 207, 0.18);
+  box-shadow: 0 6px 18px rgba(30, 64, 175, 0.18);
 }
 
 .spec-category-item .label-pill .first-letter {
@@ -1052,7 +1052,7 @@ button {
   padding: 8px 18px;
   border-radius: 20px;
   background: #ffffff;
-  border: 1px solid rgba(63, 195, 207, 0.35);
+  border: 1px solid rgba(30, 64, 175, 0.35);
   font-size: 13.5px;
   font-weight: 600;
   color: #334155;
@@ -1065,7 +1065,7 @@ button {
   background: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(63, 195, 207, 0.3);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
 }
 
 .doctors-grid {
@@ -1089,8 +1089,8 @@ button {
 
 .doctor-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 36px rgba(63, 195, 207, 0.2);
-  border-color: rgba(63, 195, 207, 0.4);
+  box-shadow: 0 16px 36px rgba(30, 64, 175, 0.2);
+  border-color: rgba(30, 64, 175, 0.4);
 }
 
 .doctor-card .doctor-header {
@@ -1323,8 +1323,8 @@ button {
 
 .hospital-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(63, 195, 207, 0.18);
-  border-color: rgba(63, 195, 207, 0.4);
+  box-shadow: 0 18px 40px rgba(30, 64, 175, 0.18);
+  border-color: rgba(30, 64, 175, 0.4);
 }
 
 .hospital-card .hospital-img-wrap {
@@ -1534,7 +1534,7 @@ button {
 .about-center-img img {
   max-width: 100%;
   height: auto;
-  filter: drop-shadow(0 15px 30px rgba(63, 195, 207, 0.25));
+  filter: drop-shadow(0 15px 30px rgba(30, 64, 175, 0.25));
 }
 
 /* =========================================================================
@@ -1564,7 +1564,7 @@ button {
 
 .video-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(63, 195, 207, 0.2);
+  box-shadow: 0 18px 40px rgba(30, 64, 175, 0.2);
 }
 
 .video-card .video-frame-wrapper {
@@ -1834,7 +1834,7 @@ button {
 
 .faq-item.active {
   border-color: var(--primary);
-  box-shadow: 0 8px 24px rgba(63, 195, 207, 0.18);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.18);
 }
 
 .faq-question-btn {
@@ -1917,8 +1917,8 @@ button {
 
 .blog-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(63, 195, 207, 0.2);
-  border-color: rgba(63, 195, 207, 0.4);
+  box-shadow: 0 16px 36px rgba(30, 64, 175, 0.2);
+  border-color: rgba(30, 64, 175, 0.4);
 }
 
 .blog-card .thumbnail-wrap {
@@ -1996,7 +1996,7 @@ button {
 }
 
 .support-strip {
-  background: linear-gradient(135deg, #eaf8fa 0%, #def6f9 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border: 2px solid #ffffff;
   border-radius: 32px;
   padding: 36px 40px;
@@ -2005,7 +2005,7 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
-  box-shadow: 0 10px 30px rgba(63, 195, 207, 0.12);
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.12);
 }
 
 .support-strip .left-col {
@@ -2026,7 +2026,7 @@ button {
   background: #ffffff;
   padding: 12px 20px;
   border-radius: 18px;
-  border: 1px solid rgba(63, 195, 207, 0.3);
+  border: 1px solid rgba(30, 64, 175, 0.3);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
@@ -2253,7 +2253,7 @@ button {
 
 .modal-header-strip {
   height: 6px;
-  background: linear-gradient(90deg, #3fc3cf 0%, #178996 100%);
+  background: linear-gradient(90deg, #1e40af 0%, #172554 100%);
   width: 100%;
 }
 
@@ -2313,7 +2313,7 @@ button {
 
 .form-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(63, 195, 207, 0.2);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
 }
 
 .modal-submit-btn {
