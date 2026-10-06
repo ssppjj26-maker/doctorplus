@@ -5,3 +5,5 @@ download_assets.py
 download_assets.ps1
 download_batch2.ps1
 download_int_docs.ps1
+
+.vercel
