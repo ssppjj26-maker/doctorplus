@@ -1,5 +1,5 @@
 node_modules
-.vercel
+*.zip
 *.log
 download_assets.py
 download_assets.ps1

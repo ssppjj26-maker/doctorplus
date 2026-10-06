@@ -288,6 +288,26 @@ button {
   transform: translateY(-1px);
 }
 
+.nav-currency-select {
+  padding: 6px 10px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(63, 195, 207, 0.4);
+  background: #ffffff;
+  color: #1e293b;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.nav-currency-select:hover,
+.nav-currency-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(63, 195, 207, 0.2);
+}
+
 .currency-badge-btn {
   display: flex;
   align-items: center;

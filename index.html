@@ -27,30 +27,7 @@
     </a>
   </div>
 
-  <!-- Top Global Notice Bar -->
-  <div class="top-notice-bar">
-    <div class="container inner">
-      <div>
-        <span class="badge-global">Global Care</span>
-        <span>Connecting International Clients to Board-Certified Doctors in London, New York, Singapore, Dubai, Zurich & India</span>
-      </div>
-      <div class="selectors-row">
-        <label style="display: flex; align-items: center; gap: 4px;">
-          <span>Currency:</span>
-          <select id="globalCurrencySelect" class="top-select-btn" onchange="setCurrency(this.value)">
-            <option value="USD" selected>USD ($)</option>
-            <option value="EUR">EUR (€)</option>
-            <option value="GBP">GBP (£)</option>
-            <option value="AED">AED (AED)</option>
-            <option value="INR">INR (₹)</option>
-            <option value="SGD">SGD (S$)</option>
-          </select>
-        </label>
-        <span style="opacity: 0.5;">|</span>
-        <span style="font-weight: 500;">Helpline: <strong>+1 (800) 412-MEDIQ</strong> / <strong>+91 81411 24181</strong></span>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Main Navigation Bar -->
   <nav class="navbar" id="navbar">
@@ -85,11 +62,15 @@
 
           <!-- Right Action Buttons -->
           <div class="nav-right-actions">
-            <!-- Currency quick toggle badge -->
-            <button class="currency-badge-btn" onclick="document.getElementById('globalCurrencySelect').focus();" title="Click to change currency">
-              <span id="navCurrencyText">USD</span>
-              <span style="font-size: 11px; color: #64748b;">▼</span>
-            </button>
+            <!-- Currency selector -->
+            <select id="globalCurrencySelect" class="nav-currency-select" onchange="setCurrency(this.value)" title="Select Currency">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="AED">AED (AED)</option>
+              <option value="INR">INR (₹)</option>
+              <option value="SGD">SGD (S$)</option>
+            </select>
 
             <!-- Sign in / Account Button -->
             <div class="details-wrapper">
