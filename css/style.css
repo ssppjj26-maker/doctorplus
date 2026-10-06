@@ -1234,73 +1234,34 @@ button {
 }
 
 .doctor-card .booking-buttons-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  display: block;
   margin-top: auto;
 }
 
-.doctor-card .btn-visit {
+.doctor-card .btn-free-consult {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8px 6px;
+  gap: 8px;
+  padding: 11px 16px;
   border-radius: 14px;
   background: var(--primary);
-  border: 1px solid rgba(24, 24, 24, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
   transition: all 0.2s ease;
 }
 
-.doctor-card .btn-visit:hover {
+.doctor-card .btn-free-consult:hover {
   background: var(--primary-dark);
-}
-
-.doctor-card .btn-visit .btn-lbl {
-  font-family: var(--font-heading);
-  font-size: 11.5px;
-  font-weight: 700;
-}
-
-.doctor-card .btn-visit .btn-fee {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-.doctor-card .btn-video {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 6px;
-  border-radius: 14px;
-  background: #ffffff;
-  border: 1px solid rgba(24, 24, 24, 0.15);
-  color: #181818;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.doctor-card .btn-video:hover {
-  background: #f7f9fa;
-  border-color: var(--primary);
-}
-
-.doctor-card .btn-video .btn-lbl {
-  font-family: var(--font-heading);
-  font-size: 11.5px;
-  font-weight: 600;
-}
-
-.doctor-card .btn-video .btn-fee {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 700;
-  color: #181818;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.35);
 }
 
 /* =========================================================================

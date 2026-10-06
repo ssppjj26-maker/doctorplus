@@ -468,13 +468,9 @@ function renderDoctors(filterCategory = 'ALL', hub = 'ALL', searchQuery = '') {
       <div class="divider-line"></div>
 
       <div class="booking-buttons-row">
-        <button class="btn-visit" onclick="openBookingModal('${doc.id}', 'hospital')">
-          <span class="btn-lbl">Hospital Visit</span>
-          <span class="btn-fee">${formatPrice(doc.feeVisitINR)}</span>
-        </button>
-        <button class="btn-video" onclick="openBookingModal('${doc.id}', 'video')">
-          <span class="btn-lbl">4K Video Consult</span>
-          <span class="btn-fee">${formatPrice(doc.feeVideoINR)}</span>
+        <button class="btn-free-consult" onclick="openBookingModal('${doc.id}', 'free')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Free Consultation</span>
         </button>
       </div>
     </div>
@@ -593,7 +589,7 @@ function closeBookingModal() {
 }
 
 function updateConsultTypeDisplay(type) {
-  currentConsultType = type;
+  currentConsultType = (type === 'hospital') ? 'hospital' : 'video';
   const visitOpt = document.getElementById('optVisitType');
   const videoOpt = document.getElementById('optVideoType');
   const feeDisplay = document.getElementById('modalFeeAmount');
@@ -602,16 +598,13 @@ function updateConsultTypeDisplay(type) {
     if (type === 'hospital') {
       visitOpt.classList.add('active');
       videoOpt.classList.remove('active');
-      if (feeDisplay && currentBookingDoctor) {
-        feeDisplay.textContent = formatPrice(currentBookingDoctor.feeVisitINR);
-      }
     } else {
       videoOpt.classList.add('active');
       visitOpt.classList.remove('active');
-      if (feeDisplay && currentBookingDoctor) {
-        feeDisplay.textContent = formatPrice(currentBookingDoctor.feeVideoINR);
-      }
     }
+  }
+  if (feeDisplay) {
+    feeDisplay.textContent = '100% FREE';
   }
 }
 
@@ -638,7 +631,6 @@ function handleBookingSubmit(e) {
   }
 
   const bookingId = 'MQ-' + Math.floor(100000 + Math.random() * 900000);
-  const fee = currentConsultType === 'hospital' ? currentBookingDoctor.feeVisitINR : currentBookingDoctor.feeVideoINR;
 
   const appointment = {
     id: bookingId,
@@ -649,15 +641,15 @@ function handleBookingSubmit(e) {
     hospital: currentBookingDoctor.hospital,
     city: currentBookingDoctor.city,
     country: currentBookingDoctor.country,
-    type: currentConsultType === 'hospital' ? 'In-Person Hospital Visit' : '4K Telehealth Video Consult',
+    type: currentConsultType === 'hospital' ? 'In-Person Hospital Visit (Free)' : '4K Video Consult (Free)',
     date: bookingDate,
     time: selectedSlot,
     patientName: patientName,
     patientPhone: patientPhone,
     patientEmail: patientEmail,
     reason: reason,
-    feeINR: fee,
-    feeFormatted: formatPrice(fee),
+    feeINR: 0,
+    feeFormatted: '100% FREE',
     status: 'Confirmed',
     bookedAt: new Date().toLocaleString()
   };
@@ -740,8 +732,8 @@ function renderAppointmentsDrawer() {
           <div style="font-weight: 600; color: #181818;">${a.date} at ${a.time}</div>
         </div>
         <div style="text-align: right;">
-          <div style="color: #94a3b8; font-size: 11px;">FEE PAID</div>
-          <div style="font-weight: 700; color: var(--primary);">${a.feeFormatted}</div>
+          <div style="color: #94a3b8; font-size: 11px;">CONSULTATION FEE</div>
+          <div style="font-weight: 700; color: #16a34a;">${a.feeFormatted || '100% FREE'}</div>
         </div>
       </div>
       <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 4px;">
@@ -1042,13 +1034,13 @@ function setCurrency(currCode) {
 function updateHeroCardPrices() {
   const p1 = document.getElementById('heroCard1Price');
   const p1Old = document.getElementById('heroCard1Old');
-  if (p1) p1.textContent = formatPrice(49);
-  if (p1Old) p1Old.textContent = formatPrice(299);
+  if (p1) p1.textContent = '100% Free';
+  if (p1Old) p1Old.textContent = '';
 
   const p2 = document.getElementById('heroCard2Price');
   const p2Old = document.getElementById('heroCard2Old');
-  if (p2) p2.textContent = formatPrice(200);
-  if (p2Old) p2Old.textContent = formatPrice(499);
+  if (p2) p2.textContent = 'Free';
+  if (p2Old) p2Old.textContent = '';
 }
 
 // =========================================================================

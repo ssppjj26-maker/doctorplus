@@ -61,15 +61,12 @@
 
           <!-- Right Action Buttons -->
           <div class="nav-right-actions">
-            <!-- Currency selector -->
-            <select id="globalCurrencySelect" class="nav-currency-select" onchange="setCurrency(this.value)" title="Select Currency">
-              <option value="USD">USD ($)</option>
-              <option value="EUR">EUR (€)</option>
-              <option value="GBP">GBP (£)</option>
-              <option value="AED">AED (AED)</option>
-              <option value="INR">INR (₹)</option>
-              <option value="SGD">SGD (S$)</option>
-            </select>
+            <!-- Free Consultation Badge -->
+            <div class="free-consult-badge" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; background: #eff6ff; border: 1.5px solid rgba(30, 64, 175, 0.2); color: var(--primary); font-family: var(--font-heading); font-size: 13px; font-weight: 700;">
+              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);"></span>
+              <span>Free Consultation</span>
+            </div>
+            <select id="globalCurrencySelect" style="display: none;"><option value="USD">USD</option></select>
 
             <!-- Sign in / Account Button -->
             <div class="details-wrapper">
@@ -194,8 +191,8 @@
             <h3 class="card-title"><span class="first-letter">Q</span>uick Consult</h3>
             <p class="card-desc">Connect with a Doctor in Just Few Minutes</p>
             <div class="price-row">
-              <span class="price-current" id="heroCard1Price">$1</span>
-              <span class="price-strike" id="heroCard1Old">$5</span>
+              <span class="price-current" id="heroCard1Price" style="font-size: 15px; color: #16a34a; font-weight: 800; background: #dcfce7; padding: 4px 12px; border-radius: 20px;">100% Free Consultation</span>
+              <span class="price-strike" id="heroCard1Old" style="display: none;"></span>
             </div>
             <div class="capsules-container">
               <span class="capsule">⏱️ MBBS / Board Certified</span>
@@ -211,8 +208,8 @@
             <h3 class="card-title"><span class="first-letter">B</span>ook Appointment</h3>
             <p class="card-desc">Consult a specialist doctor via hospital-video appointment</p>
             <div class="price-row">
-              <span class="price-current" id="heroCard2Price">$3</span>
-              <span class="price-strike" id="heroCard2Old">$8</span>
+              <span class="price-current" id="heroCard2Price" style="font-size: 15px; color: #16a34a; font-weight: 800; background: #dcfce7; padding: 4px 12px; border-radius: 20px;">Free Consultation</span>
+              <span class="price-strike" id="heroCard2Old" style="display: none;"></span>
             </div>
             <div class="capsules-container">
               <span class="capsule">🛡️ Verified Doctors</span>
@@ -451,7 +448,7 @@
               Meet Our Verified <span>Doctors</span>
             </h2>
             <p class="sub-heading">
-              Connect with MediQ Verified doctors across multiple specialities for online and in-clinic consultations. Real profiles, real credentials, and transparent fee conversion.
+              Connect with MediQ Verified doctors across multiple specialities for online and in-clinic consultations. Real profiles, verified credentials, and 100% free consultation.
             </p>
           </div>
           <div>
@@ -693,11 +690,11 @@
 
             <div class="faq-item">
               <button class="faq-question-btn">
-                <span>What payment methods and currencies are supported?</span>
+                <span>Is doctor consultation really free?</span>
                 <span class="faq-icon-arrow">▼</span>
               </button>
               <div class="faq-answer">
-                We accept major international credit/debit cards (Visa, MasterCard, American Express), Apple Pay, Google Pay, UPI, and local bank transfers. You can toggle currency between USD, EUR, GBP, AED, INR, and SGD anytime using the currency switcher.
+                Yes! All doctor consultations and appointments booked on MediQ Connect are 100% complimentary. There are no consultation fees, payment requirements, or hidden charges.
               </div>
             </div>
 
@@ -1009,14 +1006,17 @@
             <input type="text" id="patientReasonInput" class="form-input" placeholder="e.g. Second opinion, blood pressure, fever">
           </div>
 
-          <!-- Fee Summary -->
-          <div style="background: #f0fdfa; border: 1px solid #ccfbf1; padding: 12px 16px; border-radius: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-weight: 600; color: #115e59; font-size: 13.5px;">Total Consultation Fee:</span>
-            <span id="modalFeeAmount" style="font-family: var(--font-heading); font-size: 20px; font-weight: 800; color: #0d9488;">$13</span>
+          <!-- Free Consultation Banner -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; padding: 12px 16px; border-radius: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 18px;">🎁</span>
+              <span style="font-weight: 700; color: #1e40af; font-size: 13.5px;">Consultation Fee:</span>
+            </div>
+            <span id="modalFeeAmount" style="font-family: var(--font-heading); font-size: 14px; font-weight: 800; color: #16a34a; background: #dcfce7; padding: 4px 12px; border-radius: 10px;">100% FREE</span>
           </div>
 
           <button type="submit" class="modal-submit-btn">
-            <span>Confirm & Generate Booking Pass</span>
+            <span>Book Free Consultation</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </button>
 
@@ -1059,8 +1059,8 @@
             <span id="successType" style="font-weight: 600; color: #0284c7;">Hospital Visit</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span style="font-size: 12px; color: #64748b;">FEE AMOUNT</span>
-            <span id="successFee" style="font-weight: 800; color: #16a34a;">$13</span>
+            <span style="font-size: 12px; color: #64748b;">FEE STATUS</span>
+            <span id="successFee" style="font-weight: 800; color: #16a34a;">100% FREE</span>
           </div>
         </div>
 
