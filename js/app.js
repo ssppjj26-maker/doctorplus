@@ -1049,33 +1049,7 @@ function initSocialProofToast() {
    ========================================================================== */
 
 function initBlogSection() {
-  // Category Filtering for 7 Questions FAQ Cards
-  const filterBtns = document.querySelectorAll('.blog-filter-btn');
-  const blogFaqItems = document.querySelectorAll('#blog .faq-item');
-
-  if (filterBtns.length > 0 && blogFaqItems.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-
-        blogFaqItems.forEach(card => {
-          if (filter === 'all') {
-            card.style.display = 'block';
-          } else {
-            const cardCat = card.getAttribute('data-category');
-            if (cardCat === filter) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
-          }
-        });
-      });
-    });
-  }
+  // Category filters removed per user design specification
 }
 
 
