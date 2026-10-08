@@ -237,22 +237,7 @@ button {
   font-size: 0.82rem;
 }
 
-.admin-lead-link {
-  color: #5eead4;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: rgba(94, 234, 212, 0.12);
-  transition: var(--transition-fast);
-}
 
-.admin-lead-link:hover {
-  background: rgba(94, 234, 212, 0.25);
-  color: #ffffff;
-}
 
 /* Main Navbar */
 .site-header {
@@ -1732,93 +1717,7 @@ button {
   margin: 22px 0;
 }
 
-/* ==========================================================================
-   Admin / Marketing Lead Portal Modal (For Owner to Export Emails!)
-   ========================================================================== */
 
-.leads-admin-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(5, 19, 38, 0.8);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.leads-admin-modal.open {
-  display: flex;
-}
-
-.leads-admin-box {
-  background: #ffffff;
-  border-radius: var(--radius-xl);
-  max-width: 1080px;
-  width: 100%;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-.leads-admin-header {
-  padding: 24px 30px;
-  background: #091e3a;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.leads-admin-toolbar {
-  padding: 16px 30px;
-  background: var(--bg-soft);
-  border-bottom: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.leads-table-container {
-  overflow-y: auto;
-  flex-grow: 1;
-  padding: 0 30px 20px;
-}
-
-.leads-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-  text-align: left;
-}
-
-.leads-table th {
-  padding: 14px 12px;
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  border-bottom: 2px solid var(--border-light);
-  font-weight: 700;
-  color: var(--primary-navy);
-}
-
-.leads-table td {
-  padding: 14px 12px;
-  border-bottom: 1px solid var(--border-light);
-  color: var(--text-secondary);
-}
-
-.leads-table tr:hover td {
-  background: rgba(13, 148, 136, 0.04);
-}
 
 /* ==========================================================================
    Toast Notification (Live Booking Social Proof)

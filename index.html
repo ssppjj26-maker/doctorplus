@@ -14,7 +14,7 @@
 <body>
 
   <!-- ==========================================================================
-       Top Announcement Bar (Trust & Marketing Hub Access)
+       Top Announcement Bar (Trust & Nationwide Network)
        ========================================================================== -->
   <div class="top-announcement">
     <div class="container top-announcement-inner">
@@ -26,10 +26,6 @@
       </div>
       <div class="top-announcement-right">
         <span><span class="pulse-dot"></span> <strong>14 Free Consultation Slots</strong> Open Today</span>
-        <a href="#admin-portal" class="admin-lead-link" id="openAdminPortal" title="Click to view & export captured emails for email marketing">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Leads Marketing Hub (<span id="adminLeadsCount">4</span>)
-        </a>
       </div>
     </div>
   </div>
@@ -966,7 +962,6 @@
           <a href="#">Privacy Policy (HIPAA)</a>
           <a href="#">Terms of Consultation</a>
           <a href="#">Physician Credentials</a>
-          <a href="#" id="footerAdminTrigger">Lead Marketing Admin</a>
         </div>
       </div>
 
@@ -1256,61 +1251,6 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       Admin / Email Marketing Portal Modal (Owner Feature to Export Leads!)
-       ========================================================================== -->
-  <div class="leads-admin-modal" id="adminPortalModal">
-    <div class="leads-admin-box">
-      
-      <div class="leads-admin-header">
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; display: flex; align-items: center; gap: 8px;">
-            <span>📬 Marketing Lead Hub & Email Exporter</span>
-            <span class="badge-free" style="background:#0d9488;">OWNER PORTAL</span>
-          </h3>
-          <p style="font-size: 0.82rem; color: #cbd5e1; margin-top: 4px;">
-            Collected client emails & free consultation booking details ready for email marketing campaigns.
-          </p>
-        </div>
-        <button class="modal-close-btn" id="closeAdminBtn" style="color: #ffffff; position: static;">✕</button>
-      </div>
-
-      <div class="leads-admin-toolbar">
-        <div style="display: flex; align-items: center; gap: 12px; flex-grow: 1; max-width: 400px;">
-          <input type="text" id="adminSearchInput" class="form-input" placeholder="Search by name, email, state, or doctor..." style="padding: 8px 14px; font-size: 0.85rem;">
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <button class="btn-secondary" id="copyEmailsBtn" style="padding: 8px 16px; font-size: 0.85rem;" title="Copies all email addresses as a comma-separated list to paste into Mailchimp, Klaviyo, etc.">
-            📋 Copy All Emails
-          </button>
-          <button class="btn-primary" id="exportCsvBtn" style="padding: 8px 18px; font-size: 0.85rem;" title="Downloads a clean CSV spreadsheet with all patient leads">
-            📥 Export to CSV (Email Marketing)
-          </button>
-        </div>
-      </div>
-
-      <div class="leads-table-container">
-        <table class="leads-table">
-          <thead>
-            <tr>
-              <th>ID & Date</th>
-              <th>Patient & State</th>
-              <th>Email Address</th>
-              <th>Phone</th>
-              <th>Primary Struggle</th>
-              <th>Doctor & Mode</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="leadsTableBody">
-            <!-- Dynamically populated from LocalStorage -->
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
 
   <!-- ==========================================================================
        Live Booking Social Proof Toast
