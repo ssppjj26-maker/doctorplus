@@ -1504,6 +1504,7 @@ button {
   color: var(--primary-navy);
   text-align: left;
   transition: var(--transition-fast);
+  user-select: none;
 }
 
 .faq-question:hover {
@@ -1511,10 +1512,16 @@ button {
 }
 
 .faq-icon {
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
   transition: transform 0.3s ease;
   color: var(--teal-accent);
   flex-shrink: 0;
+  pointer-events: none;
+  transform-origin: center;
 }
 
 .faq-item.active .faq-icon {

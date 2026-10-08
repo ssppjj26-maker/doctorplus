@@ -2,19 +2,34 @@
  * MetabolicMD™ USA - Interactive Core Logic & Lead Collection System
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Initial State & Leads
-  initLeadsStorage();
-  initNavbar();
-  initQuickBooking();
-  initModalWizard();
-  initBmiCalculator();
-  initDoctorFilters();
-  initFaqAccordion();
-  initLeadMagnet();
-  initSocialProofToast();
-  initBlogSection();
-});
+function initApp() {
+  const inits = [
+    initLeadsStorage,
+    initNavbar,
+    initQuickBooking,
+    initModalWizard,
+    initBmiCalculator,
+    initDoctorFilters,
+    initFaqAccordion,
+    initLeadMagnet,
+    initSocialProofToast,
+    initBlogSection
+  ];
+
+  inits.forEach(fn => {
+    try {
+      fn();
+    } catch (e) {
+      console.warn('Initialization notice:', e);
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /* ==========================================================================
    1. Local Storage & Lead Management (For Email Marketing)
@@ -93,7 +108,6 @@ function initLeadsStorage() {
   if (!localStorage.getItem(STORAGE_KEY)) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SAMPLE_LEADS));
   }
-  updateLeadBadgeCount();
 }
 
 function getStoredLeads() {
@@ -860,25 +874,29 @@ function initDoctorFilters() {
    ========================================================================== */
 
 function initFaqAccordion() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
+  // Event delegation on document ensures clicks on .faq-question, .faq-icon, or any inner element always fire
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.faq-question');
+    if (!btn) return;
 
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const parent = q.closest('.faq-item') || q.parentElement;
-      if (!parent) return;
-      const list = parent.closest('.faq-list') || parent.parentElement;
-      const isActive = parent.classList.contains('active');
+    e.preventDefault();
+    const parent = btn.closest('.faq-item') || btn.parentElement;
+    if (!parent) return;
 
-      if (list) {
-        list.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('active');
-        });
-      }
+    const list = parent.closest('.faq-list') || parent.parentElement;
+    const isActive = parent.classList.contains('active');
 
-      if (!isActive) {
-        parent.classList.add('active');
-      }
-    });
+    // Close all other items in the same list
+    if (list) {
+      list.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+    }
+
+    // Toggle the clicked item
+    if (!isActive) {
+      parent.classList.add('active');
+    }
   });
 }
 
