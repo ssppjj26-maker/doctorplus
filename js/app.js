@@ -964,11 +964,11 @@ function initSocialProofToast() {
   if (!toast) return;
 
   const sampleNotifications = [
-    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)', image: 'images/doctor-jenkins.jpg' },
-    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance (Johns Hopkins)', image: 'images/doctor-vance.jpg' },
-    { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova (Mayo Clinic)', image: 'images/doctor-rostova.jpg' },
-    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen (Cedars-Sinai)', image: 'images/doctor-chen.jpg' },
-    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)', image: 'images/doctor-jenkins.jpg' }
+    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' }
   ];
 
   let currentIndex = 0;
