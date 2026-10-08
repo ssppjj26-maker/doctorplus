@@ -964,11 +964,31 @@ function initSocialProofToast() {
   if (!toast) return;
 
   const sampleNotifications = [
-    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
-    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
     { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
-    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
-    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' }
+    { name: 'Michael T.', city: 'Austin, TX', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Sarah M.', city: 'Denver, CO', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'David K.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Emily S.', city: 'Chicago, IL', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Daniel P.', city: 'Dallas, TX', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Jessica L.', city: 'Orlando, FL', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'Christopher B.', city: 'Atlanta, GA', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Ashley W.', city: 'Charlotte, NC', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Matthew H.', city: 'Seattle, WA', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Amanda C.', city: 'Tampa, FL', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'James D.', city: 'Houston, TX', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Sophia G.', city: 'San Diego, CA', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Robert N.', city: 'Las Vegas, NV', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Olivia F.', city: 'Nashville, TN', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'William J.', city: 'Boston, MA', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Megan A.', city: 'Columbus, OH', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Andrew V.', city: 'San Antonio, TX', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Lauren E.', city: 'Los Angeles, CA', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'Joshua R.', city: 'Philadelphia, PA', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Rachel K.', city: 'Portland, OR', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Kevin S.', city: 'Jacksonville, FL', doctor: 'Dr. Marcus Vance', image: 'images/doctor-vance.jpg' },
+    { name: 'Nicole P.', city: 'Minneapolis, MN', doctor: 'Dr. Elena Rostova', image: 'images/doctor-rostova.jpg' },
+    { name: 'Brian M.', city: 'Salt Lake City, UT', doctor: 'Dr. David Chen', image: 'images/doctor-chen.jpg' },
+    { name: 'Hannah T.', city: 'Washington, DC', doctor: 'Dr. Sarah Jenkins', image: 'images/doctor-jenkins.jpg' }
   ];
 
   let currentIndex = 0;
