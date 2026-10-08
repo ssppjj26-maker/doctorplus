@@ -34,7 +34,7 @@ const DEFAULT_SAMPLE_LEADS = [
     currentWeight: '215 lbs',
     goalWeight: '145 lbs',
     struggle: 'Hormonal Plateau & Slow Metabolism',
-    doctor: 'Dr. Sarah Jenkins, MD (Cleveland Clinic)',
+    doctor: 'Dr. Sarah Jenkins, MD',
     hospital: 'Cleveland Clinic',
     type: 'Telehealth (Video)',
     slot: 'Tomorrow - 10:30 AM EST'
@@ -50,7 +50,7 @@ const DEFAULT_SAMPLE_LEADS = [
     currentWeight: '265 lbs',
     goalWeight: '190 lbs',
     struggle: 'Insulin Resistance & Pre-Diabetes',
-    doctor: 'Dr. Marcus Vance, MD, PhD (Johns Hopkins)',
+    doctor: 'Dr. Marcus Vance, MD, PhD',
     hospital: 'Johns Hopkins Medicine',
     type: 'In-Person Consultation',
     slot: 'Thursday - 2:00 PM CST'
@@ -66,7 +66,7 @@ const DEFAULT_SAMPLE_LEADS = [
     currentWeight: '185 lbs',
     goalWeight: '135 lbs',
     struggle: 'PCOS & Chronic Weight Cycling',
-    doctor: 'Dr. Elena Rostova, MD (Mayo Clinic)',
+    doctor: 'Dr. Elena Rostova, MD',
     hospital: 'Mayo Clinic',
     type: 'Telehealth (Video)',
     slot: 'Friday - 11:00 AM PST'
