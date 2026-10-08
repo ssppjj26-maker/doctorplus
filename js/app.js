@@ -129,9 +129,8 @@ function initNavbar() {
   const navLinks = document.querySelector('.nav-links');
   if (mobileBtn && navLinks) {
     mobileBtn.addEventListener('click', () => {
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
+      const isVisible = navLinks.classList.toggle('mobile-open');
+      if (isVisible) {
         navLinks.style.display = 'flex';
         navLinks.style.flexDirection = 'column';
         navLinks.style.position = 'absolute';
@@ -139,9 +138,22 @@ function initNavbar() {
         navLinks.style.left = '0';
         navLinks.style.right = '0';
         navLinks.style.background = '#ffffff';
-        navLinks.style.padding = '20px';
-        navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        navLinks.style.padding = '24px';
+        navLinks.style.boxShadow = '0 15px 35px rgba(9, 30, 58, 0.12)';
+        navLinks.style.borderBottom = '1px solid var(--border-light)';
+        navLinks.style.gap = '16px';
+      } else {
+        navLinks.style.display = '';
       }
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          navLinks.classList.remove('mobile-open');
+          navLinks.style.display = '';
+        }
+      });
     });
   }
 }
