@@ -964,11 +964,11 @@ function initSocialProofToast() {
   if (!toast) return;
 
   const sampleNotifications = [
-    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)' },
-    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance (Johns Hopkins)' },
-    { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova (Mayo Clinic)' },
-    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen (Cedars-Sinai)' },
-    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Amanda Hayes (Mount Sinai)' }
+    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)', image: 'images/doctor-jenkins.jpg' },
+    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance (Johns Hopkins)', image: 'images/doctor-vance.jpg' },
+    { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova (Mayo Clinic)', image: 'images/doctor-rostova.jpg' },
+    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen (Cedars-Sinai)', image: 'images/doctor-chen.jpg' },
+    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)', image: 'images/doctor-jenkins.jpg' }
   ];
 
   let currentIndex = 0;
@@ -976,8 +976,13 @@ function initSocialProofToast() {
   function showToast() {
     const item = sampleNotifications[currentIndex];
     const textEl = document.getElementById('toastText');
+    const avatarEl = document.getElementById('toastAvatar') || toast.querySelector('.toast-avatar');
+
     if (textEl) {
-      textEl.innerHTML = `<strong>${item.name} from ${item.city}</strong> just booked a 100% Free Consultation with ${item.doctor}`;
+      textEl.innerHTML = `<strong>${item.name} from ${item.city}</strong> Just Booked 100% Free Consultation with ${item.doctor}`;
+    }
+    if (avatarEl && item.image) {
+      avatarEl.src = item.image;
     }
 
     toast.classList.add('show');
