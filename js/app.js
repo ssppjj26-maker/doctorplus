@@ -1043,18 +1043,42 @@ function initBlogSection() {
     });
   }
 
-  // Expandable ChatGPT Deep Breakdown
-  const toggleBtns = document.querySelectorAll('.chatgpt-toggle-btn');
-  toggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        const isExpanded = targetContent.classList.toggle('expanded');
-        btn.innerHTML = isExpanded 
-          ? '<span>Hide In-Depth Breakdown</span> ▴' 
-          : '<span>Read Full ChatGPT Analysis & Protocol</span> ▾';
+  // Toggle Read More Full Article
+  const readMoreBtns = document.querySelectorAll('.btn-blog-read-more');
+  const titleLinks = document.querySelectorAll('.blog-card-title-link');
+
+  function toggleArticle(targetId, sourceBtn) {
+    const fullArticle = document.getElementById(targetId);
+    if (!fullArticle) return;
+
+    const isExpanded = fullArticle.classList.toggle('expanded');
+    
+    // Find associated read more button
+    const btn = sourceBtn || document.querySelector(`.btn-blog-read-more[data-target="${targetId}"]`);
+    if (btn) {
+      if (isExpanded) {
+        btn.classList.add('active');
+        btn.innerHTML = '<span>Hide Full Article</span> ▴';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '<span>Read Full Article & ChatGPT Analysis</span> ▾';
       }
+    }
+  }
+
+  readMoreBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      toggleArticle(targetId, btn);
+    });
+  });
+
+  titleLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      toggleArticle(targetId, null);
     });
   });
 }

@@ -1908,6 +1908,83 @@ button {
   font-size: 1.6rem;
 }
 
+.blog-card-title-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.blog-card-title-link:hover {
+  color: var(--teal-accent);
+}
+
+.blog-excerpt {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.blog-takeaway-pill {
+  background: #f1f5f9;
+  border-left: 3px solid var(--teal-accent);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #334155;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.blog-card-preview-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.btn-blog-read-more {
+  background: var(--primary-navy);
+  color: #ffffff;
+  border: 1px solid var(--primary-navy);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-blog-read-more:hover {
+  background: var(--teal-accent);
+  border-color: var(--teal-accent);
+  color: #ffffff;
+}
+
+.btn-blog-read-more.active {
+  background: #f1f5f9;
+  color: var(--primary-navy);
+  border-color: #cbd5e1;
+}
+
+.blog-full-article {
+  display: none;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px dashed #cbd5e1;
+  animation: fadeIn 0.3s ease;
+}
+
+.blog-full-article.expanded {
+  display: block;
+}
+
 /* ChatGPT Response Box */
 .chatgpt-box {
   background: #f8fafc;
