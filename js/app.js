@@ -852,12 +852,16 @@ function initFaqAccordion() {
 
   faqQuestions.forEach(q => {
     q.addEventListener('click', () => {
-      const parent = q.parentElement;
+      const parent = q.closest('.faq-item') || q.parentElement;
+      if (!parent) return;
+      const list = parent.closest('.faq-list') || parent.parentElement;
       const isActive = parent.classList.contains('active');
 
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
+      if (list) {
+        list.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+      }
 
       if (!isActive) {
         parent.classList.add('active');
@@ -1015,11 +1019,11 @@ function initSocialProofToast() {
    ========================================================================== */
 
 function initBlogSection() {
-  // Category Filtering
+  // Category Filtering for 7 Questions FAQ Cards
   const filterBtns = document.querySelectorAll('.blog-filter-btn');
-  const blogCards = document.querySelectorAll('.blog-card');
+  const blogFaqItems = document.querySelectorAll('#blog .faq-item');
 
-  if (filterBtns.length > 0 && blogCards.length > 0) {
+  if (filterBtns.length > 0 && blogFaqItems.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -1027,13 +1031,13 @@ function initBlogSection() {
 
         const filter = btn.getAttribute('data-filter');
 
-        blogCards.forEach(card => {
+        blogFaqItems.forEach(card => {
           if (filter === 'all') {
-            card.style.display = 'flex';
+            card.style.display = 'block';
           } else {
             const cardCat = card.getAttribute('data-category');
             if (cardCat === filter) {
-              card.style.display = 'flex';
+              card.style.display = 'block';
             } else {
               card.style.display = 'none';
             }
@@ -1042,45 +1046,6 @@ function initBlogSection() {
       });
     });
   }
-
-  // Toggle Read More Full Article
-  const readMoreBtns = document.querySelectorAll('.btn-blog-read-more');
-  const titleLinks = document.querySelectorAll('.blog-card-title-link');
-
-  function toggleArticle(targetId, sourceBtn) {
-    const fullArticle = document.getElementById(targetId);
-    if (!fullArticle) return;
-
-    const isExpanded = fullArticle.classList.toggle('expanded');
-    
-    // Find associated read more button
-    const btn = sourceBtn || document.querySelector(`.btn-blog-read-more[data-target="${targetId}"]`);
-    if (btn) {
-      if (isExpanded) {
-        btn.classList.add('active');
-        btn.innerHTML = '<span>Hide Full Article</span> ▴';
-      } else {
-        btn.classList.remove('active');
-        btn.innerHTML = '<span>Read Full Article & ChatGPT Analysis</span> ▾';
-      }
-    }
-  }
-
-  readMoreBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = btn.getAttribute('data-target');
-      toggleArticle(targetId, btn);
-    });
-  });
-
-  titleLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-target');
-      toggleArticle(targetId, null);
-    });
-  });
 }
 
 
