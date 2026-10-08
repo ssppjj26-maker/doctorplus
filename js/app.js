@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initLeadMagnet();
   initSocialProofToast();
+  initArticles();
 });
 
 /* ==========================================================================
@@ -1008,5 +1009,107 @@ function initSocialProofToast() {
   setTimeout(showToast, 3500);
   setInterval(showToast, 22000);
 }
+
+/* ==========================================================================
+   11. Evidence-Based Articles & Reader Modal Logic
+   ========================================================================== */
+
+function initArticles() {
+  const filterPills = document.querySelectorAll('#articleCategoryFilters .filter-pill');
+  const searchInput = document.getElementById('articleSearchInput');
+  const cards = document.querySelectorAll('.article-card');
+  const modal = document.getElementById('articleModal');
+  const closeBtn = document.getElementById('closeArticleBtn');
+  const modalCategory = document.getElementById('modalArticleCategory');
+  const modalReadTime = document.getElementById('modalArticleReadTime');
+  const modalBody = document.getElementById('modalArticleBody');
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function filterCards() {
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
+      const matchesCategory = currentCategory === 'all' || category === currentCategory;
+      const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentCategory = pill.getAttribute('data-category');
+      filterCards();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      filterCards();
+    });
+  }
+
+  // Handle article reading
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-read-article');
+    if (!btn) return;
+
+    const articleId = btn.getAttribute('data-article-id');
+    const article = (typeof CLINICAL_ARTICLES !== 'undefined') ? CLINICAL_ARTICLES.find(a => a.id === articleId) : null;
+    if (!article || !modal) return;
+
+    if (modalCategory) modalCategory.textContent = article.categoryLabel;
+    if (modalReadTime) modalReadTime.textContent = '⏱ ' + article.readTime;
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <h1 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: var(--primary-navy); line-height: 1.3; margin-bottom: 12px;">
+          ${article.title}
+        </h1>
+        <div style="display: flex; gap: 16px; font-size: 0.85rem; color: #64748b; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+          <span>Published in Clinical Archive</span>
+          <span>•</span>
+          <span>Peer-Reviewed Literature Review</span>
+        </div>
+        ${article.fullHtml}
+      `;
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+  });
+}
+
 
 
