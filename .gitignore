@@ -7,3 +7,4 @@ download_batch2.ps1
 download_int_docs.ps1
 
 .vercel
+.env*

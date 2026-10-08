@@ -1,1132 +1,1167 @@
 /**
- * MediQ Connect Global Healthcare
- * Client-Side Static Application Engine
- * Pure Vanilla JavaScript (No database required, 100% offline-ready)
+ * MetabolicMD™ USA - Interactive Core Logic & Lead Collection System
  */
 
-// =========================================================================
-// GLOBAL CURRENCY RATES (Base: INR)
-// =========================================================================
-const CURRENCY_RATES = {
-  INR: { symbol: '₹', rate: 1, label: 'INR (₹)' },
-  USD: { symbol: '$', rate: 0.012, label: 'USD ($)' },
-  EUR: { symbol: '€', rate: 0.011, label: 'EUR (€)' },
-  GBP: { symbol: '£', rate: 0.0095, label: 'GBP (£)' },
-  AED: { symbol: 'AED ', rate: 0.044, label: 'AED' },
-  SGD: { symbol: 'S$', rate: 0.016, label: 'SGD (S$)' }
-};
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Initial State & Leads
+  initLeadsStorage();
+  initNavbar();
+  initQuickBooking();
+  initModalWizard();
+  initBmiCalculator();
+  initDoctorFilters();
+  initFaqAccordion();
+  initLeadMagnet();
+  initSocialProofToast();
+  initAdminPortal();
+});
 
-let currentCurrency = 'USD'; // Default for global clients
-let currentHubFilter = 'ALL';
-let currentSpecFilter = 'ALL';
+/* ==========================================================================
+   1. Local Storage & Lead Management (For Email Marketing)
+   ========================================================================== */
 
-// Format price with active currency
-function formatPrice(inrAmount) {
-  return 'FREE';
+const STORAGE_KEY = 'metabolic_md_leads_us';
+
+const DEFAULT_SAMPLE_LEADS = [
+  {
+    id: 'US-MET-9421',
+    timestamp: '2026-10-06 14:22',
+    name: 'Rebecca Miller',
+    email: 'rebecca.miller91@gmail.com',
+    phone: '(512) 883-9120',
+    state: 'Texas (TX)',
+    age: '38',
+    currentWeight: '215 lbs',
+    goalWeight: '145 lbs',
+    struggle: 'Hormonal Plateau & Slow Metabolism',
+    doctor: 'Dr. Sarah Jenkins, MD (Cleveland Clinic)',
+    hospital: 'Cleveland Clinic',
+    type: 'Telehealth (Video)',
+    slot: 'Tomorrow - 10:30 AM EST'
+  },
+  {
+    id: 'US-MET-9388',
+    timestamp: '2026-10-06 11:45',
+    name: 'David Sanderson',
+    email: 'dsanderson.biz@outlook.com',
+    phone: '(312) 404-5821',
+    state: 'Illinois (IL)',
+    age: '46',
+    currentWeight: '265 lbs',
+    goalWeight: '190 lbs',
+    struggle: 'Insulin Resistance & Pre-Diabetes',
+    doctor: 'Dr. Marcus Vance, MD, PhD (Johns Hopkins)',
+    hospital: 'Johns Hopkins Medicine',
+    type: 'In-Person Consultation',
+    slot: 'Thursday - 2:00 PM CST'
+  },
+  {
+    id: 'US-MET-9240',
+    timestamp: '2026-10-05 16:10',
+    name: 'Melissa Thorne',
+    email: 'm.thorne.wellness@yahoo.com',
+    phone: '(415) 779-3321',
+    state: 'California (CA)',
+    age: '34',
+    currentWeight: '185 lbs',
+    goalWeight: '135 lbs',
+    struggle: 'PCOS & Chronic Weight Cycling',
+    doctor: 'Dr. Elena Rostova, MD (Mayo Clinic)',
+    hospital: 'Mayo Clinic',
+    type: 'Telehealth (Video)',
+    slot: 'Friday - 11:00 AM PST'
+  },
+  {
+    id: 'US-MET-9104',
+    timestamp: '2026-10-05 09:30',
+    name: 'Christopher Walsh',
+    email: 'cwalsh.ny@gmail.com',
+    phone: '(212) 640-1928',
+    state: 'New York (NY)',
+    age: '52',
+    currentWeight: '240 lbs',
+    goalWeight: '175 lbs',
+    struggle: 'Cardiometabolic Risk & Stubborn Belly Fat',
+    doctor: 'Dr. David Chen, MD (Cedars-Sinai)',
+    hospital: 'Cedars-Sinai Medical Center',
+    type: 'Telehealth (Video)',
+    slot: 'Next Monday - 3:30 PM EST'
+  }
+];
+
+function initLeadsStorage() {
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SAMPLE_LEADS));
+  }
+  updateLeadBadgeCount();
 }
 
-// =========================================================================
-// STATIC DOCTORS DATABASE (Stored in Memory / Zero External DB)
-// =========================================================================
-const DOCTORS = [
-  // 1. Dr. Bahul Vekaria
-  {
-    id: 'dr-bahul-vekaria',
-    name: 'Dr. Bahul Vekaria',
-    degree: 'MS, MCh - Cardiothoracic',
-    experience: '4 Years Exp',
-    specialty: 'Cardiologist',
-    category: 'cardio',
-    hospital: 'Shree Giriraj Hospital',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-bahul-vekaria.webp',
-    feeVisitINR: 1100,
-    feeVideoINR: 1100,
-    rating: 4.9,
-    reviews: 142,
-    bio: 'Specialist in complex cardiothoracic surgeries, coronary artery disease management, and minimally invasive cardiac procedures.'
-  },
-  // 2. Dr. Sarah Jenkins (Global - New York)
-  {
-    id: 'dr-sarah-jenkins',
-    name: 'Dr. Sarah Jenkins',
-    degree: 'MD, FACC - Harvard Medical',
-    experience: '14 Years Exp',
-    specialty: 'Cardiologist',
-    category: 'cardio',
-    hospital: 'Mount Sinai Heart Center',
-    city: 'New York',
-    country: 'USA',
-    hub: 'USA',
-    flag: '🇺🇸',
-    photo: 'assets/doctors/dr-sarah-jenkins.webp',
-    feeVisitINR: 8500,
-    feeVideoINR: 6200,
-    rating: 5.0,
-    reviews: 298,
-    bio: 'Board-certified American cardiologist specializing in preventative cardiology, hypertension, valvular heart disease and tele-cardiology.'
-  },
-  // 3. Dr. Kopal Patel
-  {
-    id: 'dr-kopal-patel',
-    name: 'Dr. Kopal Patel',
-    degree: 'MBBS, DGO - Gynecology',
-    experience: '15 Years Exp',
-    specialty: 'Gynecologist',
-    category: 'gynec',
-    hospital: 'Apex Gastro Clinic & Hospital',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-kopal-patel.webp',
-    feeVisitINR: 800,
-    feeVideoINR: 1000,
-    rating: 4.8,
-    reviews: 310,
-    bio: 'Expert in high-risk obstetrics, laparoscopic gynecological surgeries, hormonal imbalances, and adolescent women health.'
-  },
-  // 4. Dr. Alexander Wright (Global - London)
-  {
-    id: 'dr-alexander-wright',
-    name: 'Dr. Alexander Wright',
-    degree: 'MBBS, FRCS - Oxford',
-    experience: '18 Years Exp',
-    specialty: 'Neurosurgeon',
-    category: 'neuro',
-    hospital: "King's College Hospital",
-    city: 'London',
-    country: 'United Kingdom',
-    hub: 'UK',
-    flag: '🇬🇧',
-    photo: 'assets/doctors/dr-alexander-wright.webp',
-    feeVisitINR: 12000,
-    feeVideoINR: 7500,
-    rating: 4.9,
-    reviews: 215,
-    bio: 'Senior Consultant Neurosurgeon in London focusing on cranial microsurgery, spine disorders, and second-opinion neurological evaluations.'
-  },
-  // 5. Dr. Krupen Tailor
-  {
-    id: 'dr-krupen-tailor',
-    name: 'Dr. Krupen Tailor',
-    degree: 'MS - Orthopedic',
-    experience: '6 Years Exp',
-    specialty: 'Orthopedic',
-    category: 'ortho',
-    hospital: 'Shree Giriraj Hospital',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-krupen-tailor.webp',
-    feeVisitINR: 700,
-    feeVideoINR: 700,
-    rating: 4.7,
-    reviews: 184,
-    bio: 'Specialist in joint replacement, sports injury reconstruction, arthroscopy, and complex bone trauma management.'
-  },
-  // 6. Dr. Marcus Chen (Global - Singapore)
-  {
-    id: 'dr-marcus-chen',
-    name: 'Dr. Marcus Chen',
-    degree: 'MBBS, FRACP - Singapore',
-    experience: '16 Years Exp',
-    specialty: 'Gastroenterologist',
-    category: 'gastro',
-    hospital: 'Mount Elizabeth Hospital',
-    city: 'Singapore',
-    country: 'Singapore',
-    hub: 'SINGAPORE',
-    flag: '🇸🇬',
-    photo: 'assets/doctors/dr-marcus-chen.webp',
-    feeVisitINR: 9500,
-    feeVideoINR: 6800,
-    rating: 4.9,
-    reviews: 340,
-    bio: 'Fellow of the Royal Australasian College of Physicians, specializing in advanced therapeutic endoscopy and liver health.'
-  },
-  // 7. Dr. Shitanshu Shekhar
-  {
-    id: 'dr-shitanshu-shekhar',
-    name: 'Dr. Shitanshu Shekhar',
-    degree: 'MS, DrNB Surgical Oncology',
-    experience: '12 Years Exp',
-    specialty: 'Oncosurgeon',
-    category: 'critical',
-    hospital: 'Premier Cancer Institute',
-    city: 'Ahmedabad',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-shitanshu-shekhar.webp',
-    feeVisitINR: 1500,
-    feeVideoINR: 1500,
-    rating: 4.9,
-    reviews: 220,
-    bio: 'Renowned cancer surgeon with special interest in head and neck, gastrointestinal, and breast oncological resections.'
-  },
-  // 8. Dr. Elena Rostova (Global - Zurich)
-  {
-    id: 'dr-elena-rostova',
-    name: 'Dr. Elena Rostova',
-    degree: 'MD, FMH - Univ of Zurich',
-    experience: '13 Years Exp',
-    specialty: 'Reproductive Medicine & IVF',
-    category: 'gynec',
-    hospital: 'Hirslanden Medical Centre',
-    city: 'Zurich',
-    country: 'Switzerland',
-    hub: 'SWITZERLAND',
-    flag: '🇨🇭',
-    photo: 'assets/doctors/dr-elena-rostova.webp',
-    feeVisitINR: 11000,
-    feeVideoINR: 7200,
-    rating: 5.0,
-    reviews: 195,
-    bio: 'Swiss board-certified reproductive endocrinologist guiding international couples through fertility optimization and IVF protocols.'
-  },
-  // 9. Dr. Shraddha Jivani
-  {
-    id: 'dr-shraddha-jivani',
-    name: 'Dr. Shraddha Jivani',
-    degree: 'MB (DCH) - Pediatrics',
-    experience: '5 Years Exp',
-    specialty: 'Child Specialist',
-    category: 'pediatric',
-    hospital: 'Orange Children Hospital',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-shraddha-jivani.webp',
-    feeVisitINR: 300,
-    feeVideoINR: 300,
-    rating: 4.8,
-    reviews: 165,
-    bio: 'Compassionate pediatric care specialist experienced in neonatal care, infant nutrition, developmental milestones and vaccinations.'
-  },
-  // 10. Dr. Tariq Al-Mansoor (Global - Dubai/Abu Dhabi)
-  {
-    id: 'dr-tariq-almansoor',
-    name: 'Dr. Tariq Al-Mansoor',
-    degree: 'MD, FAAP - Johns Hopkins Fellow',
-    experience: '15 Years Exp',
-    specialty: 'Pediatric Specialist',
-    category: 'pediatric',
-    hospital: 'Cleveland Clinic Abu Dhabi',
-    city: 'Dubai & Abu Dhabi',
-    country: 'UAE',
-    hub: 'UAE',
-    flag: '🇦🇪',
-    photo: 'assets/doctors/dr-tariq-almansoor.webp',
-    feeVisitINR: 8800,
-    feeVideoINR: 5800,
-    rating: 4.9,
-    reviews: 260,
-    bio: 'American Board of Pediatrics certified consultant, recognized leader in pediatric allergy, asthma, and remote child telehealth.'
-  },
-  // 11. Dr. Bhumi Patel
-  {
-    id: 'dr-bhumi-patel',
-    name: 'Dr. Bhumi Patel',
-    degree: 'MS, DNB (Ophthal)',
-    experience: '6 Years Exp',
-    specialty: 'EYE Specialist',
-    category: 'eye',
-    hospital: 'Aksha Eye Hospital',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-bhumi-patel.webp',
-    feeVisitINR: 400,
-    feeVideoINR: 400,
-    rating: 4.9,
-    reviews: 240,
-    bio: 'Ophthalmologist specializing in cataract phacoemulsification, computer vision syndrome, glaucoma, and refractive vision correction.'
-  },
-  // 12. Dr. Swati Braroo
-  {
-    id: 'dr-swati-braroo',
-    name: 'Dr. Swati Braroo',
-    degree: 'DPM, DNB, FIPS - Psychiatry',
-    experience: '15 Years Exp',
-    specialty: 'Psychiatrist',
-    category: 'mental',
-    hospital: 'Asha Neuro Psychiatry Clinic',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    flag: '🇮🇳',
-    photo: 'assets/doctors/dr-swati-braroo.webp',
-    feeVisitINR: 800,
-    feeVideoINR: 1000,
-    rating: 4.9,
-    reviews: 410,
-    bio: 'Consultant psychiatrist addressing mental wellness, anxiety, mood disorders, adult ADHD, and stress management via private telehealth.'
-  }
-];
-
-// =========================================================================
-// STATIC HOSPITALS DATABASE
-// =========================================================================
-const HOSPITALS = [
-  {
-    id: 'kings-college-hospital',
-    name: "King's College Hospital",
-    city: 'London',
-    country: 'United Kingdom',
-    hub: 'UK',
-    address: 'Denmark Hill, London SE5 9RS, United Kingdom',
-    photo: 'assets/hospitals/kings-college-hospital.webp',
-    specialties: ['Cardiology', 'Neurosurgery', 'Liver Centre', 'Critical Care'],
-    phone: '+44 20 3299 9000',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kings+College+Hospital+London'
-  },
-  {
-    id: 'mount-elizabeth',
-    name: 'Mount Elizabeth Hospital',
-    city: 'Singapore',
-    country: 'Singapore',
-    hub: 'SINGAPORE',
-    address: '3 Mount Elizabeth, Orchard, Singapore 228510',
-    photo: 'assets/hospitals/mount-elizabeth.webp',
-    specialties: ['Gastroenterology', 'Oncology', 'Cardiovascular', 'Orthopedics'],
-    phone: '+65 6737 2666',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Mount+Elizabeth+Hospital+Singapore'
-  },
-  {
-    id: 'cleveland-clinic-ad',
-    name: 'Cleveland Clinic Abu Dhabi',
-    city: 'Abu Dhabi & Dubai',
-    country: 'UAE',
-    hub: 'UAE',
-    address: 'Al Maryah Island, Abu Dhabi, United Arab Emirates',
-    photo: 'assets/hospitals/cleveland-clinic-ad.webp',
-    specialties: ['Pediatrics', 'Heart & Vascular', 'Neurological', 'Eye Care'],
-    phone: '+971 800 82223',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cleveland+Clinic+Abu+Dhabi'
-  },
-  {
-    id: 'shree-giriraj-hospital',
-    name: 'Shree Giriraj Hospital & ICU',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    address: '150 Feet Ring Road, Rajkot, Gujarat, India',
-    photo: 'assets/hospitals/omega-hospital.webp',
-    specialties: ['Cardiothoracic', 'Orthopedic', 'Critical Care', 'Emergency'],
-    phone: '+91 81411 24181',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Shree+Giriraj+Hospital+Rajkot'
-  },
-  {
-    id: 'pragna-homeopathy-clinic',
-    name: 'Pragna Clinic & Healthcare',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    address: 'Amin Marg, Beside Patel Boarding, Rajkot, Gujarat',
-    photo: 'assets/hospitals/pragna-clinic.webp',
-    specialties: ['Holistic Medicine', 'Chronic Care', 'Wellness', 'Physiotherapy'],
-    phone: '+91 81411 24181',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pragna+Clinic+Rajkot'
-  },
-  {
-    id: 'asha-neuro-psychiatry',
-    name: 'Asha Neuro Psychiatry Clinic',
-    city: 'Rajkot',
-    country: 'India',
-    hub: 'INDIA',
-    address: 'Tagore Road, Near Galaxy Tower, Rajkot, Gujarat',
-    photo: 'assets/hospitals/asha-clinic.webp',
-    specialties: ['Psychiatry', 'Neuro-Counseling', 'Sleep Clinic', 'Addiction Care'],
-    phone: '+91 81411 24181',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Asha+Neuro+Psychiatry+Clinic+Rajkot'
-  }
-];
-
-// =========================================================================
-// LOCALSTORAGE APPOINTMENT REPOSITORY
-// =========================================================================
-const STORAGE_KEYS = {
-  APPOINTMENTS: 'mediq_global_appointments',
-  USER_SESSION: 'mediq_global_user_session',
-  CURRENCY: 'mediq_global_currency'
-};
-
-function getStoredAppointments() {
+function getStoredLeads() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEYS.APPOINTMENTS);
-    return raw ? JSON.parse(raw) : [];
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : DEFAULT_SAMPLE_LEADS;
   } catch (e) {
-    return [];
+    return DEFAULT_SAMPLE_LEADS;
   }
 }
 
-function saveAppointment(appt) {
-  const list = getStoredAppointments();
-  list.unshift(appt);
-  localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify(list));
-  updateAppointmentsCount();
+function saveNewLead(leadData) {
+  const leads = getStoredLeads();
+  leads.unshift(leadData);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+  updateLeadBadgeCount();
 }
 
-function cancelStoredAppointment(id) {
-  let list = getStoredAppointments();
-  list = list.filter(item => item.id !== id);
-  localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify(list));
-  renderAppointmentsDrawer();
-  updateAppointmentsCount();
+function updateLeadBadgeCount() {
+  const count = getStoredLeads().length;
+  const badge = document.getElementById('adminLeadsCount');
+  if (badge) {
+    badge.textContent = count;
+  }
 }
 
-function updateAppointmentsCount() {
-  const count = getStoredAppointments().length;
-  const badges = document.querySelectorAll('.appointments-count-badge');
-  badges.forEach(b => {
-    b.textContent = count;
-    b.style.display = count > 0 ? 'inline-block' : 'none';
+/* ==========================================================================
+   2. Navbar Scroll & Interactions
+   ========================================================================== */
+
+function initNavbar() {
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener('click', () => {
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.background = '#ffffff';
+        navLinks.style.padding = '20px';
+        navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   Validation & Formatting Engine (Strict Healthcare Lead Verification)
+   ========================================================================== */
+
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  const trimmed = email.trim();
+  // RFC 5322 compliant regex ensuring proper user, domain, and 2+ character TLD
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  if (!emailRegex.test(trimmed)) return false;
+  const parts = trimmed.split('@');
+  if (parts.length !== 2) return false;
+  const domainParts = parts[1].split('.');
+  if (domainParts.length < 2) return false;
+  const tld = domainParts[domainParts.length - 1];
+  if (tld.length < 2) return false;
+  return true;
+}
+
+function isValidPhone(phone) {
+  if (!phone || typeof phone !== 'string') return false;
+  const digits = phone.replace(/\D/g, '');
+  // Must be between 10 and 15 digits
+  if (digits.length < 10 || digits.length > 15) return false;
+  // Reject identical repetition (e.g. 0000000000, 1111111111)
+  if (/^(\d)\1{9,}$/.test(digits)) return false;
+  // Reject sequential fake numbers
+  if (digits === '1234567890' || digits === '0123456789') return false;
+  return true;
+}
+
+function isValidName(name) {
+  if (!name || typeof name !== 'string') return false;
+  const trimmed = name.trim();
+  if (trimmed.length < 2) return false;
+  // Must contain alphabetic characters
+  if (!/[a-zA-Z]/.test(trimmed)) return false;
+  return true;
+}
+
+function formatPhoneValue(value) {
+  const digits = value.replace(/\D/g, '');
+  if (digits.length === 0) return '';
+  if (digits.length <= 3) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  if (digits.length <= 10) return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+}
+
+function attachPhoneFormatter(inputEl) {
+  if (!inputEl) return;
+  inputEl.addEventListener('input', () => {
+    inputEl.value = formatPhoneValue(inputEl.value);
   });
 }
 
-// =========================================================================
-// RENDER DOCTORS SHOWCASE
-// =========================================================================
-function renderDoctors(filterCategory = 'ALL', hub = 'ALL', searchQuery = '') {
-  const grid = document.getElementById('doctorsGrid');
-  if (!grid) return;
+function setFieldError(inputEl, errorEl, message) {
+  if (inputEl) {
+    inputEl.classList.add('is-invalid');
+    inputEl.classList.remove('is-valid');
+  }
+  if (errorEl) {
+    errorEl.textContent = message;
+    errorEl.classList.add('visible');
+  }
+}
 
-  let filtered = DOCTORS.filter(doc => {
-    // Category filter
-    const matchCat = filterCategory === 'ALL' || doc.category === filterCategory;
-    // Hub filter
-    const matchHub = hub === 'ALL' || doc.hub === hub || doc.country.toLowerCase().includes(hub.toLowerCase());
-    // Search query
-    const matchSearch = !searchQuery || 
-      doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.specialty.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.hospital.toLowerCase().includes(searchQuery.toLowerCase());
+function clearFieldError(inputEl, errorEl) {
+  if (inputEl) {
+    inputEl.classList.remove('is-invalid');
+    inputEl.classList.add('is-valid');
+  }
+  if (errorEl) {
+    errorEl.textContent = '';
+    errorEl.classList.remove('visible');
+  }
+}
 
-    return matchCat && matchHub && matchSearch;
+/* ==========================================================================
+   3. Quick Booking Card (Hero Section)
+   ========================================================================== */
+
+function initQuickBooking() {
+  const quickForm = document.getElementById('quickBookingForm');
+  if (!quickForm) return;
+
+  const nameInput = document.getElementById('quickName');
+  const emailInput = document.getElementById('quickEmail');
+  const phoneInput = document.getElementById('quickPhone');
+  const stateSelect = document.getElementById('quickState');
+  const errorBanner = document.getElementById('quickFormErrorBanner');
+
+  const nameError = document.getElementById('quickNameError');
+  const emailError = document.getElementById('quickEmailError');
+  const phoneError = document.getElementById('quickPhoneError');
+  const stateError = document.getElementById('quickStateError');
+
+  attachPhoneFormatter(phoneInput);
+
+  // Live real-time validation clearance
+  if (nameInput) {
+    nameInput.addEventListener('input', () => {
+      if (isValidName(nameInput.value)) clearFieldError(nameInput, nameError);
+    });
+  }
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      if (isValidEmail(emailInput.value)) clearFieldError(emailInput, emailError);
+    });
+  }
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      if (isValidPhone(phoneInput.value)) clearFieldError(phoneInput, phoneError);
+    });
+  }
+  if (stateSelect) {
+    stateSelect.addEventListener('change', () => {
+      if (stateSelect.value) clearFieldError(stateSelect, stateError);
+    });
+  }
+
+  quickForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let hasErrors = false;
+    let firstInvalidInput = null;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const state = stateSelect.value;
+    const struggle = document.getElementById('quickStruggle').value;
+
+    // Validate Name
+    if (!isValidName(name)) {
+      setFieldError(nameInput, nameError, 'Please enter your full name (minimum 2 letters).');
+      hasErrors = true;
+      if (!firstInvalidInput) firstInvalidInput = nameInput;
+    } else {
+      clearFieldError(nameInput, nameError);
+    }
+
+    // Validate Email
+    if (!isValidEmail(email)) {
+      setFieldError(emailInput, emailError, 'Please enter a valid email address (e.g. name@example.com).');
+      hasErrors = true;
+      if (!firstInvalidInput) firstInvalidInput = emailInput;
+    } else {
+      clearFieldError(emailInput, emailError);
+    }
+
+    // Validate Phone
+    if (!isValidPhone(phone)) {
+      setFieldError(phoneInput, phoneError, 'Please enter a valid 10-digit phone number (e.g. (555) 123-4567).');
+      hasErrors = true;
+      if (!firstInvalidInput) firstInvalidInput = phoneInput;
+    } else {
+      clearFieldError(phoneInput, phoneError);
+    }
+
+    // Validate State
+    if (!state) {
+      setFieldError(stateSelect, stateError, 'Please select your US state.');
+      hasErrors = true;
+      if (!firstInvalidInput) firstInvalidInput = stateSelect;
+    } else {
+      clearFieldError(stateSelect, stateError);
+    }
+
+    // Strictly prevent submission if not proper
+    if (hasErrors) {
+      if (errorBanner) {
+        errorBanner.classList.add('visible');
+      }
+      if (firstInvalidInput) {
+        firstInvalidInput.focus();
+      }
+      return;
+    }
+
+    if (errorBanner) {
+      errorBanner.classList.remove('visible');
+    }
+
+    const newLead = {
+      id: 'US-MET-' + Math.floor(1000 + Math.random() * 9000),
+      timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      name: name,
+      email: email,
+      phone: phone,
+      state: state,
+      age: 'Not specified',
+      currentWeight: 'To be assessed during free consult',
+      goalWeight: 'Personalized Clinical Target',
+      struggle: struggle || 'General Weight Struggle',
+      doctor: 'Assigned Top US Obesity Specialist',
+      hospital: 'Mayo Clinic / Cleveland Clinic Network',
+      type: 'Telehealth (Video)',
+      slot: 'Priority Window: Next 24-48 Hours'
+    };
+
+    saveNewLead(newLead);
+    showBookingSuccessModal(newLead);
+    quickForm.reset();
+
+    // Clear validity states
+    [nameInput, emailInput, phoneInput, stateSelect].forEach(el => {
+      if (el) el.classList.remove('is-valid', 'is-invalid');
+    });
   });
-
-  if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: #fff; border-radius: 20px; border: 1px dashed #cbd5e1;">
-        <h3 style="font-family: var(--font-heading); color: #1e293b; margin-bottom: 8px;">No Doctors Found in this Selection</h3>
-        <p style="color: #64748b; font-size: 14px;">Try changing the medical hub, specialty filter, or search keywords.</p>
-        <button onclick="resetFilters()" style="margin-top: 14px; padding: 8px 18px; background: var(--primary); color: #fff; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;">Show All Doctors</button>
-      </div>
-    `;
-    return;
-  }
-
-  grid.innerHTML = filtered.map(doc => `
-    <div class="doctor-card" data-doc-id="${doc.id}">
-      <div class="doctor-header">
-        <div class="avatar-box">
-          <img src="${doc.photo}" alt="${doc.name}" loading="lazy" onerror="this.src='assets/doctors/dr-bahul-vekaria.webp'">
-          <div class="verified-check" title="Verified Board Certified Specialist">✓</div>
-        </div>
-        <div class="doc-info">
-          <h3 class="doc-name" title="${doc.name}">${doc.name}</h3>
-          <div class="doc-degree">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            <span>${doc.degree}</span>
-          </div>
-          <div class="doc-exp">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-            <span>${doc.experience}</span>
-          </div>
-          <div class="doc-spec-badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span>${doc.specialty}</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hospital-affiliation" title="${doc.hospital}, ${doc.city}">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>${doc.hospital}</span>
-      </div>
-
-      <div class="global-hub-tag">
-        <span>${doc.flag}</span>
-        <span>${doc.city}, ${doc.country}</span>
-      </div>
-
-      <div class="divider-line"></div>
-
-      <div class="booking-buttons-row">
-        <button class="btn-free-consult" onclick="openBookingModal('${doc.id}', 'video')">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Free Consultation</span>
-        </button>
-      </div>
-    </div>
-  `).join('');
 }
 
-// Reset filters
-function resetFilters() {
-  currentHubFilter = 'ALL';
-  currentSpecFilter = 'ALL';
-  const hubSelect = document.getElementById('locationSelect');
-  if (hubSelect) hubSelect.value = 'ALL';
-  const searchInput = document.getElementById('autocomplete_search');
-  if (searchInput) searchInput.value = '';
-  document.querySelectorAll('.doc-tab').forEach(t => t.classList.remove('active'));
-  const allTab = document.querySelector('.doc-tab[data-spec="ALL"]');
-  if (allTab) allTab.classList.add('active');
-  renderDoctors('ALL', 'ALL', '');
-}
+/* ==========================================================================
+   4. Multi-Step Modal Consultation Booking Wizard
+   ========================================================================== */
 
-// =========================================================================
-// RENDER HOSPITALS SHOWCASE
-// =========================================================================
-function renderHospitals(hub = 'ALL') {
-  const grid = document.getElementById('hospitalsGrid');
-  if (!grid) return;
+let currentWizardStep = 1;
 
-  const filtered = HOSPITALS.filter(h => hub === 'ALL' || h.hub === hub);
-
-  grid.innerHTML = filtered.map(h => `
-    <div class="hospital-card">
-      <div class="hospital-img-wrap">
-        <img src="${h.photo}" alt="${h.name}" loading="lazy" onerror="this.src='assets/hospitals/omega-hospital.webp'">
-        <div class="hospital-badge">Verified Center • ${h.city}</div>
-      </div>
-      <div class="hospital-body">
-        <div class="hospital-title-row">
-          <h3 class="hospital-name"><span class="first-letter">${h.name.charAt(0)}</span>${h.name.slice(1)}</h3>
-          <a href="tel:${h.phone}" class="call-circle-btn" title="Call Hospital Concierge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-        </div>
-        <div class="hospital-address">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>${h.address}</span>
-        </div>
-        <div class="hospital-tags">
-          ${h.specialties.map(s => `<span class="tag-capsule">${s}</span>`).join('')}
-        </div>
-        <div class="hospital-footer-actions">
-          <a href="${h.mapsUrl}" target="_blank" rel="noopener noreferrer" class="direction-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            <span>Get Directions</span>
-          </a>
-          <button class="view-doctors-btn" onclick="filterDoctorsByHospital('${h.name}')">View Doctors</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function filterDoctorsByHospital(hospitalName) {
-  const searchInput = document.getElementById('autocomplete_search');
-  if (searchInput) searchInput.value = hospitalName;
-  renderDoctors('ALL', 'ALL', hospitalName);
-  document.getElementById('verified-doctors-section')?.scrollIntoView({ behavior: 'smooth' });
-}
-
-// =========================================================================
-// INTERACTIVE APPOINTMENT BOOKING MODAL
-// =========================================================================
-let currentBookingDoctor = null;
-let currentConsultType = 'hospital'; // 'hospital' or 'video'
-let selectedSlot = '10:30 AM';
-
-function openBookingModal(doctorId, type = 'hospital') {
-  const doc = DOCTORS.find(d => d.id === doctorId);
-  if (!doc) return;
-
-  currentBookingDoctor = doc;
-  currentConsultType = type;
-
-  // Set modal details
-  document.getElementById('modalDocName').textContent = doc.name;
-  document.getElementById('modalDocSpec').textContent = `${doc.specialty} • ${doc.hospital}`;
-  document.getElementById('modalDocAvatar').src = doc.photo;
-  
-  // Set consult type radio
-  updateConsultTypeDisplay(type);
-
-  // Set default date to tomorrow
-  const dateInput = document.getElementById('bookingDateInput');
-  if (dateInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    dateInput.value = tomorrow.toISOString().split('T')[0];
-    dateInput.min = new Date().toISOString().split('T')[0];
-  }
-
-  // Pre-fill user details if logged in
-  const user = getStoredUserSession();
-  if (user) {
-    document.getElementById('patientNameInput').value = user.name || '';
-    document.getElementById('patientPhoneInput').value = user.phone || '';
-    document.getElementById('patientEmailInput').value = user.email || '';
-  }
-
-  // Open modal
+function initModalWizard() {
   const modal = document.getElementById('bookingModal');
-  if (modal) modal.classList.add('active');
+  const openButtons = document.querySelectorAll('.open-booking-modal');
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  const wizardName = document.getElementById('wizardName');
+  const wizardEmail = document.getElementById('wizardEmail');
+  const wizardPhone = document.getElementById('wizardPhone');
+  const wizardState = document.getElementById('wizardState');
+  const wizardCurrentWeight = document.getElementById('wizardCurrentWeight');
+  const wizardGoalWeight = document.getElementById('wizardGoalWeight');
+  const wizardErrorBanner = document.getElementById('wizardErrorBanner');
+  const wizardErrorText = document.getElementById('wizardErrorText');
+
+  const nameError = document.getElementById('wizardNameError');
+  const emailError = document.getElementById('wizardEmailError');
+  const phoneError = document.getElementById('wizardPhoneError');
+  const stateError = document.getElementById('wizardStateError');
+  const currentWeightError = document.getElementById('wizardCurrentWeightError');
+  const goalWeightError = document.getElementById('wizardGoalWeightError');
+  const strugglesError = document.getElementById('wizardStrugglesError');
+
+  attachPhoneFormatter(wizardPhone);
+
+  // Live validation listeners on modal inputs
+  if (wizardName) {
+    wizardName.addEventListener('input', () => {
+      if (isValidName(wizardName.value)) clearFieldError(wizardName, nameError);
+    });
+  }
+  if (wizardEmail) {
+    wizardEmail.addEventListener('input', () => {
+      if (isValidEmail(wizardEmail.value)) clearFieldError(wizardEmail, emailError);
+    });
+  }
+  if (wizardPhone) {
+    wizardPhone.addEventListener('input', () => {
+      if (isValidPhone(wizardPhone.value)) clearFieldError(wizardPhone, phoneError);
+    });
+  }
+  if (wizardState) {
+    wizardState.addEventListener('change', () => {
+      if (wizardState.value) clearFieldError(wizardState, stateError);
+    });
+  }
+  if (wizardCurrentWeight) {
+    wizardCurrentWeight.addEventListener('input', () => {
+      const val = parseFloat(wizardCurrentWeight.value);
+      if (val >= 70 && val <= 700) clearFieldError(wizardCurrentWeight, currentWeightError);
+    });
+  }
+  if (wizardGoalWeight) {
+    wizardGoalWeight.addEventListener('input', () => {
+      const val = parseFloat(wizardGoalWeight.value);
+      if (val >= 60 && val <= 600) clearFieldError(wizardGoalWeight, goalWeightError);
+    });
+  }
+
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const docName = btn.getAttribute('data-doctor');
+      if (docName) {
+        const docSelect = document.getElementById('wizardDoctor');
+        if (docSelect) {
+          for (let option of docSelect.options) {
+            if (option.text.includes(docName)) {
+              option.selected = true;
+              break;
+            }
+          }
+        }
+      }
+      openBookingModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeBookingModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeBookingModal();
+      }
+    });
+  }
+
+  // Step 1 -> Step 2 with strict validation
+  const nextToStep2 = document.getElementById('nextToStep2');
+  if (nextToStep2) {
+    nextToStep2.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      let hasErrors = false;
+      let firstInvalidInput = null;
+
+      const name = wizardName.value.trim();
+      const email = wizardEmail.value.trim();
+      const phone = wizardPhone.value.trim();
+      const state = wizardState.value;
+
+      // Validate Name
+      if (!isValidName(name)) {
+        setFieldError(wizardName, nameError, 'Please enter your full name (minimum 2 letters).');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardName;
+      } else {
+        clearFieldError(wizardName, nameError);
+      }
+
+      // Validate Email
+      if (!isValidEmail(email)) {
+        setFieldError(wizardEmail, emailError, 'Please enter a valid email address (e.g. sarah@example.com).');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardEmail;
+      } else {
+        clearFieldError(wizardEmail, emailError);
+      }
+
+      // Validate Phone
+      if (!isValidPhone(phone)) {
+        setFieldError(wizardPhone, phoneError, 'Please enter a valid 10-digit phone number (e.g. (555) 123-4567).');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardPhone;
+      } else {
+        clearFieldError(wizardPhone, phoneError);
+      }
+
+      // Validate State
+      if (!state) {
+        setFieldError(wizardState, stateError, 'Please select your US state.');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardState;
+      } else {
+        clearFieldError(wizardState, stateError);
+      }
+
+      // Strict block: form cannot submit or proceed until all fields are proper
+      if (hasErrors) {
+        if (wizardErrorBanner) {
+          wizardErrorText.textContent = 'Please provide a valid name, email, phone number, and state to proceed.';
+          wizardErrorBanner.classList.add('visible');
+        }
+        if (firstInvalidInput) firstInvalidInput.focus();
+        return;
+      }
+
+      if (wizardErrorBanner) wizardErrorBanner.classList.remove('visible');
+      goToStep(2);
+    });
+  }
+
+  // Step 2 -> Back / Next
+  const backToStep1 = document.getElementById('backToStep1');
+  if (backToStep1) backToStep1.addEventListener('click', () => {
+    if (wizardErrorBanner) wizardErrorBanner.classList.remove('visible');
+    goToStep(1);
+  });
+
+  const nextToStep3 = document.getElementById('nextToStep3');
+  if (nextToStep3) {
+    nextToStep3.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      let hasErrors = false;
+      let firstInvalidInput = null;
+
+      const currentWeight = parseFloat(wizardCurrentWeight.value);
+      const goalWeight = parseFloat(wizardGoalWeight.value);
+
+      if (isNaN(currentWeight) || currentWeight < 70 || currentWeight > 700) {
+        setFieldError(wizardCurrentWeight, currentWeightError, 'Please enter a realistic current weight (70 to 700 lbs).');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardCurrentWeight;
+      } else {
+        clearFieldError(wizardCurrentWeight, currentWeightError);
+      }
+
+      if (isNaN(goalWeight) || goalWeight < 60 || goalWeight > 600) {
+        setFieldError(wizardGoalWeight, goalWeightError, 'Please enter a realistic target weight (60 to 600 lbs).');
+        hasErrors = true;
+        if (!firstInvalidInput) firstInvalidInput = wizardGoalWeight;
+      } else {
+        clearFieldError(wizardGoalWeight, goalWeightError);
+      }
+
+      const checkedStruggles = document.querySelectorAll('input[name="struggles"]:checked');
+      if (checkedStruggles.length === 0) {
+        if (strugglesError) {
+          strugglesError.textContent = 'Please select at least one factor affecting your weight.';
+          strugglesError.classList.add('visible');
+        }
+        hasErrors = true;
+      } else {
+        if (strugglesError) {
+          strugglesError.textContent = '';
+          strugglesError.classList.remove('visible');
+        }
+      }
+
+      if (hasErrors) {
+        if (wizardErrorBanner) {
+          wizardErrorText.textContent = 'Please fill in your current weight, goal weight, and check at least one struggle.';
+          wizardErrorBanner.classList.add('visible');
+        }
+        if (firstInvalidInput) firstInvalidInput.focus();
+        return;
+      }
+
+      if (wizardErrorBanner) wizardErrorBanner.classList.remove('visible');
+      goToStep(3);
+    });
+  }
+
+  // Step 3 -> Back / Submit
+  const backToStep2 = document.getElementById('backToStep2');
+  if (backToStep2) backToStep2.addEventListener('click', () => {
+    if (wizardErrorBanner) wizardErrorBanner.classList.remove('visible');
+    goToStep(2);
+  });
+
+  const submitModalBooking = document.getElementById('submitModalBooking');
+  if (submitModalBooking) {
+    submitModalBooking.addEventListener('click', handleWizardSubmit);
+  }
+}
+
+function openBookingModal() {
+  const modal = document.getElementById('bookingModal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const banner = document.getElementById('wizardErrorBanner');
+    if (banner) banner.classList.remove('visible');
+    goToStep(1);
+  }
 }
 
 function closeBookingModal() {
   const modal = document.getElementById('bookingModal');
-  if (modal) modal.classList.remove('active');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  }
 }
 
-function updateConsultTypeDisplay(type) {
-  currentConsultType = type;
-  const visitOpt = document.getElementById('optVisitType');
-  const videoOpt = document.getElementById('optVideoType');
-  const feeDisplay = document.getElementById('modalFeeAmount');
+function goToStep(step) {
+  currentWizardStep = step;
+  
+  // Hide all step contents
+  document.querySelectorAll('.wizard-step-content').forEach(el => el.classList.remove('active'));
+  const targetContent = document.getElementById(`wizardStep${step}`);
+  if (targetContent) targetContent.classList.add('active');
 
-  if (visitOpt && videoOpt) {
-    if (type === 'hospital') {
-      visitOpt.classList.add('active');
-      videoOpt.classList.remove('active');
-    } else {
-      videoOpt.classList.add('active');
-      visitOpt.classList.remove('active');
+  // Update step indicators
+  document.querySelectorAll('.wizard-step-node').forEach(node => {
+    const nodeStep = parseInt(node.getAttribute('data-step'));
+    node.classList.remove('active', 'completed');
+    if (nodeStep === step) {
+      node.classList.add('active');
+    } else if (nodeStep < step) {
+      node.classList.add('completed');
     }
-  }
-  if (feeDisplay) {
-    feeDisplay.textContent = 'FREE';
-  }
+  });
 }
 
-function selectTimeSlot(slotBtn) {
-  document.querySelectorAll('.slot-btn').forEach(btn => btn.classList.remove('selected'));
-  slotBtn.classList.add('selected');
-  selectedSlot = slotBtn.textContent.trim();
-}
-
-// Handle Booking Form Submit
-function handleBookingSubmit(e) {
+function handleWizardSubmit(e) {
   e.preventDefault();
-  if (!currentBookingDoctor) return;
 
-  const patientName = document.getElementById('patientNameInput').value.trim();
-  const patientPhone = document.getElementById('patientPhoneInput').value.trim();
-  const patientEmail = document.getElementById('patientEmailInput').value.trim();
-  const bookingDate = document.getElementById('bookingDateInput').value;
-  const reason = document.getElementById('patientReasonInput')?.value.trim() || 'General Medical Consultation';
+  const name = document.getElementById('wizardName').value.trim();
+  const email = document.getElementById('wizardEmail').value.trim();
+  const phone = document.getElementById('wizardPhone').value.trim();
+  const state = document.getElementById('wizardState').value;
+  const currentWeightVal = document.getElementById('wizardCurrentWeight').value.trim();
+  const goalWeightVal = document.getElementById('wizardGoalWeight').value.trim();
+  const age = document.getElementById('wizardAge').value;
 
-  if (!patientName || !patientPhone) {
-    alert('Please enter your Name and Mobile/WhatsApp number.');
+  // Final sanity check before submission
+  if (!isValidName(name) || !isValidEmail(email) || !isValidPhone(phone) || !state) {
+    goToStep(1);
+    const wizardErrorBanner = document.getElementById('wizardErrorBanner');
+    const wizardErrorText = document.getElementById('wizardErrorText');
+    if (wizardErrorBanner) {
+      wizardErrorText.textContent = 'Please enter a valid name, email, phone number, and select your state.';
+      wizardErrorBanner.classList.add('visible');
+    }
     return;
   }
 
-  const bookingId = 'MQ-' + Math.floor(100000 + Math.random() * 900000);
+  // Collect struggles checked
+  const strugglesChecked = [];
+  document.querySelectorAll('input[name="struggles"]:checked').forEach(cb => {
+    strugglesChecked.push(cb.value);
+  });
+  const struggleText = strugglesChecked.length ? strugglesChecked.join(', ') : 'Metabolic Resistance';
 
-  const appointment = {
-    id: bookingId,
-    doctorId: currentBookingDoctor.id,
-    doctorName: currentBookingDoctor.name,
-    doctorSpecialty: currentBookingDoctor.specialty,
-    doctorPhoto: currentBookingDoctor.photo,
-    hospital: currentBookingDoctor.hospital,
-    city: currentBookingDoctor.city,
-    country: currentBookingDoctor.country,
-    type: currentConsultType === 'hospital' ? 'In-Person Hospital Visit' : '4K Telehealth Video Consult',
-    date: bookingDate,
-    time: selectedSlot,
-    patientName: patientName,
-    patientPhone: patientPhone,
-    patientEmail: patientEmail,
-    reason: reason,
-    feeINR: 0,
-    feeFormatted: 'FREE',
-    status: 'Confirmed',
-    bookedAt: new Date().toLocaleString()
+  const doctorSelect = document.getElementById('wizardDoctor');
+  const doctor = doctorSelect ? doctorSelect.options[doctorSelect.selectedIndex].text : 'Top Available US Specialist';
+  const hospital = doctor.includes('Mayo') ? 'Mayo Clinic' : 
+                   doctor.includes('Cleveland') ? 'Cleveland Clinic' : 
+                   doctor.includes('Johns Hopkins') ? 'Johns Hopkins Medicine' : 'Top US Hospital Affiliate';
+
+  const consultType = document.querySelector('input[name="consultType"]:checked')?.value || 'Telehealth (Video Call)';
+  const slot = document.getElementById('wizardSlot').value || 'Earliest Available (Next 48h)';
+
+  const newLead = {
+    id: 'US-MET-' + Math.floor(1000 + Math.random() * 9000),
+    timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16),
+    name: name,
+    email: email,
+    phone: phone,
+    state: state,
+    age: age,
+    currentWeight: currentWeightVal + ' lbs',
+    goalWeight: goalWeightVal + ' lbs',
+    struggle: struggleText,
+    doctor: doctor,
+    hospital: hospital,
+    type: consultType,
+    slot: slot
   };
 
-  // Save to localStorage
-  saveAppointment(appointment);
+  saveNewLead(newLead);
   closeBookingModal();
-
-  // Show confirmation modal / toast
-  showBookingSuccessModal(appointment);
+  showBookingSuccessModal(newLead);
 }
 
-function showBookingSuccessModal(appt) {
-  const modal = document.getElementById('successModal');
-  if (!modal) {
-    alert(`Appointment Confirmed!\nBooking ID: ${appt.id}\nDoctor: ${appt.doctorName}\nDate: ${appt.date} at ${appt.time}`);
-    return;
-  }
+/* ==========================================================================
+   5. Success Confirmation Modal
+   ========================================================================== */
 
-  document.getElementById('successBookingId').textContent = appt.id;
-  document.getElementById('successDocName').textContent = appt.doctorName;
-  document.getElementById('successDateTime').textContent = `${appt.date} • ${appt.time}`;
-  document.getElementById('successType').textContent = appt.type;
-  document.getElementById('successFee').textContent = 'FREE';
+function showBookingSuccessModal(lead) {
+  const successModal = document.getElementById('successModal');
+  if (!successModal) return;
 
-  modal.classList.add('active');
-}
+  document.getElementById('confLeadId').textContent = lead.id;
+  document.getElementById('confName').textContent = lead.name;
+  document.getElementById('confEmail').textContent = lead.email;
+  document.getElementById('confDoctor').textContent = lead.doctor;
+  document.getElementById('confSlot').textContent = lead.slot;
 
-function closeSuccessModal() {
-  const modal = document.getElementById('successModal');
-  if (modal) modal.classList.remove('active');
-}
+  successModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 
-// =========================================================================
-// MY APPOINTMENTS DRAWER
-// =========================================================================
-function toggleAppointmentsDrawer(open = true) {
-  const drawer = document.getElementById('appointmentsDrawer');
-  if (!drawer) return;
-  if (open) {
-    renderAppointmentsDrawer();
-    drawer.classList.add('active');
-  } else {
-    drawer.classList.remove('active');
-  }
-}
-
-function renderAppointmentsDrawer() {
-  const container = document.getElementById('appointmentsListContainer');
-  if (!container) return;
-
-  const appts = getStoredAppointments();
-  if (appts.length === 0) {
-    container.innerHTML = `
-      <div style="text-align: center; padding: 40px 20px; color: #64748b;">
-        <svg style="width: 54px; height: 54px; margin-bottom: 12px; color: #cbd5e1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <h4 style="font-family: var(--font-heading); color: #1e293b; font-size: 17px; margin-bottom: 6px;">No Bookings Found</h4>
-        <p style="font-size: 13.5px;">You have not booked any consultations yet. Your future bookings will be saved here offline without needing a database.</p>
-      </div>
-    `;
-    return;
-  }
-
-  container.innerHTML = appts.map(a => `
-    <div class="appointment-ticket-card">
-      <div class="ticket-header">
-        <span style="font-size: 12px; font-weight: 700; color: #0284c7;">PASS #${a.id}</span>
-        <span class="ticket-status-badge">● ${a.status}</span>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: center;">
-        <img src="${a.doctorPhoto}" alt="" style="width: 44px; height: 44px; border-radius: 12px; object-fit: cover; border: 1.5px solid var(--primary);">
-        <div>
-          <div style="font-family: var(--font-heading); font-weight: 700; color: #181818; font-size: 15px;">${a.doctorName}</div>
-          <div style="font-size: 12px; color: #64748b;">${a.doctorSpecialty} • ${a.hospital}</div>
-        </div>
-      </div>
-      <div style="background: #ffffff; padding: 10px 12px; border-radius: 10px; font-size: 12.5px; display: flex; justify-content: space-between;">
-        <div>
-          <div style="color: #94a3b8; font-size: 11px;">DATE & TIME</div>
-          <div style="font-weight: 600; color: #181818;">${a.date} at ${a.time}</div>
-        </div>
-        <div style="text-align: right;">
-          <div style="color: #94a3b8; font-size: 11px;">CONSULTATION</div>
-          <div style="font-weight: 700; color: #16a34a;">FREE</div>
-        </div>
-      </div>
-      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 4px;">
-        <span style="font-size: 11.5px; color: #64748b;">Type: <strong>${a.type}</strong></span>
-        <button class="ticket-cancel-btn" onclick="cancelStoredAppointment('${a.id}')">Cancel Booking</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-// =========================================================================
-// INTERACTIVE AUTH & OTP SIMULATION (No Database Required)
-// =========================================================================
-let generatedOtp = '2489';
-let userPhoneNumber = '';
-
-function openSignInModal() {
-  const modal = document.getElementById('signInModal');
-  if (modal) {
-    document.getElementById('phoneStep').style.display = 'block';
-    document.getElementById('otpStep').style.display = 'none';
-    modal.classList.add('active');
-  }
-}
-
-function closeSignInModal() {
-  const modal = document.getElementById('signInModal');
-  if (modal) modal.classList.remove('active');
-}
-
-function handleSendOtp(e) {
-  e.preventDefault();
-  const phone = document.getElementById('loginPhoneInput').value.trim();
-  if (phone.length < 6) {
-    alert('Please enter a valid mobile number.');
-    return;
-  }
-
-  userPhoneNumber = phone;
-  // Generate random 4 digit code
-  generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
-
-  document.getElementById('phoneStep').style.display = 'none';
-  document.getElementById('otpStep').style.display = 'block';
-  document.getElementById('otpSentToText').textContent = phone;
-
-  // Clear inputs
-  document.querySelectorAll('.otp-box-input').forEach(i => i.value = '');
-  document.getElementById('otp1')?.focus();
-
-  // Show friendly notification toast with OTP
-  showToast(`WhatsApp OTP sent to ${phone}: ${generatedOtp}`);
-}
-
-function handleVerifyOtp(e) {
-  e.preventDefault();
-  const inputs = document.querySelectorAll('.otp-box-input');
-  let entered = '';
-  inputs.forEach(i => entered += i.value);
-
-  if (entered === generatedOtp || entered === '1234') {
-    // Store user session
-    const session = {
-      phone: userPhoneNumber,
-      name: 'Global Patient',
-      email: 'patient@global-client.com',
-      token: 'client_session_' + Date.now()
+  const closeSuccess = document.getElementById('closeSuccessBtn');
+  if (closeSuccess) {
+    closeSuccess.onclick = () => {
+      successModal.classList.remove('open');
+      document.body.style.overflow = 'auto';
     };
-    localStorage.setItem(STORAGE_KEYS.USER_SESSION, JSON.stringify(session));
-    closeSignInModal();
-    updateUserAuthUI();
-    showToast('Successfully signed in! Welcome to MediQ Connect Global.');
-  } else {
-    alert(`Invalid OTP code. Please enter the demo code: ${generatedOtp}`);
   }
 }
 
-function getStoredUserSession() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEYS.USER_SESSION);
-    return raw ? JSON.parse(raw) : null;
-  } catch (e) {
-    return null;
-  }
-}
+/* ==========================================================================
+   6. BMI & Metabolic Resistance Assessment (Interactive Funnel)
+   ========================================================================== */
 
-function updateUserAuthUI() {
-  const session = getStoredUserSession();
-  const btn = document.getElementById('navSignInBtn');
-  if (!btn) return;
+function initBmiCalculator() {
+  const calcForm = document.getElementById('bmiCalcForm');
+  if (!calcForm) return;
 
-  if (session) {
-    btn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span>My Account</span>
-    `;
-    btn.onclick = () => {
-      if (confirm('You are logged in. Do you want to sign out?')) {
-        localStorage.removeItem(STORAGE_KEYS.USER_SESSION);
-        updateUserAuthUI();
-        showToast('Signed out successfully.');
-      }
-    };
-  } else {
-    btn.innerHTML = `
-      <img src="assets/icons/lock-icon.svg" width="18" height="18" alt="" onerror="this.style.display='none'">
-      <span>Sign In</span>
-    `;
-    btn.onclick = openSignInModal;
-  }
-}
+  const unitBtns = document.querySelectorAll('.unit-btn');
+  let currentUnit = 'us'; // 'us' (lbs/inches) or 'metric' (kg/cm)
 
-// Toast Notification
-function showToast(msg) {
-  let toast = document.getElementById('toastNotice');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'toastNotice';
-    toast.style.position = 'fixed';
-    toast.style.bottom = '30px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = '#0f172a';
-    toast.style.color = '#fff';
-    toast.style.padding = '12px 24px';
-    toast.style.borderRadius = '30px';
-    toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
-    toast.style.zIndex = '9999';
-    toast.style.fontFamily = 'var(--font-heading)';
-    toast.style.fontSize = '14px';
-    toast.style.fontWeight = '600';
-    toast.style.transition = 'all 0.3s ease';
-    document.body.appendChild(toast);
-  }
-  toast.textContent = msg;
-  toast.style.opacity = '1';
-  toast.style.visibility = 'visible';
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.visibility = 'hidden';
-  }, 4500);
-}
-
-// =========================================================================
-// LIVE SEARCH & AUTOCOMPLETE
-// =========================================================================
-function setupLiveSearch() {
-  const searchInput = document.getElementById('autocomplete_search');
-  const suggestionBox = document.getElementById('searchSuggestions');
-  const hubSelect = document.getElementById('locationSelect');
-
-  if (!searchInput || !suggestionBox) return;
-
-  searchInput.addEventListener('input', (e) => {
-    const val = e.target.value.trim().toLowerCase();
-    if (val.length < 1) {
-      suggestionBox.classList.remove('active');
-      suggestionBox.innerHTML = '';
-      return;
-    }
-
-    const matchedDocs = DOCTORS.filter(d => 
-      d.name.toLowerCase().includes(val) || 
-      d.specialty.toLowerCase().includes(val) || 
-      d.hospital.toLowerCase().includes(val)
-    ).slice(0, 5);
-
-    const matchedHospitals = HOSPITALS.filter(h => 
-      h.name.toLowerCase().includes(val) || 
-      h.city.toLowerCase().includes(val)
-    ).slice(0, 3);
-
-    if (matchedDocs.length === 0 && matchedHospitals.length === 0) {
-      suggestionBox.innerHTML = `
-        <div style="padding: 16px; color: #64748b; font-size: 13.5px; text-align: center;">
-          No matching doctors or hospitals found for "<strong>${val}</strong>"
-        </div>
-      `;
-      suggestionBox.classList.add('active');
-      return;
-    }
-
-    let html = '';
-    if (matchedDocs.length > 0) {
-      html += `<div class="suggestion-category-title">Verified Doctors</div>`;
-      matchedDocs.forEach(d => {
-        html += `
-          <div class="suggestion-item" onclick="selectSearchDoctor('${d.id}')">
-            <div class="item-info">
-              <img src="${d.photo}" class="item-avatar" alt="">
-              <div>
-                <div class="item-name">${d.name}</div>
-                <div class="item-meta">${d.specialty} • ${d.hospital}</div>
-              </div>
-            </div>
-            <span class="badge-type">${d.city}</span>
-          </div>
-        `;
-      });
-    }
-
-    if (matchedHospitals.length > 0) {
-      html += `<div class="suggestion-category-title">Hospitals & Centers</div>`;
-      matchedHospitals.forEach(h => {
-        html += `
-          <div class="suggestion-item" onclick="selectSearchHospital('${h.name}')">
-            <div class="item-info">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div>
-                <div class="item-name">${h.name}</div>
-                <div class="item-meta">${h.city}, ${h.country}</div>
-              </div>
-            </div>
-            <span class="badge-type">Hospital</span>
-          </div>
-        `;
-      });
-    }
-
-    suggestionBox.innerHTML = html;
-    suggestionBox.classList.add('active');
-  });
-
-  // Hide suggestions on outside click
-  document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
-      suggestionBox.classList.remove('active');
-    }
-  });
-
-  // Handle Location hub select
-  if (hubSelect) {
-    hubSelect.addEventListener('change', (e) => {
-      currentHubFilter = e.target.value;
-      renderDoctors(currentSpecFilter, currentHubFilter, searchInput.value.trim());
-      renderHospitals(currentHubFilter);
-    });
-  }
-
-  // Handle search form submit
-  const searchForm = document.getElementById('doctorSearchForm2');
-  if (searchForm) {
-    searchForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      suggestionBox.classList.remove('active');
-      renderDoctors(currentSpecFilter, currentHubFilter, searchInput.value.trim());
-      document.getElementById('verified-doctors-section')?.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-}
-
-function selectSearchDoctor(doctorId) {
-  const doc = DOCTORS.find(d => d.id === doctorId);
-  if (!doc) return;
-  const input = document.getElementById('autocomplete_search');
-  if (input) input.value = doc.name;
-  document.getElementById('searchSuggestions')?.classList.remove('active');
-  renderDoctors('ALL', 'ALL', doc.name);
-  document.getElementById('verified-doctors-section')?.scrollIntoView({ behavior: 'smooth' });
-}
-
-function selectSearchHospital(hospitalName) {
-  const input = document.getElementById('autocomplete_search');
-  if (input) input.value = hospitalName;
-  document.getElementById('searchSuggestions')?.classList.remove('active');
-  filterDoctorsByHospital(hospitalName);
-}
-
-// =========================================================================
-// CURRENCY SWITCHER HANDLER
-// =========================================================================
-function setCurrency(currCode) {
-  if (!CURRENCY_RATES[currCode]) return;
-  currentCurrency = currCode;
-  localStorage.setItem(STORAGE_KEYS.CURRENCY, currCode);
-
-  // Update top selector
-  const topSelect = document.getElementById('globalCurrencySelect');
-  if (topSelect) topSelect.value = currCode;
-
-  // Update navbar currency badge
-  const navBadge = document.getElementById('navCurrencyText');
-  if (navBadge) navBadge.textContent = currCode;
-
-  // Update all hero cards prices
-  updateHeroCardPrices();
-
-  // Re-render doctors to update fees
-  renderDoctors(currentSpecFilter, currentHubFilter, document.getElementById('autocomplete_search')?.value.trim() || '');
-
-  // Update active booking modal fee if open
-  if (currentBookingDoctor) {
-    updateConsultTypeDisplay(currentConsultType);
-  }
-}
-
-function updateHeroCardPrices() {
-  const p1 = document.getElementById('heroCard1Price');
-  const p1Old = document.getElementById('heroCard1Old');
-  if (p1) p1.textContent = 'Free Consultation';
-  if (p1Old) p1Old.style.display = 'none';
-
-  const p2 = document.getElementById('heroCard2Price');
-  const p2Old = document.getElementById('heroCard2Old');
-  if (p2) p2.textContent = 'Free Consultation';
-  if (p2Old) p2Old.style.display = 'none';
-}
-
-// =========================================================================
-// FAQ ACCORDION LOGIC
-// =========================================================================
-function setupFaqAccordion() {
-  document.querySelectorAll('.faq-question-btn').forEach(btn => {
+  unitBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isActive = item.classList.contains('active');
-      
-      // Close all other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      unitBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentUnit = btn.getAttribute('data-unit');
+      updateCalcLabels(currentUnit);
+    });
+  });
+
+  calcForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const height = parseFloat(document.getElementById('calcHeight').value);
+    const weight = parseFloat(document.getElementById('calcWeight').value);
+
+    if (!height || !weight) {
+      alert('Please enter your height and weight.');
+      return;
+    }
+
+    let bmi = 0;
+    if (currentUnit === 'us') {
+      bmi = (weight / (height * height)) * 703;
+    } else {
+      const heightInMeters = height / 100;
+      bmi = weight / (heightInMeters * heightInMeters);
+    }
+
+    bmi = Math.round(bmi * 10) / 10;
+
+    let category = '';
+    let advice = '';
+
+    if (bmi < 25) {
+      category = 'Normal Range (Metabolic Optimization)';
+      advice = 'Our physicians focus on preserving lean mass, cellular longevity, and hormone stabilization.';
+    } else if (bmi < 30) {
+      category = 'Overweight (Stage 1 Metabolic Load)';
+      advice = 'Clinical studies show early metabolic intervention prevents insulin resistance and permanent set-point resets.';
+    } else if (bmi < 35) {
+      category = 'Class 1 Obesity (High Set-Point Resistance)';
+      advice = 'Standard calorie deprivation triggers metabolic slowdown. Board-certified US physicians can review GLP-1 and metabolic biology.';
+    } else {
+      category = 'Class 2+ Obesity (Severe Metabolic Adaptation)';
+      advice = 'You qualify for comprehensive medical obesity management covered under clinical guidelines. You are paired with top US hospital specialists.';
+    }
+
+    const resultBox = document.getElementById('calcResultBox');
+    document.getElementById('calcBmiVal').textContent = bmi;
+    document.getElementById('calcBmiCat').textContent = category;
+    document.getElementById('calcBmiNote').textContent = advice;
+    resultBox.style.display = 'block';
+
+    // Auto populate modal with these values if they open it
+    const wizardWeight = document.getElementById('wizardCurrentWeight');
+    if (wizardWeight) {
+      wizardWeight.value = currentUnit === 'us' ? Math.round(weight) : Math.round(weight * 2.20462);
+    }
+  });
+
+  // Claim Doctor Review button in calculator
+  const claimDoctorBtn = document.getElementById('claimAssessmentDoctor');
+  if (claimDoctorBtn) {
+    claimDoctorBtn.addEventListener('click', () => {
+      openBookingModal();
+    });
+  }
+}
+
+function updateCalcLabels(unit) {
+  const heightLabel = document.getElementById('calcHeightLabel');
+  const weightLabel = document.getElementById('calcWeightLabel');
+  const heightInput = document.getElementById('calcHeight');
+  const weightInput = document.getElementById('calcWeight');
+
+  if (unit === 'us') {
+    heightLabel.textContent = 'Height (Inches, e.g. 68 for 5\'8")';
+    weightLabel.textContent = 'Current Weight (lbs)';
+    heightInput.placeholder = 'e.g. 68';
+    weightInput.placeholder = 'e.g. 210';
+  } else {
+    heightLabel.textContent = 'Height (Centimeters)';
+    weightLabel.textContent = 'Current Weight (kg)';
+    heightInput.placeholder = 'e.g. 173';
+    weightInput.placeholder = 'e.g. 95';
+  }
+}
+
+/* ==========================================================================
+   7. Featured Doctor Directory Filtering
+   ========================================================================== */
+
+function initDoctorFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const doctorCards = document.querySelectorAll('.doctor-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      doctorCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   8. FAQ Accordion
+   ========================================================================== */
+
+function initFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.parentElement;
+      const isActive = parent.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
 
       if (!isActive) {
-        item.classList.add('active');
+        parent.classList.add('active');
       }
     });
   });
 }
 
-// =========================================================================
-// MOBILE DRAWER & NAV
-// =========================================================================
-function toggleMobileMenu() {
-  const navMenu = document.getElementById('mobileNavDrawer');
-  if (navMenu) {
-    navMenu.classList.toggle('active');
+/* ==========================================================================
+   9. Secondary Lead Magnet (Download Free Clinical Protocol)
+   ========================================================================== */
+
+function initLeadMagnet() {
+  const magnetForm = document.getElementById('leadMagnetForm');
+  if (!magnetForm) return;
+
+  const magnetNameInput = document.getElementById('magnetName');
+  const magnetEmailInput = document.getElementById('magnetEmail');
+  const magnetNameError = document.getElementById('magnetNameError');
+  const magnetEmailError = document.getElementById('magnetEmailError');
+
+  if (magnetNameInput) {
+    magnetNameInput.addEventListener('input', () => {
+      if (isValidName(magnetNameInput.value)) clearFieldError(magnetNameInput, magnetNameError);
+    });
+  }
+  if (magnetEmailInput) {
+    magnetEmailInput.addEventListener('input', () => {
+      if (isValidEmail(magnetEmailInput.value)) clearFieldError(magnetEmailInput, magnetEmailError);
+    });
+  }
+
+  magnetForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let hasErrors = false;
+    let firstInvalid = null;
+
+    const name = magnetNameInput.value.trim();
+    const email = magnetEmailInput.value.trim();
+
+    if (!isValidName(name)) {
+      setFieldError(magnetNameInput, magnetNameError, 'Please enter your name (minimum 2 letters).');
+      hasErrors = true;
+      if (!firstInvalid) firstInvalid = magnetNameInput;
+    } else {
+      clearFieldError(magnetNameInput, magnetNameError);
+    }
+
+    if (!isValidEmail(email)) {
+      setFieldError(magnetEmailInput, magnetEmailError, 'Please enter a valid email address (e.g. name@example.com).');
+      hasErrors = true;
+      if (!firstInvalid) firstInvalid = magnetEmailInput;
+    } else {
+      clearFieldError(magnetEmailInput, magnetEmailError);
+    }
+
+    if (hasErrors) {
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    const newLead = {
+      id: 'US-MET-' + Math.floor(1000 + Math.random() * 9000),
+      timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      name: name,
+      email: email,
+      phone: 'Guide Request (Follow up via email)',
+      state: 'Guide Download',
+      age: '-',
+      currentWeight: '-',
+      goalWeight: '-',
+      struggle: 'Requested 2026 Clinical Metabolic Guide',
+      doctor: 'Education Resource Team',
+      hospital: 'MetabolicMD US Faculty',
+      type: 'Guide Download Lead',
+      slot: 'Email Sent'
+    };
+
+    saveNewLead(newLead);
+    alert(`Thank you, ${name}! Your copy of the "2026 Physician's Protocol: Resetting Leptin & Metabolic Setpoint" has been dispatched to ${email}. You also qualify for a 100% Free Consultation!`);
+    magnetForm.reset();
+    [magnetNameInput, magnetEmailInput].forEach(el => {
+      if (el) el.classList.remove('is-valid', 'is-invalid');
+    });
+  });
+}
+
+/* ==========================================================================
+   10. Live Booking Social Proof Toaster
+   ========================================================================== */
+
+function initSocialProofToast() {
+  const toast = document.getElementById('liveToast');
+  if (!toast) return;
+
+  const sampleNotifications = [
+    { name: 'Sarah T.', city: 'Austin, TX', doctor: 'Dr. Sarah Jenkins (Cleveland Clinic)' },
+    { name: 'Michael K.', city: 'Chicago, IL', doctor: 'Dr. Marcus Vance (Johns Hopkins)' },
+    { name: 'Jennifer R.', city: 'Miami, FL', doctor: 'Dr. Elena Rostova (Mayo Clinic)' },
+    { name: 'Robert B.', city: 'Phoenix, AZ', doctor: 'Dr. David Chen (Cedars-Sinai)' },
+    { name: 'Ashley D.', city: 'Atlanta, GA', doctor: 'Dr. Amanda Hayes (Mount Sinai)' }
+  ];
+
+  let currentIndex = 0;
+
+  function showToast() {
+    const item = sampleNotifications[currentIndex];
+    const textEl = document.getElementById('toastText');
+    if (textEl) {
+      textEl.innerHTML = `<strong>${item.name} from ${item.city}</strong> just booked a 100% Free Consultation with ${item.doctor}`;
+    }
+
+    toast.classList.add('show');
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4500);
+
+    currentIndex = (currentIndex + 1) % sampleNotifications.length;
+  }
+
+  // First toast after 3 seconds, then every 22 seconds
+  setTimeout(showToast, 3500);
+  setInterval(showToast, 22000);
+}
+
+/* ==========================================================================
+   11. Admin / Email Marketing Lead Management Portal
+   ========================================================================== */
+
+function initAdminPortal() {
+  const adminModal = document.getElementById('adminPortalModal');
+  const openAdminBtn = document.getElementById('openAdminPortal');
+  const footerAdminTrigger = document.getElementById('footerAdminTrigger');
+  const closeAdminBtn = document.getElementById('closeAdminBtn');
+  const exportCsvBtn = document.getElementById('exportCsvBtn');
+  const copyEmailsBtn = document.getElementById('copyEmailsBtn');
+  const searchInput = document.getElementById('adminSearchInput');
+
+  const openAdmin = (e) => {
+    if (e) e.preventDefault();
+    renderLeadsTable();
+    adminModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  if (openAdminBtn) {
+    openAdminBtn.addEventListener('click', openAdmin);
+  }
+  if (footerAdminTrigger) {
+    footerAdminTrigger.addEventListener('click', openAdmin);
+  }
+
+  // Keyboard shortcut: Ctrl + Shift + L
+  window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+      e.preventDefault();
+      renderLeadsTable();
+      adminModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  if (closeAdminBtn) {
+    closeAdminBtn.addEventListener('click', () => {
+      adminModal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  if (exportCsvBtn) {
+    exportCsvBtn.addEventListener('click', exportLeadsToCsv);
+  }
+
+  if (copyEmailsBtn) {
+    copyEmailsBtn.addEventListener('click', copyAllEmailsToClipboard);
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      renderLeadsTable(query);
+    });
   }
 }
 
-// OTP digit auto-advance
-function setupOtpInputs() {
-  const inputs = document.querySelectorAll('.otp-box-input');
-  inputs.forEach((input, idx) => {
-    input.addEventListener('input', () => {
-      input.value = input.value.replace(/\D/g, '');
-      if (input.value && idx < inputs.length - 1) {
-        inputs[idx + 1].focus();
-      }
-    });
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace' && !input.value && idx > 0) {
-        inputs[idx - 1].focus();
-      }
-    });
+function renderLeadsTable(filterQuery = '') {
+  const tbody = document.getElementById('leadsTableBody');
+  if (!tbody) return;
+
+  const leads = getStoredLeads();
+  tbody.innerHTML = '';
+
+  const filtered = leads.filter(l => {
+    if (!filterQuery) return true;
+    return (
+      l.name.toLowerCase().includes(filterQuery) ||
+      l.email.toLowerCase().includes(filterQuery) ||
+      l.phone.toLowerCase().includes(filterQuery) ||
+      l.state.toLowerCase().includes(filterQuery) ||
+      l.doctor.toLowerCase().includes(filterQuery) ||
+      l.struggle.toLowerCase().includes(filterQuery)
+    );
+  });
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:#64748b;">No leads found matching your search.</td></tr>`;
+    return;
+  }
+
+  filtered.forEach(lead => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${lead.id}</strong><br><small style="color:#94a3b8;">${lead.timestamp}</small></td>
+      <td><strong>${escapeHtml(lead.name)}</strong><br><small style="color:#0d9488;">${escapeHtml(lead.state)}</small></td>
+      <td><span style="font-weight:600; color:#1d4ed8;">${escapeHtml(lead.email)}</span></td>
+      <td>${escapeHtml(lead.phone)}</td>
+      <td><span class="tag-pill" style="font-size:0.75rem;">${escapeHtml(lead.struggle)}</span></td>
+      <td><small><strong>${escapeHtml(lead.doctor)}</strong></small><br><span style="font-size:0.75rem; color:#059669;">${escapeHtml(lead.type)}</span></td>
+      <td><button class="btn-primary" style="padding:4px 10px; font-size:0.75rem;" onclick="copySingleEmail('${escapeHtml(lead.email)}')">Copy Email</button></td>
+    `;
+    tbody.appendChild(tr);
   });
 }
 
-// =========================================================================
-// INITIALIZATION
-// =========================================================================
-document.addEventListener('DOMContentLoaded', () => {
-  // Load saved currency preference
-  const savedCurr = localStorage.getItem(STORAGE_KEYS.CURRENCY);
-  if (savedCurr && CURRENCY_RATES[savedCurr]) {
-    currentCurrency = savedCurr;
+function copySingleEmail(email) {
+  navigator.clipboard.writeText(email).then(() => {
+    alert(`Copied "${email}" to clipboard!`);
+  });
+}
+
+function copyAllEmailsToClipboard() {
+  const leads = getStoredLeads();
+  const emails = leads.map(l => l.email).filter(e => e && e.includes('@'));
+  const uniqueEmails = [...new Set(emails)];
+
+  if (uniqueEmails.length === 0) {
+    alert('No emails to copy.');
+    return;
   }
-  const topSelect = document.getElementById('globalCurrencySelect');
-  if (topSelect) topSelect.value = currentCurrency;
-  const navBadge = document.getElementById('navCurrencyText');
-  if (navBadge) navBadge.textContent = currentCurrency;
 
-  // Initialize UI & data renders
-  updateHeroCardPrices();
-  renderDoctors('ALL', 'ALL', '');
-  renderHospitals('ALL');
-  updateAppointmentsCount();
-  updateUserAuthUI();
-  setupLiveSearch();
-  setupFaqAccordion();
-  setupOtpInputs();
+  const emailString = uniqueEmails.join(', ');
+  navigator.clipboard.writeText(emailString).then(() => {
+    alert(`Successfully copied ${uniqueEmails.length} client email addresses to clipboard! Ready to paste into your email marketing platform (Mailchimp, Klaviyo, etc.).`);
+  });
+}
 
-  // Specialty category pill clicks
-  document.querySelectorAll('.doc-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.doc-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      currentSpecFilter = tab.getAttribute('data-spec') || 'ALL';
-      renderDoctors(currentSpecFilter, currentHubFilter, document.getElementById('autocomplete_search')?.value.trim() || '');
-    });
+function exportLeadsToCsv() {
+  const leads = getStoredLeads();
+  if (leads.length === 0) {
+    alert('No leads to export.');
+    return;
+  }
+
+  const headers = ['Lead ID', 'Timestamp', 'Full Name', 'Email Address', 'Phone Number', 'US State', 'Age', 'Current Weight', 'Target Goal', 'Primary Struggle', 'Assigned Doctor', 'Hospital', 'Consultation Mode', 'Requested Slot'];
+  
+  const csvRows = [];
+  csvRows.push(headers.join(','));
+
+  leads.forEach(l => {
+    const row = [
+      `"${l.id}"`,
+      `"${l.timestamp}"`,
+      `"${l.name.replace(/"/g, '""')}"`,
+      `"${l.email.replace(/"/g, '""')}"`,
+      `"${l.phone.replace(/"/g, '""')}"`,
+      `"${(l.state || '').replace(/"/g, '""')}"`,
+      `"${(l.age || '').replace(/"/g, '""')}"`,
+      `"${(l.currentWeight || '').replace(/"/g, '""')}"`,
+      `"${(l.goalWeight || '').replace(/"/g, '""')}"`,
+      `"${(l.struggle || '').replace(/"/g, '""')}"`,
+      `"${(l.doctor || '').replace(/"/g, '""')}"`,
+      `"${(l.hospital || '').replace(/"/g, '""')}"`,
+      `"${(l.type || '').replace(/"/g, '""')}"`,
+      `"${(l.slot || '').replace(/"/g, '""')}"`
+    ];
+    csvRows.push(row.join(','));
   });
 
-  // Hub quick filter pills
-  document.querySelectorAll('.hub-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.hub-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentHubFilter = pill.getAttribute('data-hub') || 'ALL';
-      const hubSelect = document.getElementById('locationSelect');
-      if (hubSelect) hubSelect.value = currentHubFilter;
-      renderDoctors(currentSpecFilter, currentHubFilter, '');
-      renderHospitals(currentHubFilter);
-    });
-  });
-});
+  const csvContent = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvRows.join('\n'));
+  const link = document.createElement('a');
+  link.setAttribute('href', csvContent);
+  link.setAttribute('download', `metabolicmd_weightloss_leads_${new Date().toISOString().substring(0, 10)}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function escapeHtml(string) {
+  if (!string) return '';
+  return String(string)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
