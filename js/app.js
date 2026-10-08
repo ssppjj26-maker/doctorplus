@@ -999,7 +999,7 @@ function initSocialProofToast() {
     const avatarEl = document.getElementById('toastAvatar') || toast.querySelector('.toast-avatar');
 
     if (textEl) {
-      textEl.innerHTML = `<strong>${item.name} from ${item.city}</strong> just Booked a Free Consultation with ${item.doctor}`;
+      textEl.innerHTML = `<strong>${item.name} from ${item.city}</strong> just Booked a 100% Free Consultation with ${item.doctor}`;
     }
     if (avatarEl && item.image) {
       avatarEl.src = item.image;
