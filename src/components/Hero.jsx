@@ -4,15 +4,24 @@ import { ArrowRight, Star, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lu
 export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
   const quickProblems = [
     { label: 'Joint Pain', categoryId: 'bone-joint' },
-    { label: 'Tinnitus & Ear Ringing', categoryId: 'tinnitus-ear' },
-    { label: 'Sexual Health', categoryId: 'sexual-health' },
-    { label: 'Migraine & Nerves', categoryId: 'brain-nerve' },
-    { label: 'Dental & Teeth', categoryId: 'dental' },
-    { label: 'Weight Loss & Metabolism', categoryId: 'weight-management' },
     { label: 'Back Pain', categoryId: 'bone-joint' },
+    { label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
+    { label: 'Tinnitus', categoryId: 'tinnitus-ear' },
+    { label: 'Migraine Issues', categoryId: 'brain-nerve' },
+    { label: 'Hair Fall', categoryId: 'skin-hair' },
+    { label: 'Skin Acne', categoryId: 'skin-hair' },
+    { label: 'Skin Allergy', categoryId: 'skin-hair' },
+    { label: 'Cavities', categoryId: 'dental' },
+    { label: 'Gum Disease', categoryId: 'dental' },
+    { label: 'Teeth Bleeding', categoryId: 'dental' },
+    { label: 'Yellow Teeth', categoryId: 'dental' },
+    { label: 'Obesity', categoryId: 'weight-management' },
+    { label: 'Slow Metabolism', categoryId: 'weight-management' },
     { label: 'Diabetes', categoryId: 'diabetes' },
     { label: 'Prostate Issues', categoryId: 'prostate' },
-    { label: 'Stress', categoryId: 'mental-health' }
+    { label: 'Sexual Health', categoryId: 'sexual-health' },
+    { label: 'Stress', categoryId: 'mental-health' },
+    { label: 'Mood Swings', categoryId: 'mental-health' }
   ];
 
   return (
