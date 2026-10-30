@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Search, ArrowRight, Star, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Star, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
 
-export function Hero({ onSearchSubmit, onSelectCategory, onExploreConcerns, onStartBooking }) {
-  const [searchTerm, setSearchTerm] = useState('');
-
+export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
   const quickProblems = [
     { label: 'Joint Pain', categoryId: 'bone-joint' },
     { label: 'Tinnitus & Ear Ringing', categoryId: 'tinnitus-ear' },
@@ -12,11 +10,6 @@ export function Hero({ onSearchSubmit, onSelectCategory, onExploreConcerns, onSt
     { label: 'Dental & Teeth', categoryId: 'dental' },
     { label: 'Weight Loss & Metabolism', categoryId: 'weight-management' }
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearchSubmit(searchTerm.trim());
-  };
 
   return (
     <div className="bookdoc-hero-wrapper">
@@ -39,40 +32,6 @@ export function Hero({ onSearchSubmit, onSelectCategory, onExploreConcerns, onSt
               <span className="free-tag">100% FREE</span>
               <span>Online consultations with certified medical specialists</span>
             </div>
-
-            {/* Search Input Bar */}
-            <form className="bookdoc-quick-search-form" onSubmit={handleSubmit}>
-              <div className="quick-search-input-box">
-                <Search size={18} className="search-icon" />
-                <input
-                  type="text"
-                  placeholder="Enter any health problem or symptom..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  id="bookdoc-hero-input"
-                  aria-label="Search health concern or symptom"
-                />
-              </div>
-
-              <div className="bookdoc-hero-btn-group">
-                <button
-                  type="submit"
-                  className="bookdoc-pill-btn bookdoc-pill-primary"
-                  id="btn-hero-find-doctor"
-                >
-                  <Search size={16} />
-                  <span>Find a Doctor</span>
-                </button>
-
-                <button
-                  type="button"
-                  className="bookdoc-pill-btn bookdoc-pill-ghost"
-                  onClick={onExploreConcerns}
-                >
-                  How it Works
-                </button>
-              </div>
-            </form>
 
             {/* Quick Problem Pills */}
             <div className="bookdoc-quick-chips">
