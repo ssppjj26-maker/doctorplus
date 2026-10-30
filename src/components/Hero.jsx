@@ -86,15 +86,8 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
       {/* Overlapping Floating Stats Bar matching exact screenshot */}
       <div className="bookdoc-floating-stats-card">
         <div className="stat-column">
-          <div className="stat-number">24/7</div>
-          <div className="stat-label">Booking</div>
-        </div>
-
-        <div className="stat-divider" />
-
-        <div className="stat-column">
-          <div className="stat-number">45+</div>
-          <div className="stat-label">Certified Doctors</div>
+          <div className="stat-number">1.8M</div>
+          <div className="stat-label">Happy Clients</div>
         </div>
 
         <div className="stat-divider" />
@@ -107,8 +100,15 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
         <div className="stat-divider" />
 
         <div className="stat-column">
-          <div className="stat-number">1.8M</div>
-          <div className="stat-label">Happy Clients</div>
+          <div className="stat-number">45+</div>
+          <div className="stat-label">Certified Doctors</div>
+        </div>
+
+        <div className="stat-divider" />
+
+        <div className="stat-column">
+          <div className="stat-number">24/7</div>
+          <div className="stat-label">Booking</div>
         </div>
       </div>
     </div>
