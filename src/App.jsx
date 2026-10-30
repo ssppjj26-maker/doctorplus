@@ -148,11 +148,9 @@ export default function App() {
               }}
             />
 
-            {/* 3. Our Departments */}
-            <CategoriesSection
-              onSelectCategory={handleSelectCategory}
-              onViewCategoryDetail={handleViewCategoryDetail}
-              onStartBooking={handleStartBooking}
+            {/* 3. Customer Reviews for Free Online Consultation Services */}
+            <PatientReviewsSection
+              onStartBooking={() => handleStartBooking()}
             />
 
             {/* 4. One Major Problem = One Dedicated Doctor Matcher */}
@@ -161,9 +159,11 @@ export default function App() {
               onViewDoctorProfile={(doc) => setDoctorProfileModalDoc(doc)}
             />
 
-            {/* 5. Customer Reviews for Free Online Consultation Services */}
-            <PatientReviewsSection
-              onStartBooking={() => handleStartBooking()}
+            {/* 5. Our Departments */}
+            <CategoriesSection
+              onSelectCategory={handleSelectCategory}
+              onViewCategoryDetail={handleViewCategoryDetail}
+              onStartBooking={handleStartBooking}
             />
 
             {/* 6. Featured Doctors */}
