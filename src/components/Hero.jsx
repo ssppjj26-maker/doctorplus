@@ -6,11 +6,8 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
     { label: 'Joint Pain', categoryId: 'bone-joint' },
     { label: 'Back Pain', categoryId: 'bone-joint' },
     { label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
-    { label: 'Tinnitus', categoryId: 'tinnitus-ear' },
-    { label: 'Migraine Issues', categoryId: 'brain-nerve' },
     { label: 'Hair Fall', categoryId: 'skin-hair' },
     { label: 'Skin Acne', categoryId: 'skin-hair' },
-    { label: 'Skin Allergy', categoryId: 'skin-hair' },
     { label: 'Cavities', categoryId: 'dental' },
     { label: 'Gum Disease', categoryId: 'dental' },
     { label: 'Teeth Bleeding', categoryId: 'dental' },
@@ -20,8 +17,7 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
     { label: 'Diabetes', categoryId: 'diabetes' },
     { label: 'Prostate Issues', categoryId: 'prostate' },
     { label: 'Sexual Health', categoryId: 'sexual-health' },
-    { label: 'Stress', categoryId: 'mental-health' },
-    { label: 'Mood Swings', categoryId: 'mental-health' }
+    { label: 'Stress', categoryId: 'mental-health' }
   ];
 
   return (
