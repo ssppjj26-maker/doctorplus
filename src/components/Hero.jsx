@@ -8,7 +8,11 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
     { label: 'Sexual Health', categoryId: 'sexual-health' },
     { label: 'Migraine & Nerves', categoryId: 'brain-nerve' },
     { label: 'Dental & Teeth', categoryId: 'dental' },
-    { label: 'Weight Loss & Metabolism', categoryId: 'weight-management' }
+    { label: 'Weight Loss & Metabolism', categoryId: 'weight-management' },
+    { label: 'Back Pain', categoryId: 'bone-joint' },
+    { label: 'Diabetes', categoryId: 'diabetes' },
+    { label: 'Prostate Issues', categoryId: 'prostate' },
+    { label: 'Stress', categoryId: 'mental-health' }
   ];
 
   return (
@@ -38,7 +42,7 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
               <span className="chips-label">Common concerns:</span>
               {quickProblems.map((p) => (
                 <button
-                  key={p.categoryId}
+                  key={p.label}
                   type="button"
                   className="quick-chip-btn"
                   onClick={() => onSelectCategory(p.categoryId)}
