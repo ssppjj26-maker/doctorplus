@@ -3,21 +3,21 @@ import { ArrowRight, Star, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lu
 
 export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
   const quickProblems = [
-    { label: 'Joint Pain', categoryId: 'bone-joint' },
-    { label: 'Back Pain', categoryId: 'bone-joint' },
-    { label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
-    { label: 'Hair Fall', categoryId: 'skin-hair' },
-    { label: 'Skin Acne', categoryId: 'skin-hair' },
-    { label: 'Cavities', categoryId: 'dental' },
-    { label: 'Gum Disease', categoryId: 'dental' },
-    { label: 'Teeth Bleeding', categoryId: 'dental' },
-    { label: 'Yellow Teeth', categoryId: 'dental' },
-    { label: 'Obesity', categoryId: 'weight-management' },
-    { label: 'Slow Metabolism', categoryId: 'weight-management' },
     { label: 'Diabetes', categoryId: 'diabetes' },
-    { label: 'Prostate Issues', categoryId: 'prostate' },
+    { label: 'Joint Pain', categoryId: 'bone-joint' },
+    { label: 'Stress', categoryId: 'mental-health' },
+    { label: 'Back Pain', categoryId: 'bone-joint' },
+    { label: 'Obesity', categoryId: 'weight-management' },
+    { label: 'Cavities', categoryId: 'dental' },
     { label: 'Sexual Health', categoryId: 'sexual-health' },
-    { label: 'Stress', categoryId: 'mental-health' }
+    { label: 'Hair Fall', categoryId: 'skin-hair' },
+    { label: 'Prostate Issues', categoryId: 'prostate' },
+    { label: 'Gum Disease', categoryId: 'dental' },
+    { label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
+    { label: 'Slow Metabolism', categoryId: 'weight-management' },
+    { label: 'Teeth Bleeding', categoryId: 'dental' },
+    { label: 'Skin Acne', categoryId: 'skin-hair' },
+    { label: 'Yellow Teeth', categoryId: 'dental' }
   ];
 
   return (
