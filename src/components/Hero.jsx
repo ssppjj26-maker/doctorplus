@@ -93,22 +93,22 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
         <div className="stat-divider" />
 
         <div className="stat-column">
-          <div className="stat-number">500+</div>
-          <div className="stat-label">Doctors</div>
+          <div className="stat-number">45+</div>
+          <div className="stat-label">Certified Doctors</div>
         </div>
 
         <div className="stat-divider" />
 
         <div className="stat-column">
-          <div className="stat-number">10+</div>
-          <div className="stat-label">Experience</div>
+          <div className="stat-number">12+</div>
+          <div className="stat-label">Years of Experience</div>
         </div>
 
         <div className="stat-divider" />
 
         <div className="stat-column">
-          <div className="stat-number">120+</div>
-          <div className="stat-label">Hospitals</div>
+          <div className="stat-number">1.8M</div>
+          <div className="stat-label">Happy Clients</div>
         </div>
       </div>
     </div>
