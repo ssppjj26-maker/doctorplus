@@ -114,7 +114,7 @@ export function ProblemDoctorMatcher({ onStartBooking, onViewDoctorProfile }) {
                 src={matchedDoctor.photo}
                 alt={matchedDoctor.name}
                 className="matcher-doc-avatar"
-              />
+               loading="lazy" decoding="async" />
               <div className="verified-badge-pill">
                 <ShieldCheck size={13} />
                 <span>Verified Specialist</span>

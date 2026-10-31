@@ -284,7 +284,7 @@ export function BookingWizardModal({
                             borderRadius: 'var(--radius-sm)',
                             objectFit: 'cover'
                           }}
-                        />
+                         loading="lazy" decoding="async" />
                         <div>
                           <strong style={{ fontSize: '16px', color: 'var(--text-main)', display: 'block' }}>
                             {doc.name}

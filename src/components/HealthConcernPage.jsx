@@ -153,7 +153,7 @@ export function HealthConcernPage({
                           src={doc.photo}
                           alt={doc.name}
                           className="doctor-photo"
-                        />
+                         loading="lazy" decoding="async" />
                         <div className="doctor-info-col">
                           <h3 className="doctor-name">{doc.name}</h3>
                           <div className="doctor-specialty">{doc.specialty}</div>

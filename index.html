@@ -8,9 +8,17 @@
     <meta name="keywords" content="DoctorPlus, book a doctor anytime anywhere, free online consultation, international doctors, telehealth" />
     
     <!-- Google Fonts: Outfit & Inter -->
+    <!-- High-Priority Preconnect & Preloads -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/hero-doctor.jpg" fetchpriority="high" type="image/jpeg">
+
+    <!-- Non-render-blocking Google Fonts with instant fallback -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap">
+    </noscript>
     
     <!-- DoctorPlus 4-Color Clover Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect x='2' y='2' width='13' height='13' rx='6.5' fill='%2310B981'/><rect x='19' y='2' width='13' height='13' rx='6.5' fill='%2306B6D4'/><rect x='2' y='19' width='13' height='13' rx='6.5' fill='%231E3A8A'/><rect x='19' y='19' width='13' height='13' rx='6.5' fill='%231D70E8'/></svg>" />

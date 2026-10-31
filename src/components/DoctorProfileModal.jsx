@@ -43,7 +43,7 @@ export function DoctorProfileModal({ doctor, onClose, onBookDoctor, patientTimez
                 border: '1px solid var(--border-color)',
                 flexShrink: 0
               }}
-            />
+             loading="lazy" decoding="async" />
 
             <div style={{ flex: 1, minWidth: '240px' }}>
               <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '2px' }}>

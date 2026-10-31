@@ -66,15 +66,19 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
                 src="/hero-doctor.jpg"
                 alt="DoctorPlus certified medical specialist"
                 className="bookdoc-hero-doctor-img"
+                fetchPriority="high"
+                decoding="async"
+                width="460"
+                height="390"
               />
 
               {/* Floating Social Proof Pill Badge */}
               <div className="bookdoc-floating-social-proof">
                 <div className="avatar-cluster">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="Patient 1" className="cluster-avatar" />
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Patient 2" className="cluster-avatar" />
-                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=100" alt="Patient 3" className="cluster-avatar" />
-                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100" alt="Patient 4" className="cluster-avatar" />
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="Patient 1" className="cluster-avatar" loading="lazy" decoding="async" width="36" height="36" />
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Patient 2" className="cluster-avatar" loading="lazy" decoding="async" width="36" height="36" />
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=100" alt="Patient 3" className="cluster-avatar" loading="lazy" decoding="async" width="36" height="36" />
+                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100" alt="Patient 4" className="cluster-avatar" loading="lazy" decoding="async" width="36" height="36" />
                   <div className="cluster-more-badge">1M+</div>
                 </div>
                 <div className="social-proof-text">
