@@ -742,8 +742,8 @@ export const INITIAL_DOCTORS = [
   {
     id: 'doc-hannah-schmidt',
     name: 'Dr. Hannah Schmidt',
-    title: 'Board Certified Internal Medicine Physician',
-    specialty: 'General Practitioner',
+    title: 'Board Certified General Doctor & Internal Medicine Physician',
+    specialty: 'General Doctor',
     categoryId: 'general-health',
     qualifications: [
       { degree: 'State Examination in Medicine (MD)', institution: 'LMU Munich', year: 2014 },
@@ -765,6 +765,7 @@ export const INITIAL_DOCTORS = [
     photo: 'https://images.unsplash.com/photo-1594824813712-40e83713f8c8?auto=format&fit=crop&q=80&w=500',
     bio: 'Dr. Hannah Schmidt is a diagnostic physician who specializes in post-viral exhaustion, complex multi-symptom presentations, preventative lab screenings, and holistic primary health for international patients.',
     areasOfCare: [
+      'General health advice & virtual consultation triage',
       'Chronic unrefreshing fatigue & biomarker reviews',
       'Preventive full-body screening and lab analysis',
       'Post-viral recovery protocols',

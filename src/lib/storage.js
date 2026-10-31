@@ -8,7 +8,7 @@
 import { INITIAL_DOCTORS, INITIAL_SAMPLE_APPOINTMENTS, INITIAL_REVIEWS, CATEGORIES, TIMEZONES } from '../data/healthcareData';
 
 const STORAGE_KEYS = {
-  DOCTORS: 'bookdoc_doctors_v10',
+  DOCTORS: 'doctorplus_doctors_v11',
   APPOINTMENTS: 'bookdoc_appointments_v10',
   NOTIFICATIONS: 'bookdoc_notifications_v10',
   REVIEWS: 'bookdoc_reviews_v17',

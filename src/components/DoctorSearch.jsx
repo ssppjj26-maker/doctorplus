@@ -6,6 +6,86 @@ import {
 import { CATEGORIES } from '../data/healthcareData';
 import { convertSlotToPatientTime } from '../lib/storage';
 
+export const SPECIALTY_OPTIONS = [
+  {
+    id: 'general-doctor',
+    label: 'General Doctor (General Advice & Health)',
+    specialtyKey: 'General Doctor',
+    altKeys: ['General Practitioner', 'General Physician'],
+    categoryId: 'general-health'
+  },
+  {
+    id: 'dentist',
+    label: 'Dentist (Teeth & Gum Related Issues)',
+    specialtyKey: 'Dentist',
+    altKeys: ['Dental Surgeon', 'Periodontist'],
+    categoryId: 'dental'
+  },
+  {
+    id: 'orthopedic',
+    label: 'Orthopedic Specialist (Joint, Bone & Back Pain)',
+    specialtyKey: 'Orthopedic Specialist',
+    altKeys: ['Orthopedic Spine & Joint Specialist'],
+    categoryId: 'bone-joint'
+  },
+  {
+    id: 'dermatologist',
+    label: 'Dermatologist (Skin & Hair Issues)',
+    specialtyKey: 'Dermatologist',
+    altKeys: ['Trichologist'],
+    categoryId: 'skin-hair'
+  },
+  {
+    id: 'diabetologist',
+    label: 'Diabetologist (Diabetes & Blood Sugar)',
+    specialtyKey: 'Diabetologist',
+    altKeys: [],
+    categoryId: 'diabetes'
+  },
+  {
+    id: 'endocrinologist',
+    label: 'Endocrinologist (Weight Loss & Metabolism)',
+    specialtyKey: 'Endocrinologist',
+    altKeys: ['Metabolic Physician'],
+    categoryId: 'weight-management'
+  },
+  {
+    id: 'ent',
+    label: 'ENT Specialist (Ear Ringing & Tinnitus)',
+    specialtyKey: 'ENT & Audiology Specialist',
+    altKeys: ['ENT Specialist', 'Audiologist'],
+    categoryId: 'tinnitus-ear'
+  },
+  {
+    id: 'neurologist',
+    label: 'Neurologist (Brain & Nerve Care)',
+    specialtyKey: 'Neurologist',
+    altKeys: ['Clinical Neurologist'],
+    categoryId: 'brain-nerve'
+  },
+  {
+    id: 'psychiatrist',
+    label: 'Psychiatrist (Mental Health & Stress)',
+    specialtyKey: 'Psychiatrist',
+    altKeys: ['Neuropsychiatrist'],
+    categoryId: 'mental-health'
+  },
+  {
+    id: 'urologist',
+    label: 'Urologist (Prostate & Men\'s Health)',
+    specialtyKey: 'Urologist',
+    altKeys: ['Urological Surgeon'],
+    categoryId: 'prostate'
+  },
+  {
+    id: 'sexual-medicine',
+    label: 'Sexual Health Specialist (Sexual Health & Intimacy)',
+    specialtyKey: 'Sexual Medicine & Andrology',
+    altKeys: ['Andrologist'],
+    categoryId: 'sexual-health'
+  }
+];
+
 export const COMMON_HEALTH_CONCERNS = [
   { id: 'diabetes', label: 'Diabetes', categoryId: 'diabetes' },
   { id: 'joint-pain', label: 'Joint Pain', categoryId: 'bone-joint' },
@@ -77,9 +157,17 @@ export function DoctorSearch({
         }
       }
 
-      // Specialty filter
-      if (selectedSpecialty !== 'all' && doc.specialty !== selectedSpecialty) {
-        return false;
+      // Specialty filter (supporting health issue mapped options)
+      if (selectedSpecialty !== 'all') {
+        const option = SPECIALTY_OPTIONS.find((s) => s.id === selectedSpecialty || s.specialtyKey === selectedSpecialty);
+        if (option) {
+          const matchSpecialty = doc.specialty === option.specialtyKey ||
+            (option.altKeys && option.altKeys.includes(doc.specialty));
+          const matchCategory = doc.categoryId === option.categoryId;
+          if (!matchSpecialty && !matchCategory) return false;
+        } else if (doc.specialty !== selectedSpecialty) {
+          return false;
+        }
       }
 
       // Language filter
@@ -217,7 +305,7 @@ export function DoctorSearch({
               ))}
             </select>
 
-            {/* Specialty filter */}
+            {/* Specialty filter (options mapped to health issues) */}
             <select
               value={selectedSpecialty}
               onChange={(e) => setSelectedSpecialty(e.target.value)}
@@ -225,8 +313,10 @@ export function DoctorSearch({
               aria-label="Filter by Specialty"
             >
               <option value="all">All Specialties</option>
-              {allSpecialties.map((s) => (
-                <option key={s} value={s}>{s}</option>
+              {SPECIALTY_OPTIONS.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.label}
+                </option>
               ))}
             </select>
 
