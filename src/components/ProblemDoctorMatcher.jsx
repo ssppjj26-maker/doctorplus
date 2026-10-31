@@ -53,7 +53,7 @@ export function ProblemDoctorMatcher({ onStartBooking, onViewDoctorProfile }) {
           </div>
           <h2 className="matcher-title">One Major Problem — One Dedicated Doctor</h2>
           <p className="matcher-subtitle">
-            Skip the runaround between general practitioners. For any health problem, BookDoc pairs you directly with one dedicated, board-certified specialist for a 100% Free Online Consultation.
+            Skip the runaround between general practitioners. For any health problem, DoctorPlus pairs you directly with one dedicated, board-certified specialist for a 100% Free Online Consultation.
           </p>
         </div>
 

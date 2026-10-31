@@ -956,14 +956,14 @@ export const QUESTIONNAIRES = INTAKE_QUESTIONS;
 export const FAQS = [
   {
     q: 'How does the "One Major Problem = One Dedicated Doctor" model work?',
-    a: 'Unlike generic directories that shuffle you between generalists, BookDoc assigns one dedicated, board-certified specialist for your specific medical problem. Your dedicated specialist leads your evaluation from start to finish.'
+    a: 'Unlike generic directories that shuffle you between generalists, DoctorPlus assigns one dedicated, board-certified specialist for your specific medical problem. Your dedicated specialist leads your evaluation from start to finish.'
   },
   {
     q: 'Is the online consultation really 100% free?',
     a: 'Yes! Our introductory telehealth video consultations are 100% free with no credit card required and no hidden subscription fees. Patients can connect directly with our board-certified medical specialists.'
   },
   {
-    q: 'What credentials do BookDoc specialists hold?',
+    q: 'What credentials do DoctorPlus specialists hold?',
     a: 'All consulting doctors are board-certified specialists with verified medical licenses, trained at renowned academic medical centers with extensive clinical experience.'
   },
   {

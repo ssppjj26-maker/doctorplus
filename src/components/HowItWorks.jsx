@@ -24,7 +24,7 @@ export function HowItWorks({ onStartBooking }) {
     <section className="section-padding how-it-works-section" id="how-it-works">
       <div className="container">
         <div className="section-header">
-          <h2>How CareFind Works</h2>
+          <h2>How DoctorPlus Works</h2>
           <p>Finding the right healthcare professional is straightforward and simple.</p>
         </div>
 

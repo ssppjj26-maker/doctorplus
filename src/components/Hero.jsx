@@ -64,7 +64,7 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
               {/* Doctor Cutout Image matching screenshot */}
               <img
                 src="/hero-doctor.jpg"
-                alt="BookDoc certified medical specialist"
+                alt="DoctorPlus certified medical specialist"
                 className="bookdoc-hero-doctor-img"
               />
 

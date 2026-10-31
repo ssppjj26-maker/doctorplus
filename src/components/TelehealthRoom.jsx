@@ -66,7 +66,7 @@ export function TelehealthRoom({ appointment, onClose, onFinishConsultation }) {
           <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 10px #22c55e' }} />
           <div>
             <strong style={{ fontSize: '1rem', display: 'block' }}>
-              CareFind Encrypted Telehealth Session • {appointment.id}
+              DoctorPlus Encrypted Telehealth Session • {appointment.id}
             </strong>
             <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
               {appointment.categoryName} Consultation with {appointment.doctorName}

@@ -11,7 +11,7 @@ export function AboutPage({ onStartBooking }) {
     <div className="section-padding">
       <div className="container" style={{ maxWidth: '820px' }}>
         <div className="section-header">
-          <h1>About CareFind</h1>
+          <h1>About DoctorPlus</h1>
           <p>
             Making it easier for people to discover healthcare professionals and arrange consultations online.
           </p>
@@ -22,8 +22,8 @@ export function AboutPage({ onStartBooking }) {
             Our Purpose & Core Philosophy
           </h3>
           <p style={{ marginBottom: '16px' }}>
-            CareFind was created around a single, straightforward principle:
-            <em> "I have a health concern. CareFind can help me find an appropriate healthcare professional, understand who they are, and book a consultation without making the process complicated."</em>
+            DoctorPlus was created around a single, straightforward principle:
+            <em> "I have a health concern. DoctorPlus can help me find an appropriate healthcare professional, understand who they are, and book a consultation without making the process complicated."</em>
           </p>
           <p style={{ marginBottom: '16px' }}>
             We believe patients deserve complete transparency before choosing a healthcare professional. That means showing verified educational credentials, genuine clinical experience, clear language proficiencies, and honest consultation fees without surprise bills or aggressive marketing claims.
@@ -72,7 +72,7 @@ export function ContactPage() {
     <div className="section-padding">
       <div className="container" style={{ maxWidth: '820px' }}>
         <div className="section-header">
-          <h1>Contact CareFind</h1>
+          <h1>Contact DoctorPlus</h1>
           <p>
             Have questions about finding a doctor, our credential verification, or technical support?
           </p>
@@ -86,11 +86,11 @@ export function ContactPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
               <div>
                 <span style={{ color: 'var(--text-subtle)', display: 'block', fontSize: '12px' }}>Email Support</span>
-                <strong>support@carefind.health</strong>
+                <strong>support@doctorplus.health</strong>
               </div>
               <div>
                 <span style={{ color: 'var(--text-subtle)', display: 'block', fontSize: '12px' }}>Practitioner Inquiries</span>
-                <strong>doctors@carefind.health</strong>
+                <strong>doctors@doctorplus.health</strong>
               </div>
               <div>
                 <span style={{ color: 'var(--text-subtle)', display: 'block', fontSize: '12px' }}>Support Hours</span>
@@ -99,7 +99,7 @@ export function ContactPage() {
               <div>
                 <span style={{ color: 'var(--text-subtle)', display: 'block', fontSize: '12px' }}>Operational Notice</span>
                 <span style={{ color: 'var(--text-muted)' }}>
-                  CareFind operates as an online healthcare discovery & booking technology platform.
+                  DoctorPlus operates as an online healthcare discovery & booking technology platform.
                 </span>
               </div>
             </div>
@@ -185,13 +185,13 @@ export function MedicalDisclaimerPage() {
       <div className="container" style={{ maxWidth: '820px' }}>
         <div className="section-header">
           <h1>Medical Disclaimer</h1>
-          <p>Important legal and health safety disclosures regarding the use of CareFind.</p>
+          <p>Important legal and health safety disclosures regarding the use of DoctorPlus.</p>
         </div>
 
         <div style={{ background: 'white', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '32px', lineHeight: 1.7, fontSize: '15px', color: 'var(--text-muted)' }}>
           <div className="notice-box-emergency" style={{ marginBottom: '24px' }}>
             <strong style={{ display: 'block', fontSize: '15px', marginBottom: '4px' }}>
-              CareFind Is Not an Emergency Medical Service
+              DoctorPlus Is Not an Emergency Medical Service
             </strong>
             If you are experiencing severe chest pain, shortness of breath, loss of consciousness, stroke symptoms, severe bleeding, or any life-threatening emergency, call your local emergency service (112 / 911 / 999) or go to the nearest hospital emergency department immediately.
           </div>
@@ -200,7 +200,7 @@ export function MedicalDisclaimerPage() {
             1. Nature of the Platform
           </h3>
           <p style={{ marginBottom: '16px' }}>
-            CareFind is a healthcare discovery and appointment scheduling platform. CareFind connects individuals with independent healthcare professionals. CareFind is not a hospital, clinic, or medical practice and does not directly provide medical diagnoses or clinical care.
+            DoctorPlus is a healthcare discovery and appointment scheduling platform. DoctorPlus connects individuals with independent healthcare professionals. DoctorPlus is not a hospital, clinic, or medical practice and does not directly provide medical diagnoses or clinical care.
           </p>
 
           <h3 style={{ fontSize: '18px', color: 'var(--text-main)', marginBottom: '8px' }}>
@@ -221,7 +221,7 @@ export function MedicalDisclaimerPage() {
             4. Prescriptions & Medication Decisions
           </h3>
           <p>
-            Any decision to prescribe medication rests solely with the qualified healthcare professional after reviewing your medical history and where legally authorized under local medical regulations. CareFind does not guarantee prescription issuance and never automatically prescribes medication.
+            Any decision to prescribe medication rests solely with the qualified healthcare professional after reviewing your medical history and where legally authorized under local medical regulations. DoctorPlus does not guarantee prescription issuance and never automatically prescribes medication.
           </p>
         </div>
       </div>
@@ -266,7 +266,7 @@ export function PrivacyPolicyPage() {
             4. Your Rights
           </h3>
           <p>
-            You may request to view, update, or delete your appointment history and stored information at any time by contacting privacy@carefind.health.
+            You may request to view, update, or delete your appointment history and stored information at any time by contacting privacy@doctorplus.health.
           </p>
         </div>
       </div>

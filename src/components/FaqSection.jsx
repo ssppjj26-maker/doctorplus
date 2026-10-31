@@ -12,7 +12,7 @@ export function FaqSection() {
       <div className="container">
         <div className="section-header">
           <h2>Frequently Asked Questions</h2>
-          <p>Clear, transparent answers about how CareFind works and what to expect.</p>
+          <p>Clear, transparent answers about how DoctorPlus works and what to expect.</p>
         </div>
 
         <div className="faq-list">

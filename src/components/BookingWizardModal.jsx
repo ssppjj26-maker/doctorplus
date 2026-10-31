@@ -587,7 +587,7 @@ export function BookingWizardModal({
                   <AlertTriangle size={18} style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div>
                     <strong style={{ display: 'block', marginBottom: '2px' }}>Important Medical Safety Notice:</strong>
-                    CareFind is not an emergency medical service. If you are experiencing a medical emergency, severe symptoms or an immediate danger to your health, contact your local emergency service or seek urgent in-person medical care immediately. Do not submit emergency symptoms through this appointment form.
+                    DoctorPlus is not an emergency medical service. If you are experiencing a medical emergency, severe symptoms or an immediate danger to your health, contact your local emergency service or seek urgent in-person medical care immediately. Do not submit emergency symptoms through this appointment form.
                   </div>
                 </div>
               </div>

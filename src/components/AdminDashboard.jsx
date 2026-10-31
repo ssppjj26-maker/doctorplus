@@ -86,7 +86,7 @@ export function AdminDashboard({
               Administration & Credentialing
             </span>
             <h1 style={{ fontSize: '28px', fontWeight: 700, marginTop: '4px' }}>
-              CareFind Management Center
+              DoctorPlus Management Center
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
               Audit medical credentials, manage participating doctors, and oversee appointment scheduling.

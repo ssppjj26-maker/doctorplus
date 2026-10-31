@@ -16,8 +16,8 @@ export function Footer({ onNavigate }) {
                 <rect x="19" y="19" width="13" height="13" rx="6.5" fill="#1D70E8" />
               </svg>
               <h3 style={{ margin: 0, fontSize: '22px', fontWeight: 800 }}>
-                <span style={{ color: '#0f172a' }}>Book</span>
-                <span style={{ color: '#1d70e8' }}>Doc</span>
+                <span style={{ color: '#0f172a' }}>Doctor</span>
+                <span style={{ color: '#1d70e8' }}>Plus</span>
               </h3>
             </div>
             <p style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.6, maxWidth: '320px' }}>
@@ -58,7 +58,7 @@ export function Footer({ onNavigate }) {
             <ul className="footer-links">
               <li>
                 <button className="footer-link-btn" onClick={() => onNavigate('about')}>
-                  About CareFind
+                  About DoctorPlus
                 </button>
               </li>
               <li>
@@ -127,10 +127,10 @@ export function Footer({ onNavigate }) {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div>
-            © {new Date().getFullYear()} CareFind. All rights reserved.
+            © {new Date().getFullYear()} DoctorPlus. All rights reserved.
           </div>
           <div style={{ color: '#64748b', fontSize: '12px' }}>
-            CareFind is a healthcare discovery and appointment platform. Not an emergency medical service.
+            DoctorPlus is a healthcare discovery and appointment platform. Not an emergency medical service.
           </div>
         </div>
       </div>

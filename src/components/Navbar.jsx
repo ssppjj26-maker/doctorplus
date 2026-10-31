@@ -28,8 +28,8 @@ export function Navbar({ currentView, setCurrentView, apptCount, onStartBooking,
               <rect x="19" y="19" width="13" height="13" rx="6.5" fill="#1D70E8" />
             </svg>
             <span className="bookdoc-logo-text">
-              <span className="book-dark">Book</span>
-              <span className="doc-blue">Doc</span>
+              <span className="book-dark">Doctor</span>
+              <span className="doc-blue">Plus</span>
             </span>
           </div>
 

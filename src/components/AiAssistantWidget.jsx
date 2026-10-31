@@ -13,7 +13,7 @@ export function AiAssistantWidget({
   const [messages, setMessages] = useState([
     {
       sender: 'assistant',
-      text: "Hello! I am the CareFind Assistant. I can help you find the right healthcare professional, explain how booking works, and navigate the platform.",
+      text: "Hello! I am the DoctorPlus Assistant. I can help you find the right healthcare professional, explain how booking works, and navigate the platform.",
       chips: [
         'Find a doctor for Weight Management',
         'How does online consultation work?',
@@ -58,7 +58,7 @@ export function AiAssistantWidget({
     let matchedCat = null;
 
     if (lower.includes('how') && (lower.includes('work') || lower.includes('book'))) {
-      replyText = "CareFind works in 3 simple steps: 1) Tell us your health concern or specialty, 2) Choose an appropriate doctor and review their verified qualifications, 3) Select an available date/time in your timezone and confirm.";
+      replyText = "DoctorPlus works in 3 simple steps: 1) Tell us your health concern or specialty, 2) Choose an appropriate doctor and review their verified qualifications, 3) Select an available date/time in your timezone and confirm.";
     } else if (lower.includes('verify') || lower.includes('verified') || lower.includes('qualification')) {
       replyText = "We verify medical council registration licenses and academic degrees provided by participating doctors before displaying verification badges. You can see each doctor's credentials directly on their profile.";
     } else if (lower.includes('free') || lower.includes('price') || lower.includes('cost')) {
@@ -83,7 +83,7 @@ export function AiAssistantWidget({
         else matchedCat = CATEGORIES.find(c => c.id === 'general-health') || CATEGORIES[0];
       }
 
-      replyText = `For ${matchedCat.name}, CareFind connects you with qualified practitioners (${matchedCat.specialtyName}) who can review your history and advise on lifestyle, nutrition, and care options during an online consultation.`;
+      replyText = `For ${matchedCat.name}, DoctorPlus connects you with qualified practitioners (${matchedCat.specialtyName}) who can review your history and advise on lifestyle, nutrition, and care options during an online consultation.`;
     }
 
     setTimeout(() => {
@@ -126,10 +126,10 @@ export function AiAssistantWidget({
             fontWeight: 600,
             fontSize: '14px'
           }}
-          aria-label="Open CareFind Assistant"
+          aria-label="Open DoctorPlus Assistant"
         >
           <Bot size={18} />
-          <span>CareFind Assistant</span>
+          <span>DoctorPlus Assistant</span>
         </button>
       )}
 
@@ -163,7 +163,7 @@ export function AiAssistantWidget({
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Bot size={20} />
               <div>
-                <strong style={{ display: 'block', fontSize: '15px' }}>CareFind Assistant</strong>
+                <strong style={{ display: 'block', fontSize: '15px' }}>DoctorPlus Assistant</strong>
                 <span style={{ fontSize: '11px', color: '#dbeafe' }}>Navigation & platform guide</span>
               </div>
             </div>

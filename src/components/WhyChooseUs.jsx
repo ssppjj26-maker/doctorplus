@@ -26,10 +26,10 @@ export function WhyChooseUs({ onStartBooking }) {
   ];
 
   return (
-    <section className="section-padding why-section" id="why-carefind">
+    <section className="section-padding why-section" id="why-doctorplus">
       <div className="container">
         <div className="section-header">
-          <h2>Why patients use CareFind</h2>
+          <h2>Why patients use DoctorPlus</h2>
           <p>
             Designed to make it easier for people to discover healthcare professionals and arrange consultations online.
           </p>
@@ -61,7 +61,7 @@ export function WhyChooseUs({ onStartBooking }) {
           <ShieldAlert size={20} style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
             <strong>Important Medical Safety Notice:</strong>
-            CareFind is not an emergency medical service. If you are experiencing a medical emergency, severe symptoms or an immediate danger to your health, contact your local emergency service (112 / 911 / 999) or seek urgent in-person medical care immediately.
+            DoctorPlus is not an emergency medical service. If you are experiencing a medical emergency, severe symptoms or an immediate danger to your health, contact your local emergency service (112 / 911 / 999) or seek urgent in-person medical care immediately.
           </div>
         </div>
       </div>

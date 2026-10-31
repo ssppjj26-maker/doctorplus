@@ -8,7 +8,7 @@ export const SEED_POSTS = [
     title: 'How to Choose the Right Specialist for Your Health Concern',
     category: 'General Health', categorySlugs: ['general-physician'], icon: 'Stethoscope',
     excerpt: 'Not sure whether you need a general physician or a specialist? Here is a simple framework to help you decide where to start.',
-    author: 'CareFind Editorial Team', date: '2026-09-28', readMins: 5,
+    author: 'DoctorPlus Editorial Team', date: '2026-09-28', readMins: 5,
     body: [
       ['p', 'Finding the right doctor starts with understanding what kind of care you need. For many everyday concerns, a general physician is a great first stop — they can assess your symptoms and refer you to a specialist if needed.'],
       ['h2', 'When to start with a general physician'],
@@ -25,7 +25,7 @@ export const SEED_POSTS = [
     title: 'Understanding Prediabetes: What the Numbers Mean',
     category: 'Diabetes', categorySlugs: ['diabetes', 'endocrinologist'], icon: 'Droplet',
     excerpt: 'Prediabetes is common and often has no symptoms. Learn what it means and why a conversation with a doctor matters.',
-    author: 'CareFind Editorial Team', date: '2026-09-20', readMins: 6,
+    author: 'DoctorPlus Editorial Team', date: '2026-09-20', readMins: 6,
     body: [
       ['p', 'Prediabetes means blood sugar levels are higher than normal but not yet in the diabetes range. Many people have it without knowing.'],
       ['h2', 'Why it matters'],
@@ -40,7 +40,7 @@ export const SEED_POSTS = [
     title: 'How Often Should You Get a Dental Checkup?',
     category: 'Dental', categorySlugs: ['dentist'], icon: 'Smile',
     excerpt: 'Regular dental visits help catch problems early. Here is what typically happens at a checkup and how to prepare.',
-    author: 'CareFind Editorial Team', date: '2026-09-12', readMins: 4,
+    author: 'DoctorPlus Editorial Team', date: '2026-09-12', readMins: 4,
     body: [
       ['p', 'Routine dental checkups typically include an examination of your teeth and gums and, often, a professional cleaning.'],
       ['h2', 'What to expect'],
@@ -53,7 +53,7 @@ export const SEED_POSTS = [
     title: 'Acne: When Is It Time to See a Dermatologist?',
     category: 'Skin', categorySlugs: ['dermatologist'], icon: 'Sparkles',
     excerpt: 'Over-the-counter products are not always enough. Learn the signs that it may be time to consult a skin specialist.',
-    author: 'CareFind Editorial Team', date: '2026-09-05', readMins: 5,
+    author: 'DoctorPlus Editorial Team', date: '2026-09-05', readMins: 5,
     body: [
       ['p', 'Acne is one of the most common skin concerns. While mild acne may respond to basic skincare, persistent or painful acne deserves professional attention.'],
       ['h2', 'Signs to book a consultation'],
@@ -66,7 +66,7 @@ export const SEED_POSTS = [
     title: 'Hair Fall: Common Causes and When to Get Help',
     category: 'Hair', categorySlugs: ['hair-loss', 'dermatologist'], icon: 'Scissors',
     excerpt: 'Some hair shedding is normal. Here is how to tell when it might be worth speaking with a trichologist or dermatologist.',
-    author: 'CareFind Editorial Team', date: '2026-08-29', readMins: 5,
+    author: 'DoctorPlus Editorial Team', date: '2026-08-29', readMins: 5,
     body: [
       ['p', 'It is normal to shed some hair every day. Sudden or patchy hair loss, however, can have many causes that a specialist can help identify.'],
       ['h2', 'Possible contributing factors'],
@@ -79,7 +79,7 @@ export const SEED_POSTS = [
     title: "Prostate Health Basics Every Man Should Know",
     category: 'Prostate', categorySlugs: ['prostate', 'urologist'], icon: 'ShieldPlus',
     excerpt: 'Urinary changes are common with age, but they should not be ignored. Here is when to consider seeing a urologist.',
-    author: 'CareFind Editorial Team', date: '2026-08-21', readMins: 4,
+    author: 'DoctorPlus Editorial Team', date: '2026-08-21', readMins: 4,
     body: [
       ['p', 'The prostate can change with age, and urinary symptoms are a common reason men see a urologist.'],
       ['h2', 'Symptoms worth discussing'],
@@ -92,7 +92,7 @@ export const SEED_POSTS = [
     title: 'A Simple Guide to Heart Health Checkups',
     category: 'Heart', categorySlugs: ['cardiology'], icon: 'HeartPulse',
     excerpt: 'Blood pressure, cholesterol and family history all play a role. Learn what a cardiology consultation usually covers.',
-    author: 'CareFind Editorial Team', date: '2026-08-14', readMins: 5,
+    author: 'DoctorPlus Editorial Team', date: '2026-08-14', readMins: 5,
     body: [
       ['p', 'A heart health checkup typically starts with a conversation about your history, lifestyle and any symptoms.'],
       ['h2', 'Common parts of a cardiology visit'],
@@ -105,7 +105,7 @@ export const SEED_POSTS = [
     title: 'Medical Weight Management, Explained',
     category: 'Weight Loss', categorySlugs: ['weight-loss', 'nutritionist'], icon: 'Scale',
     excerpt: 'Medical weight management combines clinical evaluation with nutrition and lifestyle support. Here is how it works.',
-    author: 'CareFind Editorial Team', date: '2026-08-07', readMins: 6,
+    author: 'DoctorPlus Editorial Team', date: '2026-08-07', readMins: 6,
     body: [
       ['p', 'Medical weight management is a doctor-guided approach that considers your overall health, not just the number on the scale.'],
       ['h2', 'Who you might see'],
@@ -116,20 +116,20 @@ export const SEED_POSTS = [
 ].map((p, i) => ({ ...p, id: `post_${i + 1}`, isSample: true, published: true }));
 
 export const SEED_FAQS = [
-  { q: 'Is booking an appointment really free?', a: 'Yes. Booking through CareFind is free for patients. Any consultation charges, if applicable, are settled directly with the clinic.' },
+  { q: 'Is booking an appointment really free?', a: 'Yes. Booking through DoctorPlus is free for patients. Any consultation charges, if applicable, are settled directly with the clinic.' },
   { q: 'How do I know a doctor is verified?', a: 'Doctors with a ✓ Verified badge have had their medical registration, qualifications and clinic details reviewed by our team.' },
   { q: 'Can I cancel or reschedule?', a: 'Yes. You can cancel or reschedule from your patient dashboard at any time before the appointment.' },
-  { q: 'Does CareFind provide medical advice?', a: 'No. CareFind helps you discover doctors and request appointments. It does not diagnose or provide medical advice.' },
-  { q: 'What happens in an emergency?', a: 'CareFind is not for emergencies. Please contact your local emergency services immediately.' },
+  { q: 'Does DoctorPlus provide medical advice?', a: 'No. DoctorPlus helps you discover doctors and request appointments. It does not diagnose or provide medical advice.' },
+  { q: 'What happens in an emergency?', a: 'DoctorPlus is not for emergencies. Please contact your local emergency services immediately.' },
 ];
 
 export const SEED_CONTENT = {
   heroTitle: 'Find the Right Doctor for Your Health',
   heroSubtitle: 'Search trusted doctors by specialty, health concern, location, and availability. Book your appointment for free.',
-  about: 'CareFind is a doctor discovery and appointment-booking platform. Our mission is simple: help every patient find the right doctor and book an appointment in under a minute — for free.\n\nWe verify doctors, show transparent profiles with qualifications and experience, and make availability visible in real time so you never have to call around.',
-  terms: 'These are sample Terms of Service for development purposes.\n\n1. CareFind is a discovery and booking service and does not provide medical care.\n2. Users must provide accurate information when booking.\n3. Doctors are responsible for the care they provide.\n4. Appointments may be cancelled or rescheduled by either party.\n\nReplace this content with your legal team\'s approved terms before launch.',
+  about: 'DoctorPlus is a doctor discovery and appointment-booking platform. Our mission is simple: help every patient find the right doctor and book an appointment in under a minute — for free.\n\nWe verify doctors, show transparent profiles with qualifications and experience, and make availability visible in real time so you never have to call around.',
+  terms: 'These are sample Terms of Service for development purposes.\n\n1. DoctorPlus is a discovery and booking service and does not provide medical care.\n2. Users must provide accurate information when booking.\n3. Doctors are responsible for the care they provide.\n4. Appointments may be cancelled or rescheduled by either party.\n\nReplace this content with your legal team\'s approved terms before launch.',
   privacy: 'This is a sample Privacy Policy for development purposes.\n\nWe collect only the information needed to book appointments: name, contact details, age, gender and reason for visit. Patient information is shared only with the doctor you book. We never sell personal data.\n\nReplace this content with your approved privacy policy before launch.',
-  contact: 'Email: support@carefind.example\nPhone: +91 00000 00000 (sample)\nHours: Mon–Sat, 9 AM – 7 PM',
+  contact: 'Email: support@doctorplus.health\nPhone: +91 00000 00000 (sample)\nHours: Mon–Sat, 9 AM – 7 PM',
   careers: 'We are building the simplest way to find and book healthcare. Open roles will be listed here.',
   disclaimer: 'This platform helps users discover healthcare professionals and request appointments. Information provided on the platform is for general informational purposes and is not a substitute for professional medical advice, diagnosis, or treatment. In an emergency, contact your local emergency services.',
 };

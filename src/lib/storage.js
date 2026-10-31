@@ -1,4 +1,4 @@
-// CareFind Local Storage & Timezone Utility Engine
+// DoctorPlus Local Storage & Timezone Utility Engine
 // Strictly honest data modeling:
 // - Real doctor models without fake hospital affiliations
 // - Authentic appointment management & live audit state
@@ -61,7 +61,7 @@ export function registerDoctor(doctorData) {
     rating: null,
     reviewCount: 0,
     photo: doctorData.photo || 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400',
-    bio: doctorData.bio || 'Qualified medical practitioner offering online consultations on CareFind.',
+    bio: doctorData.bio || 'Qualified medical practitioner offering online consultations on DoctorPlus.',
     areasOfCare: doctorData.areasOfCare || [doctorData.specialty],
     medicalRegistration: doctorData.medicalRegistration || 'State Medical Council (Pending Verification)',
     baseSlotTimesUTC: ['09:00', '11:00', '14:00', '16:00']
@@ -147,7 +147,7 @@ export function createAppointment(data) {
     date: data.date,
     time: data.timeFormatted,
     timezone: data.patientTimezone,
-    meetingLink: `https://carefind.health/room/${id}`,
+    meetingLink: `https://doctorplus.health/room/${id}`,
     details: `Your appointment with ${data.doctorName} (${data.categoryName || data.doctorSpecialty}) is scheduled for ${data.date} at ${data.timeFormatted} (${data.patientTimezone}).`
   });
 
@@ -365,12 +365,12 @@ export function generateIcsFile(appointment) {
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//CareFind//Healthcare Consultation//EN',
+    'PRODID:-//DoctorPlus//Healthcare Consultation//EN',
     'BEGIN:VEVENT',
-    `UID:${appointment.id}@carefind.health`,
+    `UID:${appointment.id}@doctorplus.health`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
-    `SUMMARY:CareFind Online Consultation with ${appointment.doctorName}`,
-    `DESCRIPTION:Consultation for ${appointment.categoryName || appointment.doctorSpecialty}. Online link: https://carefind.health/patient`,
+    `SUMMARY:DoctorPlus Online Consultation with ${appointment.doctorName}`,
+    `DESCRIPTION:Consultation for ${appointment.categoryName || appointment.doctorSpecialty}. Online link: https://doctorplus.health/patient`,
     `STATUS:CONFIRMED`,
     'END:VEVENT',
     'END:VCALENDAR'
@@ -380,7 +380,7 @@ export function generateIcsFile(appointment) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `carefind-consultation-${appointment.id}.ics`;
+  a.download = `doctorplus-consultation-${appointment.id}.ics`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

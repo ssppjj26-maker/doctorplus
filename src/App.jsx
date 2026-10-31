@@ -248,12 +248,12 @@ export default function App() {
             <div className="container" style={{ maxWidth: '780px' }}>
               <div className="section-header">
                 <h1>For Healthcare Professionals</h1>
-                <p>Join CareFind to accept verified online consultation requests from patients.</p>
+                <p>Join DoctorPlus to accept verified online consultation requests from patients.</p>
               </div>
               <div style={{ background: 'white', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '32px', lineHeight: 1.7, fontSize: '15px' }}>
                 <h3 style={{ fontSize: '20px', marginBottom: '12px' }}>Professional Credentialing Process</h3>
                 <p style={{ color: 'var(--text-muted)', marginBottom: '16px' }}>
-                  CareFind performs rigorous administrative verification of medical registration licenses and academic qualifications before displaying verified badges. Falsely marking yourself as verified is strictly prevented.
+                  DoctorPlus performs rigorous administrative verification of medical registration licenses and academic qualifications before displaying verified badges. Falsely marking yourself as verified is strictly prevented.
                 </p>
                 <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
                   <button

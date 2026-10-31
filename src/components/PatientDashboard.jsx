@@ -350,12 +350,12 @@ export function PatientDashboard({
           <div style={{ background: 'white', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '28px', maxWidth: '680px' }}>
             <h3 style={{ fontSize: '18px', marginBottom: '12px' }}>Privacy & Data Controls</h3>
             <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '16px' }}>
-              CareFind strictly protects sensitive patient records. Your clinical questionnaire responses and contact details are accessible solely by your consulting practitioner.
+              DoctorPlus strictly protects sensitive patient records. Your clinical questionnaire responses and contact details are accessible solely by your consulting practitioner.
             </p>
             <div style={{ background: 'var(--bg-alt)', padding: '16px', borderRadius: 'var(--radius-md)', fontSize: '13px', color: 'var(--text-muted)' }}>
               • End-to-end encrypted video consultation streaming<br />
               • Zero lead selling or affiliate marketing tracking<br />
-              • Request full data deletion at privacy@carefind.health
+              • Request full data deletion at privacy@doctorplus.health
             </div>
           </div>
         )}
@@ -419,7 +419,7 @@ export function PatientDashboard({
                     </div>
 
                     <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '16px' }}>
-                      * CareFind displays genuine, consent-verified patient feedback. No fabricated reviews are permitted.
+                      * DoctorPlus displays genuine, consent-verified patient feedback. No fabricated reviews are permitted.
                     </div>
 
                     <button type="submit" className="btn btn-primary btn-full">

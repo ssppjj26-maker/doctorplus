@@ -707,7 +707,7 @@ export async function registerDoctor(form) {
     });
     const u = { id: userId, role: 'doctor', name, email: form.email.toLowerCase(), phone: form.phone, password: hashPw(form.password), doctorId: id, status: 'active', createdAt: new Date().toISOString() };
     db.users.push(u);
-    notify(db, { userId, type: 'doctor_verification', title: 'Profile submitted for verification', body: 'Our team will review your registration and documents. You will be notified once verified.', email: { subject: 'Your CareFind doctor profile is under review', lines: ['Thank you for joining CareFind.', 'Verification usually takes 1–2 business days.'] } });
+    notify(db, { userId, type: 'doctor_verification', title: 'Profile submitted for verification', body: 'Our team will review your registration and documents. You will be notified once verified.', email: { subject: 'Your DoctorPlus doctor profile is under review', lines: ['Thank you for joining DoctorPlus.', 'Verification usually takes 1–2 business days.'] } });
     db.users.filter((x) => x.role === 'admin').forEach((a) => notify(db, { userId: a.id, type: 'doctor_verification', title: 'New doctor awaiting verification', body: `${name} · ${form.specialty}`, link: '/admin/doctors' }));
     return u;
   });
@@ -755,7 +755,7 @@ export async function adminUpdateDoctor(id, patch) {
     ['verificationStatus', 'featured', 'name', 'specialty', 'experienceYears', 'cityId', 'autoConfirm'].forEach((k) => { if (patch[k] !== undefined) d[k] = patch[k]; });
     if (patch.verificationStatus && patch.verificationStatus !== prev && d.userId) {
       const msg = { verified: 'Your profile is verified and now shows the ✓ Verified badge.', rejected: 'Your verification was not approved. Please contact support for details.', suspended: 'Your profile has been suspended and is hidden from search.', pending: 'Your profile has been moved back to pending verification.' }[patch.verificationStatus];
-      notify(db, { userId: d.userId, type: 'doctor_verification', title: `Verification status: ${patch.verificationStatus}`, body: msg, email: { subject: 'Update on your CareFind verification', lines: [msg] } });
+      notify(db, { userId: d.userId, type: 'doctor_verification', title: `Verification status: ${patch.verificationStatus}`, body: msg, email: { subject: 'Update on your DoctorPlus verification', lines: [msg] } });
     }
     return d;
   });
