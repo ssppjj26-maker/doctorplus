@@ -78,7 +78,7 @@ export function PatientReviewsSection({ onStartBooking }) {
           </h2>
 
           <p className="reviews-subtitle">
-            Over 18,400+ patients have connected with our board-certified medical specialists at zero cost. Read their verified feedback below.
+            Over 1.8 Million+ patients have connected with our board-certified medical specialists at zero cost. Read their verified feedback below.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export function PatientReviewsSection({ onStartBooking }) {
                   <Star key={i} size={18} fill="#F59E0B" color="#F59E0B" />
                 ))}
               </div>
-              <span className="summary-count">Based on 18,400+ verified free consultations</span>
+              <span className="summary-count">Based on 1.8 Million+ verified free consultations</span>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ export function PatientReviewsSection({ onStartBooking }) {
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
-              <span>Zero Wait Times (Same-Day Video)</span>
+              <span>Zero Wait Times (Same-Day Reply)</span>
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
@@ -113,7 +113,7 @@ export function PatientReviewsSection({ onStartBooking }) {
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
-              <span>Encrypted Browser-Based Video Rooms</span>
+              <span>Free Reports & Guidance PDF</span>
             </div>
           </div>
 
