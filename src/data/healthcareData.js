@@ -1,3 +1,4 @@
+import { ALL_REVIEWS_DATA } from './allReviewsData';
 // BookDoc Global Healthcare Data Architecture
 // Configured for top-tier foreign country patients (US, UK, Canada, Australia, Germany, Switzerland, Singapore, UAE)
 // Includes:
@@ -890,92 +891,7 @@ export const INITIAL_DOCTORS = [
 ];
 
 // AUTHENTIC CUSTOMER REVIEWS FOR FREE ONLINE CONSULTATION SERVICES
-export const INITIAL_REVIEWS = [
-  {
-    id: 'rev-01',
-    appointmentId: 'demo-appt-101',
-    doctorId: 'doc-sophia-miller',
-    doctorName: 'Dr. Sophia Miller',
-    patientName: 'Mark Richardson',
-    city: 'Patient',
-    rating: 5,
-    department: 'Joint Pain',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'I was facing a 7-week waiting period for an orthopedic specialist. BookDoc connected me to Dr. Sophia Miller for a 100% free online consultation the same afternoon! She reviewed my lumbar spine MRI thoroughly and gave me clear, actionable physical therapy guidance. An absolute lifesaver.',
-    createdAt: '2026-10-10T14:20:00Z',
-    verified: true
-  },
-  {
-    id: 'rev-02',
-    appointmentId: 'demo-appt-102',
-    doctorId: 'doc-marcus-lindqvist',
-    doctorName: 'Dr. Marcus Lindqvist',
-    patientName: 'Claire Pemberton',
-    city: 'Patient',
-    rating: 5,
-    department: 'Tinnitus & Ear Ringing',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'Clinic waiting lists were lengthy for specialized audiology and neurotology. Having a 100% free consultation with Dr. Marcus Lindqvist gave our entire family clarity and peace of mind. He adjusted my acoustic therapy plan and explained my tinnitus habituation protocol with immense patience.',
-    createdAt: '2026-10-08T09:45:00Z',
-    verified: true
-  },
-  {
-    id: 'rev-03',
-    appointmentId: 'demo-appt-103',
-    doctorId: 'doc-lucas-vanderberg',
-    doctorName: 'Dr. Lucas Van Der Berg',
-    patientName: 'Liam O’Connor',
-    city: 'Patient',
-    rating: 5,
-    department: 'Brain & Nerve Care',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'The "one major problem, one doctor" concept is brilliant. No passing between juniors—I got matched directly with Dr. Lucas Van Der Berg for my chronic occipital nerve headaches. Within 20 minutes he tailored a preventative protocol that has drastically cut my flare-ups.',
-    createdAt: '2026-10-05T16:10:00Z',
-    verified: true
-  },
-  {
-    id: 'rev-04',
-    appointmentId: 'demo-appt-104',
-    doctorId: 'doc-emily-vance',
-    doctorName: 'Dr. Emily Vance',
-    patientName: 'Sarah Jenkins',
-    city: 'Patient',
-    rating: 5,
-    department: 'Dental Care',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'I needed an urgent second opinion on dental implant surgery. Dr. Emily Vance reviewed my 3D cone-beam scans online for free and saved me from an unnecessary $3,200 invasive procedure. Can’t thank BookDoc enough for this complimentary specialist service!',
-    createdAt: '2026-10-02T11:30:00Z',
-    verified: true
-  },
-  {
-    id: 'rev-05',
-    appointmentId: 'demo-appt-105',
-    doctorId: 'doc-hannah-schmidt',
-    doctorName: 'Dr. Hannah Schmidt',
-    patientName: 'Dr. Julian Weber',
-    city: 'Patient',
-    rating: 5,
-    department: 'General Health',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'As a biomedical researcher, I was skeptical of free telemedicine platforms until I tried BookDoc. Clinical rigor, high-definition encrypted video, punctual consultation, and zero hidden fees. Highly recommended for patients.',
-    createdAt: '2026-09-28T18:00:00Z',
-    verified: true
-  },
-  {
-    id: 'rev-06',
-    appointmentId: 'demo-appt-106',
-    doctorId: 'doc-marcus-sterling',
-    doctorName: 'Dr. Marcus Sterling',
-    patientName: 'Amira Al-Mansoor',
-    city: 'Patient',
-    rating: 5,
-    department: 'Skin & Hair',
-    consultationType: 'Free Online Video Consultation',
-    comment: 'Accessing English-speaking board-certified dermatologists virtually without paying exorbitant local clinic charges is a game changer. Dr. Marcus Sterling identified my flare-up triggers immediately.',
-    createdAt: '2026-09-25T13:15:00Z',
-    verified: true
-  }
-];
+export const INITIAL_REVIEWS = ALL_REVIEWS_DATA;
 
 export const INITIAL_SAMPLE_APPOINTMENTS = [];
 

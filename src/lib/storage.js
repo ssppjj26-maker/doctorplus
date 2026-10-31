@@ -206,7 +206,11 @@ export function getStoredReviews() {
   }
   try {
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) && parsed.length > 0 ? parsed : INITIAL_REVIEWS;
+    if (Array.isArray(parsed) && parsed.length >= INITIAL_REVIEWS.length) {
+      return parsed;
+    }
+    localStorage.setItem(STORAGE_KEYS.REVIEWS, JSON.stringify(INITIAL_REVIEWS));
+    return INITIAL_REVIEWS;
   } catch {
     return INITIAL_REVIEWS;
   }

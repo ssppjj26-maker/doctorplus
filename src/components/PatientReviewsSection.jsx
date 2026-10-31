@@ -1,3 +1,22 @@
+const CONCERN_FILTER_OPTIONS = [
+  'All',
+  'Diabetes',
+  'Joint Pain',
+  'Stress',
+  'Back Pain',
+  'Obesity',
+  'Cavities',
+  'Sexual Health',
+  'Hair Fall',
+  'Prostate Issues',
+  'Gum Disease',
+  'Ear Ringing',
+  'Slow Metabolism',
+  'Teeth Bleeding',
+  'Skin Acne',
+  'Yellow Teeth'
+];
+
 import React, { useState, useEffect } from 'react';
 import { Star, ShieldCheck, HeartHandshake, CheckCircle2, MessageSquare, ThumbsUp, PlusCircle, Globe, Filter, ArrowRight } from 'lucide-react';
 import { getStoredReviews, submitReview, getStoredDoctors } from '../lib/storage';
@@ -27,7 +46,7 @@ export function PatientReviewsSection({ onStartBooking }) {
 
   const filteredReviews = selectedCategoryFilter === 'All'
     ? reviews
-    : reviews.filter((r) => r.department === selectedCategoryFilter);
+    : reviews.filter((r) => r.department === selectedCategoryFilter || r.concern === selectedCategoryFilter);
 
   const handleSubmitNewReview = (e) => {
     e.preventDefault();
@@ -122,7 +141,7 @@ export function PatientReviewsSection({ onStartBooking }) {
         {/* Concern Filter Chips */}
         <div className="reviews-filter-bar">
           <span className="filter-label">Filter by concern:</span>
-          {['All', 'Joint Pain', 'Tinnitus & Ear Ringing', 'Brain & Nerve Care', 'Dental Care', 'Skin & Hair', 'General Health'].map((c) => (
+          {CONCERN_FILTER_OPTIONS.map((c) => (
             <button
               key={c}
               type="button"
