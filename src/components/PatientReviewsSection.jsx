@@ -24,6 +24,7 @@ import { getStoredReviews, submitReview, getStoredDoctors } from '../lib/storage
 export function PatientReviewsSection({ onStartBooking }) {
   const [reviews, setReviews] = useState([]);
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(9);
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [newReviewForm, setNewReviewForm] = useState({
     patientName: '',
@@ -42,11 +43,19 @@ export function PatientReviewsSection({ onStartBooking }) {
 
   const handleCategoryFilterChange = (category) => {
     setSelectedCategoryFilter(category);
+    setVisibleCount(9);
   };
 
   const filteredReviews = selectedCategoryFilter === 'All'
     ? reviews
     : reviews.filter((r) => r.department === selectedCategoryFilter || r.concern === selectedCategoryFilter);
+
+  const displayedReviews = filteredReviews.slice(0, visibleCount);
+  const hasMoreReviews = visibleCount < filteredReviews.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 9);
+  };
 
   const handleSubmitNewReview = (e) => {
     e.preventDefault();
@@ -155,7 +164,7 @@ export function PatientReviewsSection({ onStartBooking }) {
 
         {/* Reviews Grid */}
         <div className="customer-reviews-grid">
-          {filteredReviews.map((rev) => (
+          {displayedReviews.map((rev) => (
             <div key={rev.id} className="customer-review-card">
               <div className="review-card-top">
                 <div className="stars-row">
@@ -190,14 +199,25 @@ export function PatientReviewsSection({ onStartBooking }) {
                       ✓ Verified Patient
                     </span>
                   </div>
-                  <span className="verified-consult-tag">
-                    ✓ Verified 100% Free Consultation
-                  </span>
+                  
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Load More Reviews Button */}
+        {hasMoreReviews && (
+          <div className="load-more-reviews-container">
+            <button
+              type="button"
+              className="read-more-reviews-btn"
+              onClick={handleLoadMore}
+            >
+              Read More Reviews
+            </button>
+          </div>
+        )}
 
         {/* Bottom CTA to Book Free Consultation */}
         <div className="reviews-bottom-cta">
