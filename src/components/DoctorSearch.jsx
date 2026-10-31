@@ -116,7 +116,6 @@ export function DoctorSearch({
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
   const [selectedLanguage, setSelectedLanguage] = useState('all');
   const [selectedGender, setSelectedGender] = useState('all');
-  const [selectedLocation, setSelectedLocation] = useState('all');
   const [minExperience, setMinExperience] = useState(0);
   const [sortBy, setSortBy] = useState('recommended');
 
@@ -139,10 +138,6 @@ export function DoctorSearch({
     const langs = new Set();
     doctors.forEach((d) => d.languages?.forEach((l) => langs.add(l)));
     return Array.from(langs).sort();
-  }, [doctors]);
-
-  const allLocations = useMemo(() => {
-    return Array.from(new Set(doctors.map((d) => d.location))).sort();
   }, [doctors]);
 
   // Filter & Sort Logic
@@ -175,10 +170,7 @@ export function DoctorSearch({
         return false;
       }
 
-      // Location filter
-      if (selectedLocation !== 'all' && doc.location !== selectedLocation) {
-        return false;
-      }
+      
 
       // Experience filter
       if (doc.experience < minExperience) {
@@ -214,7 +206,7 @@ export function DoctorSearch({
     });
   }, [
     doctors, selectedCategory, selectedSpecialty, selectedLanguage,
-    selectedLocation, minExperience, searchTerm, sortBy
+    minExperience, searchTerm, sortBy
   ]);
 
   const resetFilters = () => {
@@ -222,7 +214,6 @@ export function DoctorSearch({
     onCategoryChange('all');
     setSelectedSpecialty('all');
     setSelectedLanguage('all');
-    setSelectedLocation('all');
     setMinExperience(0);
     setSortBy('recommended');
   };
@@ -234,7 +225,7 @@ export function DoctorSearch({
         <div style={{ marginBottom: '28px' }}>
           <h1 style={{ fontSize: '32px', marginBottom: '8px' }}>Find a Doctor</h1>
           <p style={{ fontSize: '16px', color: 'var(--text-muted)' }}>
-            Search by health concern, specialty, doctor name or location.
+            Search by health concern, specialty or doctor name.
           </p>
         </div>
 
@@ -278,7 +269,6 @@ export function DoctorSearch({
             >
               <option value="recommended">Sort: Recommended</option>
               <option value="experience">Sort: Experience</option>
-              <option value="rating">Sort: Rating</option>
               <option value="earliest">Sort: Earliest availability</option>
             </select>
           </div>
@@ -317,19 +307,6 @@ export function DoctorSearch({
                 <option key={s.id} value={s.id}>
                   {s.label}
                 </option>
-              ))}
-            </select>
-
-            {/* Location filter */}
-            <select
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-              className="form-select"
-              aria-label="Filter by Location"
-            >
-              <option value="all">All Locations</option>
-              {allLocations.map((loc) => (
-                <option key={loc} value={loc}>{loc}</option>
               ))}
             </select>
 
