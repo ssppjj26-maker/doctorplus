@@ -40,6 +40,16 @@ export function DoctorSearch({
   const [minExperience, setMinExperience] = useState(0);
   const [sortBy, setSortBy] = useState('recommended');
 
+  // Derive selected health concern value for the dropdown
+  const currentConcernValue = useMemo(() => {
+    if (!selectedCategory || selectedCategory === 'all') return 'all';
+    const direct = COMMON_HEALTH_CONCERNS.find((c) => c.id === selectedCategory);
+    if (direct) return direct.id;
+    const byCat = COMMON_HEALTH_CONCERNS.find((c) => c.categoryId === selectedCategory);
+    if (byCat) return byCat.id;
+    return selectedCategory;
+  }, [selectedCategory]);
+
   // Extract distinct filter values
   const allSpecialties = useMemo(() => {
     return Array.from(new Set(doctors.map((d) => d.specialty))).sort();
@@ -58,9 +68,13 @@ export function DoctorSearch({
   // Filter & Sort Logic
   const filteredDoctors = useMemo(() => {
     return doctors.filter((doc) => {
-      // Category filter
+      // Category / Health concern filter
       if (selectedCategory && selectedCategory !== 'all') {
-        if (doc.categoryId !== selectedCategory) return false;
+        const matchedConcern = COMMON_HEALTH_CONCERNS.find((c) => c.id === selectedCategory);
+        const targetCategory = matchedConcern ? matchedConcern.categoryId : selectedCategory;
+        if (doc.categoryId !== targetCategory && doc.categoryId !== selectedCategory) {
+          return false;
+        }
       }
 
       // Specialty filter
