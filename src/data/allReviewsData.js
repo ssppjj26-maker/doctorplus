@@ -9,7 +9,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Liam Patel’s free consultation completely transformed my glycemic control. He structured a low-glycemic dietary plan with precise carbohydrate sequencing and advised 25 minutes of brisk walking after dinner. Combined with the prescribed daily blood sugar medication, my fasting glucose dropped from 178 to 102 mg/dL in six weeks with zero afternoon energy crashes.",
+    "comment": "Dr. Liam Patel was incredibly knowledgeable and caring during our video consult. He adjusted my daily routine, gave me simple nutrition habits, and prescribed medication that stabilized my blood sugar within a few weeks. My morning numbers are finally steady and I feel so much more energetic.",
     "createdAt": "2026-10-24T14:20:00Z",
     "verified": true
   },
@@ -23,7 +23,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Living with erratic blood sugar was exhausting until Dr. Patel reviewed my continuous glucose monitor for free. He recommended switching to a Mediterranean-style high-fiber diet, added simple post-meal resistance exercises, and adjusted my prescribed maintenance medication. My HbA1c is down to 6.1% and I finally feel in total control.",
+    "comment": "I had been struggling with high glucose readings for months. Dr. Patel reviewed my lab results online for free and explained everything patiently. The medication and lifestyle plan he put together worked wonders for me. My latest HbA1c test showed tremendous improvement.",
     "createdAt": "2026-10-21T09:45:00Z",
     "verified": true
   },
@@ -37,7 +37,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had reached a complete plateau with prediabetes. Dr. Patel spent 30 minutes explaining how meal timing, 10-minute incline walks after lunch, and a gentle prescribed metabolic medication could reverse my insulin resistance. Three months later, my numbers are completely back in the normal range without extreme restrictions.",
+    "comment": "Consulting Dr. Patel gave me the exact clarity I needed. He listened to my concerns, suggested simple post-meal walks, and started me on medication that brought my sugar levels under control without any harsh side effects. Highly recommended!",
     "createdAt": "2026-10-18T16:10:00Z",
     "verified": true
   },
@@ -51,7 +51,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Patel gave me practical dietary swaps that fit my busy schedule, advised low-impact zone-2 cardio 4 mornings a week, and aligned my prescribed glycemic control medication perfectly with my meals. My morning numbers are steady, my cravings have vanished, and I have boundless energy.",
+    "comment": "Dr. Patel’s advice made managing my condition feel manageable rather than overwhelming. The combination of his dietary suggestions, light exercise, and prescribed medication has kept my numbers in the healthy target range consistently.",
     "createdAt": "2026-10-15T11:30:00Z",
     "verified": true
   },
@@ -65,7 +65,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "My knee osteoarthritis made climbing stairs excruciating. Dr. Sophia Miller provided a 100% free video assessment, designing an anti-inflammatory nutrition regimen, low-impact pool walking exercises, and a targeted joint-support prescription medication. Within four weeks, swelling dropped significantly and I am walking pain-free.",
+    "comment": "My knee stiffness was making walking down stairs painful. Dr. Sophia Miller’s free consultation gave me gentle mobility movements, low-impact exercises, and daily habits that loosened my joints. Within a month, I was walking completely pain-free!",
     "createdAt": "2026-10-23T10:15:00Z",
     "verified": true
   },
@@ -79,7 +79,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Before meeting Dr. Miller, I thought knee replacement was my only option. Her holistic approach—eliminating inflammatory nightshades from my diet, adding quad-strengthening isometric exercises, and starting a targeted therapeutic medication—relieved my chronic hip and knee stiffness completely.",
+    "comment": "Dr. Miller was fantastic. She guided me through simple knee-strengthening exercises and postural adjustments that took all the pressure off my joints. My mobility and flexibility have improved tremendously.",
     "createdAt": "2026-10-19T13:40:00Z",
     "verified": true
   },
@@ -93,7 +93,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Miller thoroughly reviewed my MRI during our online call. She advised an omega-3 rich Mediterranean diet, guided me through daily non-weight-bearing joint mobility exercises, and prescribed a gentle anti-inflammatory medication. My joint range of motion has improved by over 40%.",
+    "comment": "I was skeptical about an online joint consult, but Dr. Miller gave me better practical movement therapy than in-person visits. Her daily stretching routines and joint care advice resolved my persistent shoulder tightness.",
     "createdAt": "2026-10-14T17:25:00Z",
     "verified": true
   },
@@ -107,7 +107,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Chronic shoulder joint pain was ruining my sleep. Dr. Miller’s advice on an alkaline anti-inflammatory diet, gentle band resistance exercises, and a short course of prescribed targeted medication brought fast relief. I am finally back to lifting my grandchildren with ease.",
+    "comment": "Dr. Miller carefully reviewed my range of motion and gave me custom low-impact pool and floor exercises. My hips feel flexible again and I can go on long morning walks without any soreness.",
     "createdAt": "2026-10-11T09:10:00Z",
     "verified": true
   },
@@ -121,7 +121,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Work burnout and racing thoughts were keeping me awake until 3 AM. Dr. Julian Ward’s free consultation guided me through a cortisol-lowering diet, daily 20-minute morning outdoor walks with box breathing, and a gentle prescribed calming medication. In three weeks my panic spikes vanished and my deep sleep returned.",
+    "comment": "Work pressure had left me constantly on edge and unable to unwind. Dr. Julian Ward’s calming advice, daily morning breathwork, and structured wind-down routines completely reset my nervous system. I sleep soundly and wake up refreshed.",
     "createdAt": "2026-10-25T15:30:00Z",
     "verified": true
   },
@@ -135,7 +135,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Ward took the time to listen to my chronic work stress without rushing. He advised eliminating late-evening caffeine and sugar, guided me on daily aerobic relaxation workouts, and introduced a light prescribed maintenance medication. My focus is sharp again and I handle high-pressure deadlines with calm confidence.",
+    "comment": "Dr. Ward listened with genuine empathy. His practical guidance on setting mental boundaries, daily outdoor walking habits, and evening relaxation techniques eliminated my constant anxiety spikes.",
     "createdAt": "2026-10-20T11:50:00Z",
     "verified": true
   },
@@ -149,7 +149,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I felt overwhelmed by chronic anxiety. Dr. Ward paired a gut-brain nutrient protocol rich in magnesium and whole foods with daily evening restorative stretching and a prescribed mood-stabilizing medication. The combination balanced my nervous system without any grogginess.",
+    "comment": "I was feeling completely burnt out. Dr. Ward gave me simple, actionable stress-relief exercises and mindfulness routines that brought my calm and mental clarity back within a couple of weeks.",
     "createdAt": "2026-10-16T14:15:00Z",
     "verified": true
   },
@@ -163,7 +163,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Consulting Dr. Ward was life-changing. His holistic protocol—balanced protein pacing at breakfast, a 30-minute afternoon walk, and a carefully managed prescribed anti-anxiety medication—cleared my brain fog and restored my emotional resilience within a month.",
+    "comment": "Consulting Dr. Ward was the best decision I made this year. His guidance on managing daily work overwhelm and his restorative evening routine helped me regain balance and peace of mind.",
     "createdAt": "2026-10-12T10:00:00Z",
     "verified": true
   },
@@ -177,7 +177,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Severe lower back pain and sciatica had me bedridden for weeks. Dr. Sophia Miller prescribed an anti-inflammatory diet, daily pelvic tilts and core stabilization exercises, along with a targeted nerve-calming prescription medication. Within a month, my radiating sciatic pain was 90% gone and I can sit comfortably through work.",
+    "comment": "Severe lower back tightness had me struggling to sit at my desk. Dr. Sophia Miller showed me gentle core-activation exercises, decompression stretches, and posture corrections. My lower back pain was gone in three weeks.",
     "createdAt": "2026-10-24T08:45:00Z",
     "verified": true
   },
@@ -191,7 +191,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Miller saved me from unnecessary spine surgery. She analyzed my lumbar scan online, adjusted my anti-inflammatory nutrition, taught me gentle spine decompression stretches, and prescribed a short regimen of specialized back-pain medication. My lumbar stiffness resolved completely.",
+    "comment": "Dr. Miller’s advice saved me from unnecessary clinic visits. She taught me how to support my spine with specific pelvic floor and glute exercises, and my chronic morning back stiffness completely disappeared.",
     "createdAt": "2026-10-19T16:20:00Z",
     "verified": true
   },
@@ -205,7 +205,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had chronic disc discomfort for two years. Dr. Miller’s guidance on eliminating refined sugars that drive inflammation, doing daily glute bridges and bird-dogs, alongside her prescribed targeted muscle-relaxing medication, has restored my mobility without any pain flare-ups.",
+    "comment": "I had dealing with recurring lower back flare-ups for over a year. Dr. Miller provided clear movement modifications and daily spine-strengthening routines that restored my full range of motion.",
     "createdAt": "2026-10-15T12:05:00Z",
     "verified": true
   },
@@ -219,7 +219,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Online Video Consultation",
-    "comment": "A 30-minute free video call with Dr. Miller gave me more clarity than months of local clinic visits. Her combination of core-strengthening rehab exercises, anti-inflammatory dietary pacing, and a targeted prescription medication brought immediate relief to my chronic lower back tightness.",
+    "comment": "Dr. Miller was thorough and knowledgeable. Her step-by-step guidance on gentle stretching routines and ergonomic workstation setup gave me immediate, lasting relief from my back aches.",
     "createdAt": "2026-10-10T18:30:00Z",
     "verified": true
   },
@@ -233,7 +233,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had struggled with clinical obesity (BMI 36) for nearly a decade. Dr. Isabella Rossi’s free consultation gave me a sustainable high-protein whole-food diet, 4 days of progressive resistance workouts, and a clinically proven prescribed weight-management medication. I am down 34 lbs in 12 weeks with healthy metabolic markers.",
+    "comment": "Dr. Isabella Rossi gave me the most compassionate consultation I’ve ever had. She looked at the root cause of my weight struggles, suggested sustainable habit changes, and prescribed medication that helped curb my constant hunger. I’ve lost 24 lbs steadily and feel like myself again.",
     "createdAt": "2026-10-25T11:15:00Z",
     "verified": true
   },
@@ -247,7 +247,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Rossi did not give me a generic starvation diet. She balanced my macronutrients, added 35 minutes of daily zone-2 power walking, and supported me with a targeted prescribed metabolic medication. My visceral belly fat shrunk by 5 inches and my blood pressure normalized.",
+    "comment": "I had hit a complete weight loss wall before speaking to Dr. Rossi. Her guidance on portion pacing, daily movement, and the supportive medication she prescribed made all the difference. My clothes fit better and my overall health markers are so much healthier.",
     "createdAt": "2026-10-21T14:35:00Z",
     "verified": true
   },
@@ -261,7 +261,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Losing weight felt impossible with my sluggish thyroid until Dr. Rossi intervened. Her personalized nutrition plan, structured low-impact dumbbell exercises, and prescribed metabolic therapy medication broke my 3-year weight plateau. Down 26 lbs and feeling 10 years younger.",
+    "comment": "Dr. Rossi was wonderful. She didn’t lecture me; she gave me practical daily routines, exercise tips, and prescribed medication that helped jumpstart my weight loss. I have lost over 30 lbs and my stamina has doubled.",
     "createdAt": "2026-10-17T09:40:00Z",
     "verified": true
   },
@@ -275,7 +275,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Rossi’s comprehensive strategy of high-fiber meal sequencing, morning strength circuits, and a gentle prescribed appetite-regulating medication helped me shed 28 lbs sustainably while enjoying real food without fatigue.",
+    "comment": "A truly supportive specialist. Dr. Rossi guided me through realistic food choices, daily walking habits, and prescribed an effective medication that helped me shed stubborn pounds without feeling drained or exhausted.",
     "createdAt": "2026-10-13T16:00:00Z",
     "verified": true
   },
@@ -289,7 +289,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had recurring micro-cavities and enamel erosion. Dr. Emily Vance evaluated my teeth online for free, recommending an alkaline, low-acid remineralizing diet, daily 2-minute sonic brush routines with interdental flossing exercises, and prescribed a professional remineralizing medicinal paste. My tooth sensitivity disappeared and checkups are flawless.",
+    "comment": "I was struggling with chronic tooth sensitivity and early cavity spots. Dr. Emily Vance evaluated my teeth online for free, gave me great daily oral care tips, and prescribed a medicated dental treatment that stopped the sensitivity and protected my enamel completely.",
     "createdAt": "2026-10-23T16:45:00Z",
     "verified": true
   },
@@ -303,7 +303,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance explained the biochemistry of dental decay so clearly. She showed me how cutting hidden dietary sugars, doing gentle oil-swishing oral exercises, and applying a prescribed therapeutic enamel rinse prevented new cavities and arrested early enamel demineralization.",
+    "comment": "Dr. Vance’s advice on gentle brushing habits and the protective medication she prescribed arrested my enamel decay and saved me from having to get multiple fillings. My dentist confirmed my teeth look much healthier now!",
     "createdAt": "2026-10-18T10:20:00Z",
     "verified": true
   },
@@ -317,7 +317,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Chronic cavity sensitivity was keeping me from enjoying hot coffee and cold drinks. Dr. Vance guided me on enamel-nourishing nutrition rich in calcium and vitamin D, structured daily interproximal cleaning routines, and prescribed a high-strength topical dental medication that fortified my enamel completely.",
+    "comment": "I had sharp discomfort whenever I drank anything cold. Dr. Vance guided me on enamel-safe oral habits and prescribed a targeted remineralizing dental medication that eliminated the pain in less than two weeks.",
     "createdAt": "2026-10-14T13:55:00Z",
     "verified": true
   },
@@ -331,7 +331,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance’s complimentary consultation saved my teeth. Her advice on cutting acidic sodas, performing daily gum and enamel massage routines, alongside a specialized prescribed remineralizing dental medication, reversed my early tooth decay and sensitivity.",
+    "comment": "Dr. Vance took time to explain what was happening with my teeth and gave me simple daily routines alongside a prescribed medicated oral rinse. My tooth sensitivity is completely gone and my smile feels great.",
     "createdAt": "2026-10-09T11:15:00Z",
     "verified": true
   },
@@ -345,7 +345,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was dealing with performance anxiety and diminished stamina for months. Dr. Julian Cole provided discreet, empathetic advice on a nitric oxide-rich Mediterranean diet, pelvic floor Kegel exercises with daily cardio, and a targeted prescribed vitality medication. My stamina and confidence are fully restored.",
+    "comment": "I was hesitant to speak about my concerns, but Dr. Julian Cole was completely professional, empathetic, and discreet. The lifestyle recommendations, stress-reducing workouts, and prescribed medication he provided restored my stamina and confidence completely.",
     "createdAt": "2026-10-24T19:10:00Z",
     "verified": true
   },
@@ -359,7 +359,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Cole’s 100% free consultation was professional and thorough. He guided me through nutritional adjustments to optimize natural testosterone, advised 4 days of interval resistance training, and introduced a gentle prescribed vascular medication. The results within three weeks exceeded all expectations.",
+    "comment": "Dr. Cole took the time to understand my situation without judgment. The combination of his exercise advice, better sleep habits, and the medication he prescribed worked wonders for my vitality. I feel like a new person.",
     "createdAt": "2026-10-20T17:40:00Z",
     "verified": true
   },
@@ -373,7 +373,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Discreet and life-changing care. Dr. Cole adjusted my dietary micronutrients with zinc and healthy fats, coached me on daily pelvic conditioning exercises, and prescribed a tailored medication protocol. My energy, morning vigor, and intimate health are back to peak levels.",
+    "comment": "A truly transformative consultation. Dr. Cole gave me actionable tips for cardiovascular health and started me on targeted medication that made a noticeable difference within just a couple of weeks. My relationship and confidence have never been better.",
     "createdAt": "2026-10-15T09:20:00Z",
     "verified": true
   },
@@ -387,7 +387,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Stress and long work hours had taken a severe toll on my intimate wellness. Dr. Cole’s triple approach—nutrient-dense dietary restructuring, daily brisk cardio sessions, and a short course of prescribed targeted medication—resolved the issue completely within a month.",
+    "comment": "Dr. Cole was reassuring and thorough throughout our online call. His practical wellness guidance, daily fitness routines, and prescribed medication resolved my intimate health issues safely and quickly.",
     "createdAt": "2026-10-11T14:50:00Z",
     "verified": true
   },
@@ -401,7 +401,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was losing clumps of hair in the shower every morning. Dr. Marcus Sterling reviewed my scalp online for free, prescribed an iron- and protein-rich hair follicle diet, advised daily micro-circulation scalp exercises, and started me on a specialized prescribed hair-regrowth medication. Shedding dropped by 80% in six weeks and new baby hairs are sprouting.",
+    "comment": "I was losing so much hair every time I washed it. Dr. Marcus Sterling gave me excellent guidance on scalp wellness, gentle circulation massage techniques, and daily hair care habits. My shedding decreased significantly within a month!",
     "createdAt": "2026-10-25T13:20:00Z",
     "verified": true
   },
@@ -415,7 +415,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Sterling identified the root cause of my sudden diffuse hair thinning. He gave me an anti-inflammatory nutritional protocol, instructed daily inverted scalp stimulation exercises, and prescribed a targeted topical and oral medication. My hair density has visibly improved.",
+    "comment": "Dr. Sterling helped me understand what was causing my sudden hair thinning. His practical tips on hair protection, daily scalp stimulation routines, and lifestyle adjustments brought noticeable new baby hairs along my hairline.",
     "createdAt": "2026-10-21T18:05:00Z",
     "verified": true
   },
@@ -429,7 +429,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Online Video Consultation",
-    "comment": "After months of wasting money on useless commercial shampoos, Dr. Sterling’s free consultation gave me real medical answers. A biotin-rich nutrient plan, daily scalp massage routines, and his prescribed clinical follicle medication stopped my excessive shedding completely.",
+    "comment": "A truly reassuring consultation. Dr. Sterling gave me easy daily scalp routines and hair-strengthening habits that stopped my excessive hair shedding without any expensive gimmicks.",
     "createdAt": "2026-10-16T10:45:00Z",
     "verified": true
   },
@@ -443,7 +443,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Receding temples and thinning crown had me feeling self-conscious. Dr. Sterling’s advice on hormonal dietary adjustments, daily stress-reduction workouts, and a prescribed hair-retention medication halted the loss and triggered noticeable new growth along my hairline.",
+    "comment": "Dr. Sterling’s advice made an immediate difference. Following his daily scalp massage exercises and hair-care routine helped restore my hair’s volume and strength visibly.",
     "createdAt": "2026-10-12T15:15:00Z",
     "verified": true
   },
@@ -457,7 +457,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was waking up 4 to 5 times every night to urinate due to an enlarged prostate (BPH). Dr. Ethan Vance gave me a free video consultation, structuring a lycopene-rich prostate diet, daily pelvic floor muscle training, and a targeted prescribed prostate medication. In three weeks, my night trips dropped to just once and my flow is strong.",
+    "comment": "Waking up multiple times a night was ruining my sleep. Dr. Ethan Vance provided a discreet, reassuring consultation. The nighttime fluid tips, pelvic exercises, and the medication he prescribed gave me immense relief within two weeks. I can finally sleep through the night.",
     "createdAt": "2026-10-24T12:00:00Z",
     "verified": true
   },
@@ -471,7 +471,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance’s guidance was phenomenal. He showed me how cutting evening fluids and caffeine, doing daily pelvic floor exercises, and taking a gentle prescribed urological medication relieved my urinary hesitation and weak stream completely.",
+    "comment": "Dr. Vance explained my urinary symptoms clearly and put my mind at ease. The medication he prescribed, along with his guidance on bladder habits and daily exercise, completely normalized my urinary flow. Outstanding care.",
     "createdAt": "2026-10-19T09:30:00Z",
     "verified": true
   },
@@ -485,7 +485,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Elevated PSA concerns and urinary urgency had me worried. Dr. Vance reviewed my lab work online for free, placed me on an anti-inflammatory Mediterranean prostate diet, advised daily moderate walking, and prescribed a targeted medication that shrunk my prostate symptoms dramatically.",
+    "comment": "I was feeling anxious about my prostate health before booking this free consult. Dr. Vance gave me excellent lifestyle pointers and prescribed a medication that drastically reduced urgency and hesitation. Extremely grateful for his expertise.",
     "createdAt": "2026-10-14T14:40:00Z",
     "verified": true
   },
@@ -499,7 +499,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Online Video Consultation",
-    "comment": "A 25-minute consultation with Dr. Vance gave me my full nights of sleep back. His combination of bladder-training exercises, pumpkin-seed and zinc nutrition, and a prescribed daily prostate medication restored normal urinary flow and total comfort.",
+    "comment": "Dr. Vance is a top-tier specialist. His advice on daily pelvic floor exercises and the prescribed medication restored my normal routine and comfort in less than a month. Having access to such care online for free is amazing.",
     "createdAt": "2026-10-09T17:10:00Z",
     "verified": true
   },
@@ -513,7 +513,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Online Video Consultation",
-    "comment": "My gums were swollen, tender, and receding around my molars. Dr. Emily Vance conducted a free online triage, recommending an antioxidant-rich diet with vitamin C, soft-bristle circular brushing and gum-massage exercises, and prescribed an antibacterial oral rinse medication. My gum pockets firmed up and inflammation vanished.",
+    "comment": "My gums were sore, inflamed, and pulling away from my teeth. Dr. Emily Vance provided an expert triage, showed me proper gentle brushing techniques, and prescribed an antibacterial medication that healed the swelling in under two weeks.",
     "createdAt": "2026-10-23T14:10:00Z",
     "verified": true
   },
@@ -527,7 +527,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance saved me from costly periodontal surgery. Her advice on cutting inflammatory processed carbs, adopting daily interdental gum stimulation techniques, and applying a prescribed therapeutic gum medication brought my gingival inflammation under complete control.",
+    "comment": "I was worried about loose teeth and receding gums. Dr. Vance gave me practical home care advice and prescribed a therapeutic dental medication that stopped the inflammation and firmed up my gum tissue remarkably well.",
     "createdAt": "2026-10-18T11:45:00Z",
     "verified": true
   },
@@ -541,7 +541,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had persistent gingivitis and bad breath that regular toothpaste couldn’t fix. Dr. Vance prescribed an anti-inflammatory dietary routine, showed me daily water-flossing exercises, and prescribed a clinical antimicrobial dental medication. My gums are healthy pink again.",
+    "comment": "Dr. Vance’s online guidance was exceptional. Her recommendations for daily gum care and the targeted oral medication she prescribed resolved my persistent redness and tenderness completely.",
     "createdAt": "2026-10-13T16:30:00Z",
     "verified": true
   },
@@ -555,7 +555,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance’s free consultation was so comprehensive. She guided me on immune-supporting nutrition, instructed gentle sonic gum exercises, and prescribed a specialized periodontal medication that stopped gum recession and restored tissue strength.",
+    "comment": "A wonderful experience with Dr. Vance. The medicated oral treatment she prescribed, combined with her tips on gentle flossing and cleaning routines, gave my gums a healthy pink color again.",
     "createdAt": "2026-10-08T10:15:00Z",
     "verified": true
   },
@@ -569,7 +569,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Online Video Consultation",
-    "comment": "A constant 8 kHz high-pitched whistle in my ears was making sleep impossible. Dr. Marcus Lindqvist gave me a free video consult, recommending a low-sodium anti-neuroexcitatory diet, daily cervical neck decompression exercises with acoustic sound walks, and a prescribed micro-circulation medication. The ringing intensity dropped by more than 60%.",
+    "comment": "The constant high-pitched ringing in my ears was driving me crazy. Dr. Marcus Lindqvist evaluated my symptoms thoroughly online. The sound habituation techniques, neck relaxation exercises, and the medication he prescribed brought the volume down dramatically. I can finally rest in quiet rooms.",
     "createdAt": "2026-10-25T09:10:00Z",
     "verified": true
   },
@@ -583,7 +583,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Lindqvist is the first specialist who gave me actionable relief for ear ringing. He helped me eliminate dietary MSG and artificial sweeteners, coached me on daily auditory habituation exercises, and prescribed a targeted inner-ear medication. I can sleep peacefully without masking noise now.",
+    "comment": "Dr. Lindqvist gave me real hope when other clinics dismissed my ear ringing. The daily acoustic exercises and the prescribed circulation medication he recommended made a substantial difference. The buzzing is now just a faint background sound.",
     "createdAt": "2026-10-20T13:40:00Z",
     "verified": true
   },
@@ -597,7 +597,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Pulsatile ear ringing had caused me endless anxiety. Dr. Lindqvist reviewed my audiogram online for free, guided me on an anti-inflammatory vascular diet, advised daily brisk walks, and prescribed a gentle vascular circulation medication. The throbbing buzzing subsided within four weeks.",
+    "comment": "Pulsatile ringing was keeping me awake for months. Dr. Lindqvist’s advice on stress reduction, gentle neck stretching, and the medication he prescribed helped reduce the throbbing sensation significantly. Sleeping peacefully again!",
     "createdAt": "2026-10-16T11:20:00Z",
     "verified": true
   },
@@ -611,7 +611,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Lindqvist’s combination of ear-pressure balancing exercises, low-salt dietary modifications, and a specialized prescribed neurological medication brought the screeching volume in my ears down to a faint whisper that I barely notice.",
+    "comment": "Dr. Lindqvist’s consultation was worth every minute. His practical advice on avoiding sound triggers, daily relaxation routines, and the medication he provided gave me my focus and peace of mind back.",
     "createdAt": "2026-10-11T16:50:00Z",
     "verified": true
   },
@@ -625,7 +625,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was eating 1,200 calories and still gaining weight due to a sluggish metabolism. Dr. Isabella Rossi explained my metabolic adaptation, structuring a thermogenic protein-pacing diet, 3 weekly progressive resistance training sessions, and a prescribed metabolic support medication. My basal metabolic rate jumped and I’ve lost 18 lbs steadily.",
+    "comment": "My energy was sluggish and I couldn’t seem to burn off anything I ate. Dr. Isabella Rossi gave me fantastic workout pacing advice, metabolic activation routines, and daily habit tips. My energy has doubled and I feel so much lighter!",
     "createdAt": "2026-10-24T15:50:00Z",
     "verified": true
   },
@@ -639,7 +639,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Rossi helped me break a 2-year metabolic standstill. She advised eating protein-forward meals every 4 hours, added 20 minutes of daily zone-2 cardio, and provided a targeted prescribed cellular medication. My daytime energy doubled and my body is burning fat efficiently again.",
+    "comment": "Dr. Rossi was wonderful at explaining how to restart a sluggish metabolism naturally. Her progressive strength training tips and daily movement intervals helped break through my long plateau.",
     "createdAt": "2026-10-19T10:15:00Z",
     "verified": true
   },
@@ -653,7 +653,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Chronic fatigue and an unyielding metabolic slowdown were ruining my quality of life. Dr. Rossi’s complimentary consult gave me a nutrient-dense dietary plan, structured morning resistance exercises, and a prescribed metabolic booster medication that ignited my fat loss.",
+    "comment": "I was feeling exhausted every afternoon. Dr. Rossi’s guidance on daily physical activity timing and metabolism-boosting routines gave me sustained all-day energy and helped me drop stubborn inches.",
     "createdAt": "2026-10-15T14:30:00Z",
     "verified": true
   },
@@ -667,7 +667,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Rossi’s guidance was pure science, not fads. Her strategy of post-meal walking routines, strategic carbohydrate refeeding, and a gentle prescribed metabolic medication reversed my sluggish thyroid metabolism and restored all-day vigor.",
+    "comment": "Dr. Rossi provided practical, science-backed guidance on activating my metabolism with simple daily workout habits. I feel more active, energized, and fit than I have in years.",
     "createdAt": "2026-10-10T11:00:00Z",
     "verified": true
   },
@@ -681,7 +681,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Online Video Consultation",
-    "comment": "My gums would bleed heavily every time I brushed or flossed. Dr. Emily Vance evaluated my symptoms online for free, advising an antioxidant-rich collagen-supportive diet, ultra-soft circular brushing exercises, and a prescribed medicated antibacterial mouthrinse. The bleeding stopped completely in just 9 days.",
+    "comment": "My gums bled every single time I brushed. Dr. Emily Vance gave me gentle brushing tips, showed me proper circular motions, and guided me on delicate gum care routines. In just one week, the bleeding stopped completely.",
     "createdAt": "2026-10-23T11:35:00Z",
     "verified": true
   },
@@ -695,7 +695,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was terrified of losing teeth due to chronic gum bleeding. Dr. Vance instructed me on daily gentle interdental brushing exercises, recommended key dietary micronutrients like bioflavonoids, and prescribed a targeted dental medication that healed my delicate gum capillaries.",
+    "comment": "Dr. Vance was reassuring and gentle. Her step-by-step instructions on ultra-soft brushing and daily interdental flossing techniques healed my tender gums without any hassle.",
     "createdAt": "2026-10-18T15:20:00Z",
     "verified": true
   },
@@ -709,7 +709,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance provided clear, reassuring advice on my bleeding gums. She adjusted my daily oral hygiene habits with specialized gum massage techniques, optimized my daily nutrition, and prescribed an anti-plaque therapeutic rinse. Zero bleeding on brushing ever since.",
+    "comment": "I was anxious about brushing because of the bleeding. Dr. Vance gave me easy-to-follow oral hygiene routines and gum-massage habits that made my gums resilient and healthy again.",
     "createdAt": "2026-10-14T09:50:00Z",
     "verified": true
   },
@@ -723,7 +723,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Within one week of following Dr. Vance’s advice—eating vitamin C-rich whole foods, practicing gentle gum-line flossing exercises, and using her prescribed clinical gum medication—my painful bleeding gums became completely healthy and resilient.",
+    "comment": "Within days of following Dr. Vance’s advice on gentle oral care and soft cleaning techniques, my gum bleeding completely cleared up. A wonderful specialist!",
     "createdAt": "2026-10-09T13:10:00Z",
     "verified": true
   },
@@ -737,7 +737,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Adult cystic acne on my jawline had resisted every commercial cream. Dr. Marcus Sterling provided a free video consultation, diagnosing my dietary triggers (dairy and high-glycemic foods), advising post-workout sweat cleansing routines, and prescribing a gentle targeted oral and topical medication. My skin is 100% clear after 8 weeks.",
+    "comment": "Adult breakouts on my chin and cheeks were deeply frustrating. Dr. Marcus Sterling gave me simple skin-clearing habits, post-workout cleansing advice, and daily skincare routines. My skin is clearer and smoother than it’s been in years!",
     "createdAt": "2026-10-25T17:15:00Z",
     "verified": true
   },
@@ -751,7 +751,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Sterling’s approach tackled acne from both the inside and outside. He balanced my gut-skin axis with an anti-inflammatory diet, added daily moderate cardio for lymphatic drainage, and prescribed a targeted dermatological medication. Breakouts stopped forming within two weeks.",
+    "comment": "Dr. Sterling took the time to understand my skin triggers. His advice on gentle skin barrier care, daily sweat-cleansing routines, and stress management cleared up my stubborn blemishes without causing redness.",
     "createdAt": "2026-10-20T12:30:00Z",
     "verified": true
   },
@@ -765,7 +765,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I had painful hormonal breakouts for years. Dr. Sterling’s free consultation gave me a customized low-sugar nutrition plan, daily skin barrier restoration routines, and an effective prescribed clinical medication. My redness and active cysts cleared up without any dryness.",
+    "comment": "I had tried countless harsh face washes that only made my breakouts worse. Dr. Sterling’s gentle skincare advice and daily routine recommendations calmed my skin down completely.",
     "createdAt": "2026-10-16T16:40:00Z",
     "verified": true
   },
@@ -779,7 +779,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Sterling was compassionate and knowledgeable. He walked me through dietary adjustments to blunt sebum production, advised stress-relieving workout habits, and prescribed a tailored skin medication that cleared my stubborn back and face acne completely.",
+    "comment": "Dr. Sterling gave me practical, everyday tips to manage my breakouts and keep my pores clean after workouts. My active acne cleared up quickly and my complexion looks healthy and balanced.",
     "createdAt": "2026-10-12T11:25:00Z",
     "verified": true
   },
@@ -793,7 +793,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Years of black coffee had stained my enamel deep yellow. Dr. Emily Vance gave me a free video consultation, advising an enamel-friendly non-staining dietary protocol, daily baking-soda micro-polishing routines, and prescribed a professional enamel-brightening medicinal gel. My teeth are 5 shades whiter without any tooth sensitivity.",
+    "comment": "Years of tea and coffee had left my teeth dull and stained. Dr. Emily Vance evaluated my enamel and prescribed a professional-strength brightening medication that lifted the stains safely without causing any sensitivity. My smile looks so much brighter!",
     "createdAt": "2026-10-24T10:30:00Z",
     "verified": true
   },
@@ -807,7 +807,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance taught me how to whiten my teeth safely without damaging enamel. She adjusted my dietary habits after dark liquids, gave me gentle remineralizing brushing exercises, and prescribed a clinical whitening medication that lifted 10 years of tobacco and tea stains.",
+    "comment": "I had tried over-the-counter strips with no success and lots of pain. Dr. Vance gave me enamel-safe cleaning habits and prescribed an effective whitening medication that gave me noticeably lighter teeth in just two weeks.",
     "createdAt": "2026-10-19T15:05:00Z",
     "verified": true
   },
@@ -821,7 +821,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was hesitant about harsh bleaching until Dr. Vance explained the science. She structured an alkaline dietary routine, advised post-meal oral hygiene exercises, and prescribed a protective enamel whitening medication. My smile is radiant and my enamel feels stronger.",
+    "comment": "Dr. Vance was friendly and informative. Her advice on oral care routines and the specialized medication she prescribed safely whitened my smile by several shades without any gum irritation.",
     "createdAt": "2026-10-15T11:40:00Z",
     "verified": true
   },
@@ -835,7 +835,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Online Video Consultation",
-    "comment": "Dr. Vance’s free consultation was worth hundreds of dollars. Her combination of non-acidic dietary guidelines, daily sonic whitening brushing exercises, and a prescribed clinical brightening gel restored the natural bright white shade of my teeth safely.",
+    "comment": "Dr. Vance’s complimentary consultation gave me my confidence back. The enamel-safe medication she prescribed along with her daily brushing tips removed years of stubborn discoloration cleanly.",
     "createdAt": "2026-10-10T14:15:00Z",
     "verified": true
   }
