@@ -117,18 +117,6 @@ export function PatientReviewsSection({ onStartBooking }) {
             </div>
           </div>
 
-          <div className="summary-divider" />
-
-          <div className="summary-action-box">
-            <button
-              type="button"
-              className="write-review-btn book-consultation-btn"
-              onClick={() => onStartBooking && onStartBooking()}
-            >
-              <span>Book Your Consultation</span>
-              <ArrowRight size={15} />
-            </button>
-          </div>
         </div>
 
         {/* Concern Filter Chips */}
