@@ -6,6 +6,24 @@ import {
 import { CATEGORIES } from '../data/healthcareData';
 import { convertSlotToPatientTime } from '../lib/storage';
 
+export const COMMON_HEALTH_CONCERNS = [
+  { id: 'diabetes', label: 'Diabetes', categoryId: 'diabetes' },
+  { id: 'joint-pain', label: 'Joint Pain', categoryId: 'bone-joint' },
+  { id: 'stress', label: 'Stress', categoryId: 'mental-health' },
+  { id: 'back-pain', label: 'Back Pain', categoryId: 'bone-joint' },
+  { id: 'obesity', label: 'Obesity', categoryId: 'weight-management' },
+  { id: 'cavities', label: 'Cavities', categoryId: 'dental' },
+  { id: 'sexual-health', label: 'Sexual Health', categoryId: 'sexual-health' },
+  { id: 'hair-fall', label: 'Hair Fall', categoryId: 'skin-hair' },
+  { id: 'prostate', label: 'Prostate Issues', categoryId: 'prostate' },
+  { id: 'gum-disease', label: 'Gum Disease', categoryId: 'dental' },
+  { id: 'ear-ringing', label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
+  { id: 'slow-metabolism', label: 'Slow Metabolism', categoryId: 'weight-management' },
+  { id: 'teeth-bleeding', label: 'Teeth Bleeding', categoryId: 'dental' },
+  { id: 'skin-acne', label: 'Skin Acne', categoryId: 'skin-hair' },
+  { id: 'yellow-teeth', label: 'Yellow Teeth', categoryId: 'dental' }
+];
+
 export function DoctorSearch({
   doctors,
   selectedCategory,
@@ -114,7 +132,7 @@ export function DoctorSearch({
         <div style={{ marginBottom: '28px' }}>
           <h1 style={{ fontSize: '32px', marginBottom: '8px' }}>Find a Doctor</h1>
           <p style={{ fontSize: '16px', color: 'var(--text-muted)' }}>
-            Search by health problem, specialty, doctor name, language or location.
+            Search by health concern, specialty, doctor name or location.
           </p>
         </div>
 
@@ -166,20 +184,22 @@ export function DoctorSearch({
           {/* Filter Dropdowns Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '10px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '12px',
             alignItems: 'center'
           }}>
-            {/* Category / Concern filter */}
+            {/* Health Concern filter */}
             <select
-              value={selectedCategory}
+              value={currentConcernValue}
               onChange={(e) => onCategoryChange(e.target.value)}
               className="form-select"
               aria-label="Filter by Health Concern"
             >
               <option value="all">All Health Concerns</option>
-              {CATEGORIES.filter((c) => c.id !== 'more').map((cat) => (
-                <option key={cat.id} value={cat.id}>{cat.name}</option>
+              {COMMON_HEALTH_CONCERNS.map((concern) => (
+                <option key={concern.id} value={concern.id}>
+                  {concern.label}
+                </option>
               ))}
             </select>
 
@@ -196,19 +216,6 @@ export function DoctorSearch({
               ))}
             </select>
 
-            {/* Language filter */}
-            <select
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="form-select"
-              aria-label="Filter by Language"
-            >
-              <option value="all">All Languages</option>
-              {allLanguages.map((l) => (
-                <option key={l} value={l}>{l}</option>
-              ))}
-            </select>
-
             {/* Location filter */}
             <select
               value={selectedLocation}
@@ -222,24 +229,13 @@ export function DoctorSearch({
               ))}
             </select>
 
-            {/* Experience filter */}
-            <select
-              value={minExperience}
-              onChange={(e) => setMinExperience(Number(e.target.value))}
-              className="form-select"
-              aria-label="Filter by Experience"
-            >
-              <option value="0">Any Experience</option>
-              <option value="5">5+ Years</option>
-              <option value="10">10+ Years</option>
-              <option value="15">15+ Years</option>
-            </select>
-
             {/* Reset button */}
             <button
+              type="button"
               className="btn btn-secondary btn-sm"
               onClick={resetFilters}
               title="Reset all filters"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', height: '42px' }}
             >
               <RotateCcw size={14} /> Reset
             </button>

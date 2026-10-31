@@ -3,21 +3,21 @@ import { ArrowRight, Star, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lu
 
 export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
   const quickProblems = [
-    { label: 'Diabetes', categoryId: 'diabetes' },
-    { label: 'Joint Pain', categoryId: 'bone-joint' },
-    { label: 'Stress', categoryId: 'mental-health' },
-    { label: 'Back Pain', categoryId: 'bone-joint' },
-    { label: 'Obesity', categoryId: 'weight-management' },
-    { label: 'Cavities', categoryId: 'dental' },
-    { label: 'Sexual Health', categoryId: 'sexual-health' },
-    { label: 'Hair Fall', categoryId: 'skin-hair' },
-    { label: 'Prostate Issues', categoryId: 'prostate' },
-    { label: 'Gum Disease', categoryId: 'dental' },
-    { label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
-    { label: 'Slow Metabolism', categoryId: 'weight-management' },
-    { label: 'Teeth Bleeding', categoryId: 'dental' },
-    { label: 'Skin Acne', categoryId: 'skin-hair' },
-    { label: 'Yellow Teeth', categoryId: 'dental' }
+    { id: 'diabetes', label: 'Diabetes', categoryId: 'diabetes' },
+    { id: 'joint-pain', label: 'Joint Pain', categoryId: 'bone-joint' },
+    { id: 'stress', label: 'Stress', categoryId: 'mental-health' },
+    { id: 'back-pain', label: 'Back Pain', categoryId: 'bone-joint' },
+    { id: 'obesity', label: 'Obesity', categoryId: 'weight-management' },
+    { id: 'cavities', label: 'Cavities', categoryId: 'dental' },
+    { id: 'sexual-health', label: 'Sexual Health', categoryId: 'sexual-health' },
+    { id: 'hair-fall', label: 'Hair Fall', categoryId: 'skin-hair' },
+    { id: 'prostate', label: 'Prostate Issues', categoryId: 'prostate' },
+    { id: 'gum-disease', label: 'Gum Disease', categoryId: 'dental' },
+    { id: 'ear-ringing', label: 'Ear Ringing', categoryId: 'tinnitus-ear' },
+    { id: 'slow-metabolism', label: 'Slow Metabolism', categoryId: 'weight-management' },
+    { id: 'teeth-bleeding', label: 'Teeth Bleeding', categoryId: 'dental' },
+    { id: 'skin-acne', label: 'Skin Acne', categoryId: 'skin-hair' },
+    { id: 'yellow-teeth', label: 'Yellow Teeth', categoryId: 'dental' }
   ];
 
   return (
@@ -50,7 +50,7 @@ export function Hero({ onSelectCategory, onExploreConcerns, onStartBooking }) {
                   key={p.label}
                   type="button"
                   className="quick-chip-btn"
-                  onClick={() => onSelectCategory(p.categoryId)}
+                  onClick={() => onSelectCategory(p.id)}
                 >
                   {p.label}
                 </button>
