@@ -9,7 +9,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "I was diagnosed with high blood sugar and felt overwhelmed by all the conflicting advice online. During our free consultation, everything was explained clearly without any panic. The prescribed medication helped stabilize my morning readings within a month, dropping my fasting glucose from 165 to 98. I finally have steady daily energy again."
+    "comment": "DoctorPlus and the doctor's free consultation helped us understand my blood sugar spikes without any panic. The medication stabilized my fasting glucose from 165 to 98 in just a month, and I finally have steady daily energy again."
   },
   {
     "id": "rev-dia-2",
@@ -21,7 +21,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Same-Day Video",
-    "comment": "The medicine worked wonders for my glucose levels. Feeling healthier than ever."
+    "comment": "Booking on DoctorPlus for a free consultation helped us immensely. The medicine worked wonders for my glucose readings and I feel healthier than ever."
   },
   {
     "id": "rev-dia-3",
@@ -33,7 +33,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Online Medical Review",
-    "comment": "Such a relief to have steady readings all week long. The medication helped clear my brain fog and fatigue completely."
+    "comment": "The doctor's free consultation on DoctorPlus helped us find clarity right away. The medication helped clear my persistent brain fog and stabilized my sugar levels all week."
   },
   {
     "id": "rev-dia-4",
@@ -45,7 +45,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Video Follow-up",
-    "comment": "The medication kept my levels right in the safe zone. So relieved!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us bring my HbA1c back into the safe zone. The medication kept my daily numbers steady and I am so relieved."
   },
   {
     "id": "rev-dia-5",
@@ -57,7 +57,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Video Consultation",
-    "comment": "My post-meal glucose spikes vanished after the first three weeks. The medication worked quickly and my daily readings are remarkably consistent."
+    "comment": "The free consultation on DoctorPlus helped us address my post-meal glucose spikes quickly. The medication worked smoothly and my morning tests are now consistently normal."
   },
   {
     "id": "rev-jp-1",
@@ -69,7 +69,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Video Consultation",
-    "comment": "Severe stiffness in both knees was making simple things like going down the stairs or walking my dog painful. Following the targeted joint mobility routines and daily low-impact movements consistently brought complete relief within six weeks. I walked 4 miles this weekend with zero pain!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us solve my severe knee stiffness without surgery. The targeted mobility movements brought complete relief within six weeks, and I walked 4 miles this weekend with zero pain!"
   },
   {
     "id": "rev-jp-2",
@@ -81,7 +81,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Same-Day Video",
-    "comment": "Walking 3 miles every morning without any hip pain. Life changing!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us identify simple morning routines that totally ended my hip pain. I can walk 3 miles every morning now!"
   },
   {
     "id": "rev-jp-3",
@@ -93,7 +93,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Online Mobility Review",
-    "comment": "I had almost given up on gardening because of my swollen joints, but now I'm back outdoors completely pain-free."
+    "comment": "Booking through DoctorPlus for a free consultation helped us save my mobility. I had almost given up on gardening, but now I am back outdoors completely pain-free."
   },
   {
     "id": "rev-jp-4",
@@ -105,7 +105,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Virtual Consultation",
-    "comment": "Zero knee pain on my morning jogs now. So grateful for this outcome!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us target my joint inflammation naturally. Zero knee pain on my jogs now!"
   },
   {
     "id": "rev-jp-5",
@@ -117,7 +117,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Mobility Video",
-    "comment": "My shoulder impingement had bothered me for months. The daily range-of-motion exercises restored my mobility so smoothly."
+    "comment": "The free consultation on DoctorPlus helped us fix my chronic shoulder impingement. The daily range-of-motion routines restored full movement so smoothly."
   },
   {
     "id": "rev-ob-1",
@@ -129,7 +129,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Weight Loss Consultation",
-    "comment": "After struggling with stubborn weight gain for years and constant hunger cravings that ruined every diet attempt, this consultation was a turning point. The medication helped regulate my appetite effectively so I never felt starved, and I am officially down 26 pounds in 3 months. My confidence and mobility are completely renewed."
+    "comment": "DoctorPlus and the doctor's free consultation helped us turn my health around after years of failed diets. The medication regulated my constant cravings effortlessly, and I am down 26 pounds in 3 months with high energy."
   },
   {
     "id": "rev-ob-2",
@@ -141,7 +141,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Same-Day Video",
-    "comment": "Lost 14 pounds already and I feel light on my feet again. The medication made a huge difference."
+    "comment": "The doctor's free consultation on DoctorPlus helped us get on the right track immediately. The medication made a huge difference and I am down 14 pounds already."
   },
   {
     "id": "rev-ob-3",
@@ -153,7 +153,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Online Metabolic Evaluation",
-    "comment": "My clothes fit comfortably again after two years. The medication worked quickly and my appetite is under control."
+    "comment": "Booking a free consultation on DoctorPlus helped us find a real solution. The medication worked quickly to curb my appetite and my clothes fit comfortably again."
   },
   {
     "id": "rev-ob-4",
@@ -165,7 +165,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Video Follow-up",
-    "comment": "Down 18 lbs with the medication! Best decision ever for my health."
+    "comment": "DoctorPlus and the doctor's free consultation helped us jumpstart my weight loss. Down 18 lbs with the medication and feeling amazing!"
   },
   {
     "id": "rev-ob-5",
@@ -177,7 +177,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Telehealth Consult",
-    "comment": "The medication completely stopped my late-night snacking urges. Down two dress sizes in 8 weeks!"
+    "comment": "The free consultation on DoctorPlus helped us curb my late-night snacking. The medication worked so well and I am down two dress sizes in 8 weeks."
   },
   {
     "id": "rev-ob-6",
@@ -189,7 +189,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Online Weight Review",
-    "comment": "I was carrying an extra 35 pounds that made everyday tasks exhausting. The medication helped restart my weight loss when nothing else worked, and I have lost 21 lbs steadily without feeling weak or fatigued."
+    "comment": "DoctorPlus and the doctor's free consultation helped us tackle 35 lbs of stubborn weight. The medication restarted my fat loss smoothly without feeling hungry or fatigued."
   },
   {
     "id": "rev-st-1",
@@ -201,7 +201,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Stress Management Video",
-    "comment": "My racing thoughts and chest tightness have reduced dramatically. I feel grounded and relaxed throughout the workday."
+    "comment": "DoctorPlus and the doctor's free consultation helped us calm my racing thoughts and chest tightness. I feel grounded and relaxed throughout my workday now."
   },
   {
     "id": "rev-st-2",
@@ -213,7 +213,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Same-Day Video",
-    "comment": "Finally waking up refreshed and anxiety-free. Feeling so peaceful!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us release constant anxiety. Finally waking up refreshed and peaceful every morning!"
   },
   {
     "id": "rev-st-3",
@@ -225,7 +225,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Online Wellness Consultation",
-    "comment": "I haven't felt this calm and in control in years. My workday stress and tension have dropped significantly."
+    "comment": "Booking on DoctorPlus for a free consultation helped us regain mental peace. My workday tension has dropped significantly and I feel in control again."
   },
   {
     "id": "rev-pr-1",
@@ -237,7 +237,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Men's Health Video",
-    "comment": "I had been waking up 4 to 5 times every single night for almost two years due to frequent urges and weak flow, which left me constantly exhausted during work. Within three weeks of taking the medication, the nighttime waking stopped completely and my flow returned to normal. Having 7 hours of uninterrupted sleep has given me my life back."
+    "comment": "DoctorPlus and the doctor's free consultation helped us resolve my frequent nighttime urges after two years of lost sleep. Within three weeks of taking the medication, the nighttime waking stopped completely and I now enjoy 7 uninterrupted hours of rest."
   },
   {
     "id": "rev-pr-2",
@@ -249,7 +249,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Same-Day Video",
-    "comment": "My urinary flow is completely back to normal thanks to the medication. Highly satisfied!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us get fast, private answers. The medication restored my urinary flow to normal and I am highly satisfied."
   },
   {
     "id": "rev-pr-3",
@@ -261,7 +261,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Online Urological Review",
-    "comment": "No more discomfort or hesitation during bathroom visits. The medication worked exactly as promised."
+    "comment": "Booking with DoctorPlus for a free consultation helped us eliminate uncomfortable bathroom visits. The medication worked exactly as promised with rapid relief."
   },
   {
     "id": "rev-pr-4",
@@ -273,7 +273,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Follow-up Video",
-    "comment": "The medication let me sleep 7 uninterrupted hours again. Huge relief!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us restore my sleep schedule. The medication let me sleep through the night again. Huge relief!"
   },
   {
     "id": "rev-pr-5",
@@ -285,7 +285,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Men's Health Consult",
-    "comment": "I was extremely anxious about my prostate health and hesitant to speak to a doctor in person. The video consultation was so respectful and thorough. The medication eased the bladder pressure and urgency in just ten days. I can travel on long flights now without constantly scanning for the restroom."
+    "comment": "The free consultation on DoctorPlus helped us address my prostate urgency comfortably from home. The medication eased bladder pressure in ten days, so I can travel without worry."
   },
   {
     "id": "rev-pr-6",
@@ -297,7 +297,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Same-Day Private Video",
-    "comment": "Bladder emptying feels effortless now and the constant nighttime pressure is gone. The medication worked so smoothly."
+    "comment": "DoctorPlus and the doctor's free consultation helped us relieve constant bladder pressure. The medication worked smoothly and nighttime urgency is gone."
   },
   {
     "id": "rev-hf-1",
@@ -309,7 +309,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Hair & Scalp Video",
-    "comment": "Seeing far less hair in the shower drain and noticeable baby hairs growing along my temples."
+    "comment": "DoctorPlus and the doctor's free consultation helped us stop my severe hair shedding. Seeing far less hair in the shower drain and noticeable baby hairs growing along my temples."
   },
   {
     "id": "rev-hf-2",
@@ -321,7 +321,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Same-Day Video",
-    "comment": "Hair shedding stopped within weeks. My ponytail feels thick again!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us halt my hair loss within weeks. My ponytail feels thick and full again!"
   },
   {
     "id": "rev-hf-3",
@@ -333,7 +333,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Online Scalp Consultation",
-    "comment": "My hair density is visibly returning and the thinning patch on my crown is filling in nicely."
+    "comment": "Booking on DoctorPlus for a free consultation helped us restore my hair density. The thinning patch on my crown is filling in nicely."
   },
   {
     "id": "rev-hf-4",
@@ -345,7 +345,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Video Follow-up",
-    "comment": "Baby hairs sprouting everywhere! Couldn't be happier with the progress."
+    "comment": "DoctorPlus and the doctor's free consultation helped us revive my scalp health. Baby hairs are sprouting everywhere and I am so happy!"
   },
   {
     "id": "rev-sh-1",
@@ -357,7 +357,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Online Consultation",
-    "comment": "Dealing with performance anxiety and low stamina was taking a toll on my marriage. Having a private, completely confidential video consultation made it easy to discuss openly. The medication worked exceptionally well within the first two weeks, restoring my vitality, stamina, and self-confidence."
+    "comment": "DoctorPlus and the doctor's free consultation helped us overcome performance anxiety and low stamina with total privacy. The medication worked exceptionally well within two weeks, restoring my energy, stamina, and self-confidence."
   },
   {
     "id": "rev-sh-2",
@@ -369,7 +369,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Same-Day Private Video",
-    "comment": "Huge boost in vitality and confidence. The medication helped bring back my spark!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us bring back my spark. The medication gave me a huge boost in vitality and confidence!"
   },
   {
     "id": "rev-sh-3",
@@ -381,7 +381,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Private Wellness Review",
-    "comment": "Felt positive results within the very first week. The medication helped restore my energy and peace of mind."
+    "comment": "Booking a free consultation on DoctorPlus helped us find prompt relief. The medication worked from the first week to restore my energy and peace of mind."
   },
   {
     "id": "rev-sh-4",
@@ -393,7 +393,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Follow-up",
-    "comment": "The medication revitalized me completely. Back to my normal self!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us revitalize my intimate health completely. The medication brought me right back to my normal self!"
   },
   {
     "id": "rev-sh-5",
@@ -405,7 +405,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Telehealth",
-    "comment": "The consultation gave me immense peace of mind. The medication worked reliably from day one and my energy has rebounded."
+    "comment": "The free consultation on DoctorPlus helped us discuss sensitive concerns comfortably. The medication worked reliably from day one and my vitality is back."
   },
   {
     "id": "rev-bp-1",
@@ -417,7 +417,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Spine & Posture Video",
-    "comment": "Sitting at my desk for 8 hours a day caused a persistent ache in my lower spine that radiated into my hips by evening. The posture corrections, spinal decompression movements, and daily core activation exercises eliminated the stiffness entirely. I work full days now and wake up without pain."
+    "comment": "DoctorPlus and the doctor's free consultation helped us eliminate persistent lower back ache from long desk hours. The posture adjustments and spinal decompression movements took away all stiffness, so I work full days and wake up without pain."
   },
   {
     "id": "rev-bp-2",
@@ -429,7 +429,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Same-Day Video",
-    "comment": "Can bend down to tie my shoes without any sharp twinges now!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us fix my spinal stiffness. I can bend down to tie my shoes without any sharp twinges now!"
   },
   {
     "id": "rev-bp-3",
@@ -441,7 +441,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Spine Mobility Review",
-    "comment": "Chronic lower back ache was ruining my weekends. It's completely gone and I'm playing tennis again."
+    "comment": "Booking through DoctorPlus for a free consultation helped us cure my chronic lower back strain. It's completely gone and I am back to playing tennis."
   },
   {
     "id": "rev-bp-4",
@@ -453,7 +453,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Follow-up Video",
-    "comment": "No more morning back stiffness. Waking up feels great again!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us end morning back stiffness. Waking up feels great again!"
   },
   {
     "id": "rev-sm-1",
@@ -465,7 +465,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Metabolic Health Video",
-    "comment": "The afternoon crashes and sluggishness are completely gone. My daily stamina has doubled and I feel light."
+    "comment": "DoctorPlus and the doctor's free consultation helped us beat sluggish afternoon crashes. My daily stamina has doubled and I feel light and energetic throughout the day."
   },
   {
     "id": "rev-sm-2",
@@ -477,7 +477,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Same-Day Video",
-    "comment": "Waking up with real energy again instead of feeling groggy all morning!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us reboot my metabolic energy. Waking up refreshed instead of feeling groggy every morning!"
   },
   {
     "id": "rev-sm-3",
@@ -489,7 +489,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Online Vitality Review",
-    "comment": "Digestion is smooth and my energy levels remain steady all day. No more heavy bloating after meals."
+    "comment": "Booking a free consultation on DoctorPlus helped us fix my heavy post-meal bloating. Digestion is smooth and my energy stays steady all day."
   },
   {
     "id": "rev-er-1",
@@ -501,7 +501,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Auditory Video Consult",
-    "comment": "The high-pitched buzzing in my left ear was keeping me awake until 3 AM every single night. The medication calmed the auditory nerve flare-up significantly within two weeks. The noise is down by at least 80% and I can read and sleep in a quiet bedroom again without feeling anxious."
+    "comment": "DoctorPlus and the doctor's free consultation helped us calm high-pitched buzzing in my ear that kept me awake until 3 AM. The medication eased the nerve irritation in two weeks, and the noise is down by 80% so I can sleep peacefully."
   },
   {
     "id": "rev-er-2",
@@ -513,7 +513,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Same-Day Video",
-    "comment": "The ringing is practically silent now. The medicine gave me my quiet back."
+    "comment": "The doctor's free consultation on DoctorPlus helped us find real relief. The medicine silenced the ringing and gave me my quiet back."
   },
   {
     "id": "rev-er-3",
@@ -525,7 +525,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Online Auditory Review",
-    "comment": "After months of frustrating noise, my head finally feels clear and calm. The medication helped bring rapid relief."
+    "comment": "Booking on DoctorPlus for a free consultation helped us get rapid clarity. The medication brought prompt relief and my head finally feels clear and calm."
   },
   {
     "id": "rev-er-4",
@@ -537,7 +537,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Follow-up Video",
-    "comment": "The medication brought silent nights back. Sleeping peacefully now!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us restore quiet nights. The medication worked wonders and I am sleeping soundly!"
   },
   {
     "id": "rev-tb-1",
@@ -549,7 +549,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Oral Health Video",
-    "comment": "Not a single drop of blood when I brush or floss now. My mouth feels fresh and clean all day."
+    "comment": "DoctorPlus and the doctor's free consultation helped us resolve my persistent gum bleeding. Not a single drop of blood when I brush or floss now, and my mouth feels clean all day."
   },
   {
     "id": "rev-tb-2",
@@ -561,7 +561,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Same-Day Video",
-    "comment": "Flossing without bleeding for the first time in years. Huge relief!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us correct my oral care technique. Flossing without bleeding for the first time in years!"
   },
   {
     "id": "rev-tb-3",
@@ -573,7 +573,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Online Gum Review",
-    "comment": "My gum tenderness vanished and brushing is comfortable again. So glad I booked this consultation."
+    "comment": "Booking a free consultation on DoctorPlus helped us soothe my sensitive gums. The tenderness vanished completely and brushing is totally comfortable."
   },
   {
     "id": "rev-gd-1",
@@ -585,7 +585,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Periodontal Video",
-    "comment": "My gums were deep red, puffy, and sore every time I chewed. The medication brought down the swelling in less than ten days, and my gum tissue looks firm and healthy again. Dr. Emily Vance’s online triage saved me from painful invasive procedures."
+    "comment": "DoctorPlus and the doctor's free consultation helped us tackle deep red, puffy gums without painful procedures. The medication brought down the inflammation in ten days, and my gums feel firm and healthy again."
   },
   {
     "id": "rev-gd-2",
@@ -597,7 +597,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Same-Day Video",
-    "comment": "No more tender or irritated gums. The prescribed rinse medication worked amazingly!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us soothe painful irritation. The prescribed rinse medication worked amazingly to restore gum health!"
   },
   {
     "id": "rev-gd-3",
@@ -609,7 +609,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Online Periodontal Consult",
-    "comment": "My gums feel firm and healthy again without any soreness. The medication worked within days."
+    "comment": "Booking on DoctorPlus for a free consultation helped us prevent chronic gum damage. The medication worked within days to relieve all soreness."
   },
   {
     "id": "rev-gd-4",
@@ -621,7 +621,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Follow-up Video",
-    "comment": "The medication got my gums pink and healthy again. So thankful!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us heal my gums completely. The medication got them pink and firm again. So thankful!"
   },
   {
     "id": "rev-cav-1",
@@ -633,7 +633,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Dental Video Consult",
-    "comment": "I had sharp, piercing sensitivity every time I drank cold water or chewed near my lower molars. The medication helped calm down the nerve irritation in just a few days, and the constant tooth discomfort is completely gone. Dr. Emily Vance was so reassuring during our call."
+    "comment": "DoctorPlus and the doctor's free consultation helped us diagnose sharp tooth sensitivity when drinking cold liquids. The medication calmed down the nerve irritation in just a few days, and my tooth discomfort is totally gone."
   },
   {
     "id": "rev-cav-2",
@@ -645,7 +645,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Same-Day Video",
-    "comment": "The throbbing pain stopped within 48 hours. The medication brought immediate relief."
+    "comment": "The doctor's free consultation on DoctorPlus helped us stop throbbing toothache within 48 hours. The medication brought immediate relief!"
   },
   {
     "id": "rev-cav-3",
@@ -657,7 +657,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Online Tooth Care Review",
-    "comment": "I can chew on both sides without flinching now. The medication worked wonders for my tooth discomfort."
+    "comment": "Booking through DoctorPlus for a free consultation helped us protect my teeth. The medication worked wonders for my sensitivity so I can chew comfortably on both sides."
   },
   {
     "id": "rev-cav-4",
@@ -669,7 +669,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Follow-up Video",
-    "comment": "No sensitivity with iced coffee now thanks to the medication. Great relief!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us eliminate cold sensitivity. No pain with iced coffee now thanks to the medication!"
   },
   {
     "id": "rev-cav-5",
@@ -681,7 +681,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Dental Review",
-    "comment": "The throbbing sensitivity when eating sweets stopped completely. The medication protected my enamel and eased the nerve pain."
+    "comment": "The free consultation on DoctorPlus helped us protect my enamel when sweets caused sharp twinges. The medication eased the nerve pain quickly."
   },
   {
     "id": "rev-yt-1",
@@ -693,7 +693,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Cosmetic Smile Video",
-    "comment": "Noticed a noticeably brighter smile within two weeks. The medication helped lift deep coffee stains without any sensitivity."
+    "comment": "DoctorPlus and the doctor's free consultation helped us brighten my smile without sensitivity. The medication lifted deep coffee stains gently within two weeks, restoring my confidence."
   },
   {
     "id": "rev-yt-2",
@@ -705,7 +705,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Same-Day Video",
-    "comment": "My teeth look shades whiter! The whitening medication worked so gently."
+    "comment": "The doctor's free consultation on DoctorPlus helped us find an enamel-safe solution. My teeth look noticeably whiter and the medication worked so gently!"
   },
   {
     "id": "rev-yt-3",
@@ -717,7 +717,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Online Enamel Evaluation",
-    "comment": "So happy with how clean and bright my teeth look in photos now. The medication worked like magic."
+    "comment": "Booking a free consultation on DoctorPlus helped us restore my bright smile. The whitening medication worked wonderfully and my teeth look so clean in photos."
   },
   {
     "id": "rev-sa-1",
@@ -729,7 +729,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Dermatology Video",
-    "comment": "I had painful hormonal breakouts along my jawline and cheeks that made me feel so self-conscious. Dr. Elena Rostova guided me through a gentle barrier repair routine and non-pore-clogging habits. My inflammation calmed down completely within four weeks and my skin texture is smoother than ever."
+    "comment": "DoctorPlus and the doctor's free consultation helped us clear painful hormonal breakouts along my jawline. The barrier repair habits calmed my inflammation completely in four weeks, and my skin texture is smoother than ever."
   },
   {
     "id": "rev-sa-2",
@@ -741,7 +741,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Same-Day Video",
-    "comment": "Skin is calm and clear for the first time in months. Loving the results!"
+    "comment": "The doctor's free consultation on DoctorPlus helped us soothe angry breakouts. My skin is calm and clear for the first time in months!"
   },
   {
     "id": "rev-sa-3",
@@ -753,7 +753,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Online Skin Evaluation",
-    "comment": "The stubborn bumps and redness on my cheeks are gone. My skin finally looks radiant and healthy."
+    "comment": "Booking through DoctorPlus for a free consultation helped us eliminate stubborn bumps on my cheeks. My complexion finally looks radiant and healthy."
   },
   {
     "id": "rev-sa-4",
@@ -765,6 +765,6 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Follow-up Video",
-    "comment": "Clear skin and no new breakouts this whole month. So confident now!"
+    "comment": "DoctorPlus and the doctor's free consultation helped us restore clear skin with zero new breakouts this whole month. Feeling so confident!"
   }
 ];
