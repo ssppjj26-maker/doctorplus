@@ -2452,19 +2452,32 @@ p {
   background: #e2e8f0;
 }
 
+.summary-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.summary-action-box {
+  flex-shrink: 0;
+}
+
 .summary-features-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 24px;
+  grid-template-columns: auto auto;
+  gap: 10px 32px;
+  align-items: center;
 }
 
 .summary-feature-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
   color: #1e3a8a;
+  white-space: nowrap;
 }
 
 .summary-feature-item .feature-icon {
