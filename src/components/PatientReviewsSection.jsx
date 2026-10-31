@@ -48,7 +48,11 @@ export function PatientReviewsSection({ onStartBooking }) {
 
   const filteredReviews = selectedCategoryFilter === 'All'
     ? reviews
-    : reviews.filter((r) => r.department === selectedCategoryFilter || r.concern === selectedCategoryFilter);
+    : reviews.filter((r) =>
+        r.department === selectedCategoryFilter ||
+        r.concern === selectedCategoryFilter ||
+        (selectedCategoryFilter === 'Prostate Issues' && (r.concern === 'Prostate' || r.concern === 'Prostate Issues' || r.department === 'Prostate' || r.department === 'Prostate Issues'))
+      );
 
   const displayedReviews = filteredReviews.slice(0, visibleCount);
   const hasMoreReviews = visibleCount < filteredReviews.length;

@@ -9,7 +9,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "My fasting blood sugar dropped from 170 to 105 in just a month. The medication worked so well and I finally have my morning energy back!"
+    "comment": "I was diagnosed with high blood sugar and felt overwhelmed by all the conflicting advice online. During our free consultation, everything was explained clearly without any panic. The prescribed medication helped stabilize my morning readings within a month, dropping my fasting glucose from 165 to 98. I finally have steady daily energy again."
   },
   {
     "id": "rev-dia-2",
@@ -48,6 +48,18 @@ export const ALL_REVIEWS_DATA = [
     "comment": "The medication kept my levels right in the safe zone. So relieved!"
   },
   {
+    "id": "rev-dia-5",
+    "doctorId": "doc-liam-patel",
+    "doctorName": "Dr. Liam Patel",
+    "patientName": "Carlos M.",
+    "city": "Madrid, Spain",
+    "rating": 5,
+    "department": "Diabetes",
+    "concern": "Diabetes",
+    "consultationType": "Free Video Consultation",
+    "comment": "My post-meal glucose spikes vanished after the first three weeks. The medication worked quickly and my daily readings are remarkably consistent."
+  },
+  {
     "id": "rev-jp-1",
     "doctorId": "doc-sophia-miller",
     "doctorName": "Dr. Sophia Miller",
@@ -57,7 +69,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Video Consultation",
-    "comment": "My morning knee stiffness is completely gone. I can climb the stairs in my house without holding the railing now!"
+    "comment": "Severe stiffness in both knees was making simple things like going down the stairs or walking my dog painful. Following the targeted joint mobility routines and daily low-impact movements consistently brought complete relief within six weeks. I walked 4 miles this weekend with zero pain!"
   },
   {
     "id": "rev-jp-2",
@@ -96,6 +108,18 @@ export const ALL_REVIEWS_DATA = [
     "comment": "Zero knee pain on my morning jogs now. So grateful for this outcome!"
   },
   {
+    "id": "rev-jp-5",
+    "doctorId": "doc-sophia-miller",
+    "doctorName": "Dr. Sophia Miller",
+    "patientName": "Gordon R.",
+    "city": "Perth, Australia",
+    "rating": 5,
+    "department": "Joint Pain",
+    "concern": "Joint Pain",
+    "consultationType": "Free Mobility Video",
+    "comment": "My shoulder impingement had bothered me for months. The daily range-of-motion exercises restored my mobility so smoothly."
+  },
+  {
     "id": "rev-ob-1",
     "doctorId": "doc-isabella-rossi",
     "doctorName": "Dr. Isabella Rossi",
@@ -105,7 +129,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Weight Loss Consultation",
-    "comment": "Down 22 lbs in two months and keeping it off! The medication helped manage my constant cravings so easily."
+    "comment": "After struggling with stubborn weight gain for years and constant hunger cravings that ruined every diet attempt, this consultation was a turning point. The medication helped regulate my appetite effectively so I never felt starved, and I am officially down 26 pounds in 3 months. My confidence and mobility are completely renewed."
   },
   {
     "id": "rev-ob-2",
@@ -144,6 +168,30 @@ export const ALL_REVIEWS_DATA = [
     "comment": "Down 18 lbs with the medication! Best decision ever for my health."
   },
   {
+    "id": "rev-ob-5",
+    "doctorId": "doc-isabella-rossi",
+    "doctorName": "Dr. Isabella Rossi",
+    "patientName": "Chloe S.",
+    "city": "Auckland, NZ",
+    "rating": 5,
+    "department": "Obesity",
+    "concern": "Obesity",
+    "consultationType": "Free Telehealth Consult",
+    "comment": "The medication completely stopped my late-night snacking urges. Down two dress sizes in 8 weeks!"
+  },
+  {
+    "id": "rev-ob-6",
+    "doctorId": "doc-isabella-rossi",
+    "doctorName": "Dr. Isabella Rossi",
+    "patientName": "Marcus P.",
+    "city": "Dallas, TX",
+    "rating": 5,
+    "department": "Obesity",
+    "concern": "Obesity",
+    "consultationType": "Online Weight Review",
+    "comment": "I was carrying an extra 35 pounds that made everyday tasks exhausting. The medication helped restart my weight loss when nothing else worked, and I have lost 21 lbs steadily without feeling weak or fatigued."
+  },
+  {
     "id": "rev-st-1",
     "doctorId": "doc-marcus-vance",
     "doctorName": "Dr. Marcus Vance",
@@ -180,64 +228,76 @@ export const ALL_REVIEWS_DATA = [
     "comment": "I haven't felt this calm and in control in years. My workday stress and tension have dropped significantly."
   },
   {
-    "id": "rev-st-4",
-    "doctorId": "doc-marcus-vance",
-    "doctorName": "Dr. Marcus Vance",
-    "patientName": "Daniel S.",
-    "city": "Miami, FL",
-    "rating": 5,
-    "department": "Stress",
-    "concern": "Stress",
-    "consultationType": "Free Video Follow-up",
-    "comment": "Sleeping like a baby again. Mental peace restored!"
-  },
-  {
     "id": "rev-pr-1",
-    "doctorId": "doc-arthur-bennett",
-    "doctorName": "Dr. Arthur Bennett",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
     "patientName": "George K.",
     "city": "Manchester, UK",
     "rating": 5,
-    "department": "Prostate",
-    "concern": "Prostate",
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
     "consultationType": "Free Men's Health Video",
-    "comment": "Sleeping peacefully through the entire night without waking up every hour. The medication worked within two weeks."
+    "comment": "I had been waking up 4 to 5 times every single night for almost two years due to frequent urges and weak flow, which left me constantly exhausted during work. Within three weeks of taking the medication, the nighttime waking stopped completely and my flow returned to normal. Having 7 hours of uninterrupted sleep has given me my life back."
   },
   {
     "id": "rev-pr-2",
-    "doctorId": "doc-arthur-bennett",
-    "doctorName": "Dr. Arthur Bennett",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
     "patientName": "Harish N.",
     "city": "London, UK",
     "rating": 5,
-    "department": "Prostate",
-    "concern": "Prostate",
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
     "consultationType": "Same-Day Video",
     "comment": "My urinary flow is completely back to normal thanks to the medication. Highly satisfied!"
   },
   {
     "id": "rev-pr-3",
-    "doctorId": "doc-arthur-bennett",
-    "doctorName": "Dr. Arthur Bennett",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
     "patientName": "Peter M.",
     "city": "Edinburgh, UK",
     "rating": 5,
-    "department": "Prostate",
-    "concern": "Prostate",
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
     "consultationType": "Online Urological Review",
     "comment": "No more discomfort or hesitation during bathroom visits. The medication worked exactly as promised."
   },
   {
     "id": "rev-pr-4",
-    "doctorId": "doc-arthur-bennett",
-    "doctorName": "Dr. Arthur Bennett",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
     "patientName": "Thomas L.",
     "city": "Bristol, UK",
     "rating": 5,
-    "department": "Prostate",
-    "concern": "Prostate",
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
     "consultationType": "Free Follow-up Video",
     "comment": "The medication let me sleep 7 uninterrupted hours again. Huge relief!"
+  },
+  {
+    "id": "rev-pr-5",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
+    "patientName": "Albert D.",
+    "city": "Melbourne, Australia",
+    "rating": 5,
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
+    "consultationType": "Free Men's Health Consult",
+    "comment": "I was extremely anxious about my prostate health and hesitant to speak to a doctor in person. The video consultation was so respectful and thorough. The medication eased the bladder pressure and urgency in just ten days. I can travel on long flights now without constantly scanning for the restroom."
+  },
+  {
+    "id": "rev-pr-6",
+    "doctorId": "doc-ethan-vance",
+    "doctorName": "Dr. Ethan Vance",
+    "patientName": "Rajiv S.",
+    "city": "Toronto, Canada",
+    "rating": 5,
+    "department": "Prostate Issues",
+    "concern": "Prostate Issues",
+    "consultationType": "Same-Day Private Video",
+    "comment": "Bladder emptying feels effortless now and the constant nighttime pressure is gone. The medication worked so smoothly."
   },
   {
     "id": "rev-hf-1",
@@ -297,7 +357,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Online Consultation",
-    "comment": "My stamina and confidence returned faster than I expected. The medication worked exceptionally well for me."
+    "comment": "Dealing with performance anxiety and low stamina was taking a toll on my marriage. Having a private, completely confidential video consultation made it easy to discuss openly. The medication worked exceptionally well within the first two weeks, restoring my vitality, stamina, and self-confidence."
   },
   {
     "id": "rev-sh-2",
@@ -336,6 +396,18 @@ export const ALL_REVIEWS_DATA = [
     "comment": "The medication revitalized me completely. Back to my normal self!"
   },
   {
+    "id": "rev-sh-5",
+    "doctorId": "doc-nathan-drake",
+    "doctorName": "Dr. Nathan Drake",
+    "patientName": "Trevor W.",
+    "city": "Miami, FL",
+    "rating": 5,
+    "department": "Sexual Health",
+    "concern": "Sexual Health",
+    "consultationType": "Confidential Telehealth",
+    "comment": "The consultation gave me immense peace of mind. The medication worked reliably from day one and my energy has rebounded."
+  },
+  {
     "id": "rev-bp-1",
     "doctorId": "doc-sophia-miller",
     "doctorName": "Dr. Sophia Miller",
@@ -345,7 +417,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Spine & Posture Video",
-    "comment": "Sitting at my desk all day used to be unbearable. Now my lower back feels strong and completely loose."
+    "comment": "Sitting at my desk for 8 hours a day caused a persistent ache in my lower spine that radiated into my hips by evening. The posture corrections, spinal decompression movements, and daily core activation exercises eliminated the stiffness entirely. I work full days now and wake up without pain."
   },
   {
     "id": "rev-bp-2",
@@ -420,18 +492,6 @@ export const ALL_REVIEWS_DATA = [
     "comment": "Digestion is smooth and my energy levels remain steady all day. No more heavy bloating after meals."
   },
   {
-    "id": "rev-sm-4",
-    "doctorId": "doc-isabella-rossi",
-    "doctorName": "Dr. Isabella Rossi",
-    "patientName": "Sanjay T.",
-    "city": "Sydney, Australia",
-    "rating": 5,
-    "department": "Slow Metabolism",
-    "concern": "Slow Metabolism",
-    "consultationType": "Free Follow-up Video",
-    "comment": "Burning clean energy from sunrise to bedtime now. Feeling amazing!"
-  },
-  {
     "id": "rev-er-1",
     "doctorId": "doc-liam-patel",
     "doctorName": "Dr. Liam Patel",
@@ -441,7 +501,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Auditory Video Consult",
-    "comment": "The constant buzzing in my left ear has finally settled down. The medication worked wonders and I can sleep quietly again."
+    "comment": "The high-pitched buzzing in my left ear was keeping me awake until 3 AM every single night. The medication calmed the auditory nerve flare-up significantly within two weeks. The noise is down by at least 80% and I can read and sleep in a quiet bedroom again without feeling anxious."
   },
   {
     "id": "rev-er-2",
@@ -516,18 +576,6 @@ export const ALL_REVIEWS_DATA = [
     "comment": "My gum tenderness vanished and brushing is comfortable again. So glad I booked this consultation."
   },
   {
-    "id": "rev-tb-4",
-    "doctorId": "doc-emily-vance",
-    "doctorName": "Dr. Emily Vance",
-    "patientName": "Priya S.",
-    "city": "Sheffield, UK",
-    "rating": 5,
-    "department": "Teeth Bleeding",
-    "concern": "Teeth Bleeding",
-    "consultationType": "Free Follow-up Video",
-    "comment": "Bleeding stopped completely after just a few days. Very happy!"
-  },
-  {
     "id": "rev-gd-1",
     "doctorId": "doc-emily-vance",
     "doctorName": "Dr. Emily Vance",
@@ -537,7 +585,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Periodontal Video",
-    "comment": "My gum redness and swelling cleared up completely in ten days. The medication helped soothe the inflammation so fast."
+    "comment": "My gums were deep red, puffy, and sore every time I chewed. The medication brought down the swelling in less than ten days, and my gum tissue looks firm and healthy again. Dr. Emily Vance’s online triage saved me from painful invasive procedures."
   },
   {
     "id": "rev-gd-2",
@@ -585,7 +633,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Dental Video Consult",
-    "comment": "My tooth sensitivity when drinking cold water is completely gone. The medication worked quickly to calm the nerve pain."
+    "comment": "I had sharp, piercing sensitivity every time I drank cold water or chewed near my lower molars. The medication helped calm down the nerve irritation in just a few days, and the constant tooth discomfort is completely gone. Dr. Emily Vance was so reassuring during our call."
   },
   {
     "id": "rev-cav-2",
@@ -624,6 +672,18 @@ export const ALL_REVIEWS_DATA = [
     "comment": "No sensitivity with iced coffee now thanks to the medication. Great relief!"
   },
   {
+    "id": "rev-cav-5",
+    "doctorId": "doc-emily-vance",
+    "doctorName": "Dr. Emily Vance",
+    "patientName": "Dean F.",
+    "city": "Atlanta, GA",
+    "rating": 5,
+    "department": "Cavities",
+    "concern": "Cavities",
+    "consultationType": "Free Dental Review",
+    "comment": "The throbbing sensitivity when eating sweets stopped completely. The medication protected my enamel and eased the nerve pain."
+  },
+  {
     "id": "rev-yt-1",
     "doctorId": "doc-emily-vance",
     "doctorName": "Dr. Emily Vance",
@@ -660,18 +720,6 @@ export const ALL_REVIEWS_DATA = [
     "comment": "So happy with how clean and bright my teeth look in photos now. The medication worked like magic."
   },
   {
-    "id": "rev-yt-4",
-    "doctorId": "doc-emily-vance",
-    "doctorName": "Dr. Emily Vance",
-    "patientName": "Alok J.",
-    "city": "Baltimore, MD",
-    "rating": 5,
-    "department": "Yellow Teeth",
-    "concern": "Yellow Teeth",
-    "consultationType": "Free Follow-up Video",
-    "comment": "My smile is visibly whiter from the medication. Love the results!"
-  },
-  {
     "id": "rev-sa-1",
     "doctorId": "doc-elena-rostova",
     "doctorName": "Dr. Elena Rostova",
@@ -681,7 +729,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Dermatology Video",
-    "comment": "My cystic breakouts along my jawline have cleared up and my skin texture is smoother than ever."
+    "comment": "I had painful hormonal breakouts along my jawline and cheeks that made me feel so self-conscious. Dr. Elena Rostova guided me through a gentle barrier repair routine and non-pore-clogging habits. My inflammation calmed down completely within four weeks and my skin texture is smoother than ever."
   },
   {
     "id": "rev-sa-2",
