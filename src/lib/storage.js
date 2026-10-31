@@ -11,7 +11,7 @@ const STORAGE_KEYS = {
   DOCTORS: 'bookdoc_doctors_v10',
   APPOINTMENTS: 'bookdoc_appointments_v10',
   NOTIFICATIONS: 'bookdoc_notifications_v10',
-  REVIEWS: 'bookdoc_reviews_v16',
+  REVIEWS: 'bookdoc_reviews_v17',
   ACTIVE_ROLE: 'bookdoc_active_role_v10',
   PATIENT_PROFILE: 'bookdoc_patient_profile_v10'
 };

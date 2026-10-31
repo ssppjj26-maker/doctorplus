@@ -9,7 +9,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Online Video Consultation",
-    "comment": "The doctor's free consultation helped us understand my blood sugar spikes without any panic. The medication stabilized my fasting glucose from 165 to 98 in just a month, and I finally have steady daily energy again."
+    "comment": "My morning fasting glucose was hovering near 170 and I was constantly exhausted. Dr. Patel actually took the time to explain what was happening without making me panic. The medication brought my readings down to 98 in less than four weeks, and the heavy afternoon fatigue is completely gone."
   },
   {
     "id": "rev-jp-1",
@@ -21,7 +21,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Video Consultation",
-    "comment": "The doctor's free consultation helped us solve my severe knee stiffness without surgery. The targeted mobility movements brought complete relief within six weeks, and I walked 4 miles this weekend with zero pain!"
+    "comment": "Honestly was skeptical doing a video call for bad knees, but Dr. Miller surprised me. The daily mobility routines she showed me unlocked my joints within a month. I walked 4 miles through the park this weekend with zero pain!"
   },
   {
     "id": "rev-ob-1",
@@ -33,7 +33,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Weight Loss Consultation",
-    "comment": "The doctor's free consultation helped us turn my health around after years of failed diets. The medication regulated my constant cravings effortlessly, and I am down 26 pounds in 3 months with high energy."
+    "comment": "I spent years beating myself up over failed diets and constant food noise. Dr. Rossi treated this as a real medical condition. The medication quieted my intense cravings, and I am down 24 lbs in 10 weeks without feeling deprived or starving."
   },
   {
     "id": "rev-st-1",
@@ -45,7 +45,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Free Stress Management Video",
-    "comment": "The doctor's free consultation helped us calm my racing thoughts and chest tightness. I feel grounded and relaxed throughout my workday now."
+    "comment": "My chest felt tight all day from work pressure and I couldn't switch off at night. Dr. Vance gave me practical vagus nerve breathing techniques that actually reset my nervous system in real time. Workdays feel manageable now."
   },
   {
     "id": "rev-pr-1",
@@ -57,7 +57,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Men's Health Video",
-    "comment": "The doctor's free consultation helped us resolve my frequent nighttime urges after two years of lost sleep. Within three weeks of taking the medication, the nighttime waking stopped completely and I now enjoy 7 uninterrupted hours of rest."
+    "comment": "Waking up 4 or 5 times every single night to use the bathroom was wrecking my sleep and leaving me exhausted by noon. Dr. Vance took my symptoms seriously. Within three weeks of taking the medication, the nighttime urgency stopped completely. Sleeping 7 solid hours now is a miracle."
   },
   {
     "id": "rev-hf-1",
@@ -69,7 +69,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Hair & Scalp Video",
-    "comment": "The doctor's free consultation helped us stop my severe hair shedding. Seeing far less hair in the shower drain and noticeable baby hairs growing along my temples."
+    "comment": "My shower drain used to be clogged with handfuls of hair every wash. Dr. Rostova looked at my scalp pictures and pinpointed my barrier issues right away. Six weeks into the scalp rituals she advised, shedding dropped by 75% and tiny baby hairs are sprouting along my hairline!"
   },
   {
     "id": "rev-sh-1",
@@ -81,7 +81,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Online Consultation",
-    "comment": "The doctor's free consultation helped us overcome performance anxiety and low stamina with total privacy. The medication worked exceptionally well within two weeks, restoring my energy, stamina, and self-confidence."
+    "comment": "Performance anxiety and fatigue were quietly straining my relationship. I was nervous to book an online consult, but Dr. Drake was completely non-judgmental and respectful. The medication worked within days, and having my stamina and confidence back has been life-changing."
   },
   {
     "id": "rev-bp-1",
@@ -93,7 +93,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Spine & Posture Video",
-    "comment": "The doctor's free consultation helped us eliminate persistent lower back ache from long desk hours. The posture adjustments and spinal decompression movements took away all stiffness, so I work full days and wake up without pain."
+    "comment": "Sitting 8 hours a day for work gave me a burning ache in my lower spine that radiated into my glutes every night. Dr. Miller pinpointed my pelvic tilt instantly over video. Her daily core activation and spinal decompression stretches wiped out the pain in two weeks. I can work full days now without wincing."
   },
   {
     "id": "rev-er-1",
@@ -105,7 +105,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Auditory Video Consult",
-    "comment": "The doctor's free consultation helped us calm high-pitched buzzing in my ear that kept me awake until 3 AM. The medication eased the nerve irritation in two weeks, and the noise is down by 80% so I can sleep peacefully."
+    "comment": "A high-pitched screeching in my left ear was keeping me wide awake until 3 AM and making me irritable with my family. Dr. Patel explained the auditory nerve irritation clearly. The medication dialed the volume down by at least 80% within two weeks. I can finally read a book in a quiet room without going crazy."
   },
   {
     "id": "rev-cav-1",
@@ -117,7 +117,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Dental Video Consult",
-    "comment": "The doctor's free consultation helped us diagnose sharp tooth sensitivity when drinking cold liquids. The medication calmed down the nerve irritation in just a few days, and my tooth discomfort is totally gone."
+    "comment": "Every sip of cold water felt like an electric shock shooting into my lower molar. Dr. Emily Vance did a thorough video check of my tooth symptoms. The medication calmed the nerve inflammation in 48 hours, and the throbbing sensitivity is completely gone."
   },
   {
     "id": "rev-sm-1",
@@ -129,7 +129,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Free Metabolic Health Video",
-    "comment": "The doctor's free consultation helped us beat sluggish afternoon crashes. My daily stamina has doubled and I feel light and energetic throughout the day."
+    "comment": "By 2:30 PM every afternoon I felt like I was dragging through quicksand, brain completely foggy. Dr. Rossi adjusted my meal timing and hydration intervals. Within ten days, my sluggishness was gone. My stamina is doubled and I have consistent energy from breakfast to bedtime."
   },
   {
     "id": "rev-gd-1",
@@ -141,7 +141,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Periodontal Video",
-    "comment": "The doctor's free consultation helped us tackle deep red, puffy gums without painful procedures. The medication brought down the inflammation in ten days, and my gums feel firm and healthy again."
+    "comment": "My gums were puffy, dark red, and hurt whenever I bit into anything crusty. Dr. Emily Vance walked me through targeted antibacterial care. The medication brought down the swelling in a week, and my gums are firm, pale pink, and healthy again."
   },
   {
     "id": "rev-tb-1",
@@ -153,7 +153,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Free Oral Health Video",
-    "comment": "The doctor's free consultation helped us resolve my persistent gum bleeding. Not a single drop of blood when I brush or floss now, and my mouth feels clean all day."
+    "comment": "Every time I brushed or flossed my sink looked like a crime scene. Dr. Emily Vance showed me where I was using too much pressure and suggested soft sulcular brushing. In less than two weeks, bleeding stopped 100% and my mouth feels fresh all day."
   },
   {
     "id": "rev-sa-1",
@@ -165,7 +165,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Dermatology Video",
-    "comment": "The doctor's free consultation helped us clear painful hormonal breakouts along my jawline. The barrier repair habits calmed my inflammation completely in four weeks, and my skin texture is smoother than ever."
+    "comment": "Had deep, painful cystic bumps along my jawline that made me hate looking in the mirror. Dr. Rostova looked at my skincare products and had me strip it down to a simple barrier-repair routine. My skin calmed down within three weeks and is totally clear now."
   },
   {
     "id": "rev-yt-1",
@@ -177,7 +177,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Free Cosmetic Smile Video",
-    "comment": "The doctor's free consultation helped us brighten my smile without sensitivity. The medication lifted deep coffee stains gently within two weeks, restoring my confidence."
+    "comment": "Years of espresso drinking had turned my teeth noticeably dull and yellow, but store-bought strips always made my teeth ache. Dr. Emily Vance recommended an enamel-safe routine. The whitening medication lifted the deep stains within two weeks without any sensitivity at all. My smile looks so bright in photos!"
   },
   {
     "id": "rev-dia-2",
@@ -189,7 +189,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Same-Day Video",
-    "comment": "Having access to a free video consultation helped us immensely. The medicine worked wonders for my glucose readings and I feel healthier than ever."
+    "comment": "The medicine worked wonders for my sugar spikes. Numbers have been rock solid for three weeks straight!"
   },
   {
     "id": "rev-jp-2",
@@ -201,7 +201,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us identify simple morning movements that totally ended my hip pain. I can walk 3 miles every morning now!"
+    "comment": "Hip stiffness was making morning walks miserable. Just 15 minutes of low-impact stretching each morning completely fixed it."
   },
   {
     "id": "rev-ob-2",
@@ -213,7 +213,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us get on the right track immediately. The medication made a huge difference and I am down 14 pounds already."
+    "comment": "Lost 14 pounds in my first month. The medication makes portion control feel effortless for the first time in my life."
   },
   {
     "id": "rev-st-2",
@@ -225,7 +225,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us release constant anxiety. Finally waking up refreshed and peaceful every morning!"
+    "comment": "Waking up without a knot in my stomach for the first time in months. The mental reset techniques work like a charm."
   },
   {
     "id": "rev-pr-2",
@@ -237,7 +237,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consultation helped us get fast, private answers. The medication restored my urinary flow to normal and I am highly satisfied."
+    "comment": "Urinary stream is strong and normal again thanks to the medication. No more hesitation or straining."
   },
   {
     "id": "rev-hf-2",
@@ -249,7 +249,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us halt my hair loss within weeks. My ponytail feels thick and full again!"
+    "comment": "My ponytail was getting thinner by the month. The natural scalp circulation techniques stopped the fallout within a few weeks."
   },
   {
     "id": "rev-sh-2",
@@ -261,7 +261,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Same-Day Private Video",
-    "comment": "The free private video helped us bring back my spark. The medication gave me a huge boost in vitality and confidence!"
+    "comment": "Felt a massive boost in vitality and confidence almost immediately. The medication did exactly what I hoped for."
   },
   {
     "id": "rev-bp-2",
@@ -273,7 +273,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us fix my spinal stiffness. I can bend down to tie my shoes without any sharp twinges now!"
+    "comment": "Can tie my shoes in the morning without that sharp pinching twinge in my lower back! Incredible relief."
   },
   {
     "id": "rev-er-2",
@@ -285,7 +285,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us find real relief. The medicine silenced the ringing and gave me my quiet back."
+    "comment": "The ringing has quieted down to almost nothing. The medicine brought the peaceful silence back."
   },
   {
     "id": "rev-cav-2",
@@ -297,7 +297,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us stop throbbing toothache within 48 hours. The medication brought immediate relief!"
+    "comment": "Throbbing pain stopped within two days thanks to the medication. Could chew dinner comfortably again."
   },
   {
     "id": "rev-sm-2",
@@ -309,7 +309,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us reboot my metabolic energy. Waking up refreshed instead of feeling groggy every morning!"
+    "comment": "Waking up with real drive instead of needing 3 cups of coffee just to feel human. Metabolism feels kickstarted."
   },
   {
     "id": "rev-gd-2",
@@ -321,7 +321,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us soothe painful irritation. The prescribed rinse medication worked amazingly to restore gum health!"
+    "comment": "The prescribed rinse medication worked like a charm. Soreness and puffiness completely gone in 8 days."
   },
   {
     "id": "rev-tb-2",
@@ -333,7 +333,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us correct my oral care technique. Flossing without bleeding for the first time in years!"
+    "comment": "Flossing without bleeding for the first time in three years. Simple technique change made all the difference!"
   },
   {
     "id": "rev-sa-2",
@@ -345,7 +345,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us soothe angry breakouts. My skin is calm and clear for the first time in months!"
+    "comment": "Redness and active inflammation faded so fast. My skin hasn't looked this clear since college."
   },
   {
     "id": "rev-yt-2",
@@ -357,7 +357,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Same-Day Video",
-    "comment": "The free video consult helped us find an enamel-safe solution. My teeth look noticeably whiter and the medication worked so gently!"
+    "comment": "Teeth look three shades whiter already. The whitening medication worked super gently."
   },
   {
     "id": "rev-dia-3",
@@ -369,7 +369,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Online Medical Review",
-    "comment": "The free consultation helped us find clarity right away. The medication helped clear my persistent brain fog and stabilized my sugar levels all week."
+    "comment": "Such a relief to finally wake up without brain fog. The medication stabilized my glucose within days, and I don't get those scary mid-day crashes anymore."
   },
   {
     "id": "rev-jp-3",
@@ -381,7 +381,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Online Mobility Review",
-    "comment": "I had almost given up on gardening because of my joints. The doctor's free consultation helped us restore my mobility, and now I am back outdoors completely pain-free."
+    "comment": "I had almost given up on gardening because kneeling hurt so much. Her joint alignment advice was pure gold. Back in my yard pain-free."
   },
   {
     "id": "rev-ob-3",
@@ -393,7 +393,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Online Metabolic Evaluation",
-    "comment": "The consultation helped us find a real medical solution. The medication worked quickly to curb my appetite and my clothes fit comfortably again."
+    "comment": "My old jeans fit again! The medication worked so fast to control my appetite and my energy is through the roof."
   },
   {
     "id": "rev-st-3",
@@ -405,7 +405,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Stress",
     "concern": "Stress",
     "consultationType": "Online Wellness Consultation",
-    "comment": "The doctor's free consultation helped us regain mental peace. My workday tension has dropped significantly and I feel in control again."
+    "comment": "I used to spiral into anxiety over small emails. Learning how to regulate my breathing has brought so much peace to my day."
   },
   {
     "id": "rev-pr-3",
@@ -417,7 +417,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Online Urological Review",
-    "comment": "The consultation helped us eliminate uncomfortable bathroom visits. The medication worked exactly as promised with rapid relief."
+    "comment": "The constant feeling of an incomplete bladder was driving me crazy. The medication cleared it up in about ten days. Huge relief."
   },
   {
     "id": "rev-hf-3",
@@ -429,7 +429,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Online Scalp Consultation",
-    "comment": "The consultation helped us restore my hair density. The thinning patch on my crown is filling in nicely."
+    "comment": "The widening part on my crown was stressing me out daily. It's noticeably filling in now and hair texture feels so much fuller."
   },
   {
     "id": "rev-sh-3",
@@ -441,7 +441,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Private Wellness Review",
-    "comment": "The consultation helped us find prompt relief. The medication worked from the first week to restore my energy and peace of mind."
+    "comment": "Very discreet, easy conversation. The medication solved my stamina issues without any weird side effects."
   },
   {
     "id": "rev-bp-3",
@@ -453,7 +453,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Spine Mobility Review",
-    "comment": "The consultation helped us cure my chronic lower back strain. It is completely gone and I am back to playing tennis."
+    "comment": "Chronic lumbar stiffness was ruining my weekends. Following her posture resets cleared it up and I played two sets of tennis on Saturday!"
   },
   {
     "id": "rev-er-3",
@@ -465,7 +465,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Online Auditory Review",
-    "comment": "The consultation helped us get rapid clarity. The medication brought prompt relief and my head finally feels clear and calm."
+    "comment": "After months of constant static in my head, the medication brought rapid relief. My head feels clear again."
   },
   {
     "id": "rev-cav-3",
@@ -477,7 +477,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Online Tooth Care Review",
-    "comment": "The consultation helped us protect my teeth. The medication worked wonders for my sensitivity so I can chew comfortably on both sides."
+    "comment": "I was dreading a root canal. The medication worked so well to settle the enamel sensitivity on both sides."
   },
   {
     "id": "rev-sm-3",
@@ -489,7 +489,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Slow Metabolism",
     "concern": "Slow Metabolism",
     "consultationType": "Online Vitality Review",
-    "comment": "The consultation helped us fix my heavy post-meal bloating. Digestion is smooth and my energy stays steady all day."
+    "comment": "Heavy bloating after meals used to ruin my evenings. Her gut-friendly pacing habits made a dramatic difference in my digestion."
   },
   {
     "id": "rev-gd-3",
@@ -501,7 +501,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Online Periodontal Consult",
-    "comment": "The consultation helped us prevent chronic gum damage. The medication worked within days to relieve all soreness."
+    "comment": "Saved me from costly in-clinic periodontal treatments. The medication stopped the gum inflammation in its tracks."
   },
   {
     "id": "rev-tb-3",
@@ -513,7 +513,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Teeth Bleeding",
     "concern": "Teeth Bleeding",
     "consultationType": "Online Gum Review",
-    "comment": "The consultation helped us soothe my sensitive gums. The tenderness vanished completely and brushing is totally comfortable."
+    "comment": "Gum margin tenderness vanished and brushing is comfortable again. Dr. Vance was remarkably helpful."
   },
   {
     "id": "rev-sa-3",
@@ -525,7 +525,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Online Skin Evaluation",
-    "comment": "The consultation helped us eliminate stubborn bumps on my cheeks. My complexion finally looks radiant and healthy."
+    "comment": "Stubborn bumps on my cheeks are gone. Her non-comedogenic recommendations completely transformed my complexion."
   },
   {
     "id": "rev-yt-3",
@@ -537,7 +537,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Yellow Teeth",
     "concern": "Yellow Teeth",
     "consultationType": "Online Enamel Evaluation",
-    "comment": "The consultation helped us restore my bright smile. The whitening medication worked wonderfully and my teeth look so clean in photos."
+    "comment": "Family and friends literally asked if I got professional bleaching done. The medication worked wonders!"
   },
   {
     "id": "rev-dia-4",
@@ -549,7 +549,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Video Follow-up",
-    "comment": "The doctor's free consultation helped us bring my HbA1c back into the safe zone. The medication kept my daily numbers steady and I am so relieved."
+    "comment": "Got my lab results back yesterday and my HbA1c dropped into the normal range. The medication kept everything in check. Couldn't be happier!"
   },
   {
     "id": "rev-jp-4",
@@ -561,7 +561,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Virtual Consultation",
-    "comment": "The consultation helped us target my joint inflammation naturally. Zero knee pain on my morning jogs now!"
+    "comment": "No more grinding knee pain on stairs! So simple and effective."
   },
   {
     "id": "rev-ob-4",
@@ -573,7 +573,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Video Follow-up",
-    "comment": "The doctor's free consultation helped us jumpstart my weight loss. Down 18 lbs with the medication and feeling amazing!"
+    "comment": "Down 19 lbs with the medication and keeping it off easily. Best consultation I've ever had."
   },
   {
     "id": "rev-pr-4",
@@ -585,7 +585,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us restore my sleep schedule. The medication let me sleep through the night again. Huge relief!"
+    "comment": "Slept completely through the night from 11 PM to 6:30 AM without getting up once. The medicine made all the difference."
   },
   {
     "id": "rev-hf-4",
@@ -597,7 +597,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Hair Fall",
     "concern": "Hair Fall",
     "consultationType": "Free Video Follow-up",
-    "comment": "The doctor's free consultation helped us revive my scalp health. Baby hairs are sprouting everywhere and I am so happy!"
+    "comment": "Seeing so many new baby hairs popping up around my temples! So grateful for her practical advice."
   },
   {
     "id": "rev-sh-4",
@@ -609,7 +609,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Follow-up",
-    "comment": "The doctor's free consultation helped us revitalize my intimate health completely. The medication brought me right back to my normal self!"
+    "comment": "The medication revitalized me completely and I am back to feeling like my younger self. Highly recommend Dr. Drake."
   },
   {
     "id": "rev-bp-4",
@@ -621,7 +621,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Back Pain",
     "concern": "Back Pain",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us end morning back stiffness. Waking up feels great again!"
+    "comment": "Waking up stiff as a board is finally a thing of the past. Simple daily habits that actually work."
   },
   {
     "id": "rev-er-4",
@@ -633,7 +633,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Ear Ringing",
     "concern": "Ear Ringing",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us restore quiet nights. The medication worked wonders and I am sleeping soundly!"
+    "comment": "Quiet nights are back thanks to the medication! Sleeping through without white noise blaring on my phone."
   },
   {
     "id": "rev-cav-4",
@@ -645,7 +645,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us eliminate cold sensitivity. No pain with iced coffee now thanks to the medication!"
+    "comment": "Drank an iced latte today with zero pain! The medicine worked wonders on my sensitive tooth."
   },
   {
     "id": "rev-gd-4",
@@ -657,7 +657,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Gum Disease",
     "concern": "Gum Disease",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us heal my gums completely. The medication got them pink and firm again. So thankful!"
+    "comment": "The medication brought my gums back to healthy pink without that tender, irritated feeling. Super thankful!"
   },
   {
     "id": "rev-sa-4",
@@ -669,7 +669,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Skin Acne",
     "concern": "Skin Acne",
     "consultationType": "Free Follow-up Video",
-    "comment": "The doctor's free consultation helped us restore clear skin with zero new breakouts this whole month. Feeling so confident!"
+    "comment": "No new breakouts this entire month! Texture feels smooth and my confidence is finally back."
   },
   {
     "id": "rev-dia-5",
@@ -681,7 +681,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Diabetes",
     "concern": "Diabetes",
     "consultationType": "Free Video Consultation",
-    "comment": "The free consultation helped us address my post-meal glucose spikes quickly. The medication worked smoothly and my morning tests are now consistently normal."
+    "comment": "Post-meal readings used to spike past 190. After starting the medication, they barely cross 125 even after lunch. Excellent doctor."
   },
   {
     "id": "rev-jp-5",
@@ -693,7 +693,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Joint Pain",
     "concern": "Joint Pain",
     "consultationType": "Free Mobility Video",
-    "comment": "The free consultation helped us fix my chronic shoulder impingement. The daily range-of-motion routines restored full movement so smoothly."
+    "comment": "Shoulder impingement had nagged me for 6 months. Following her range-of-motion routine cleared the pinching sensation completely."
   },
   {
     "id": "rev-ob-5",
@@ -705,7 +705,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Free Telehealth Consult",
-    "comment": "The free consultation helped us curb my late-night snacking. The medication worked so well and I am down two dress sizes in 8 weeks."
+    "comment": "Late-night bingeing was my biggest battle. The medication shut off the cravings almost immediately. Down 2 dress sizes already."
   },
   {
     "id": "rev-pr-5",
@@ -717,7 +717,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Free Men's Health Consult",
-    "comment": "The free consultation helped us address my prostate urgency comfortably from home. The medication eased bladder pressure in ten days, so I can travel without worry."
+    "comment": "Was worried sick about my symptoms and felt uneasy talking about it. Dr. Vance was totally professional. The medication relieved the bladder pressure so fast."
   },
   {
     "id": "rev-sh-5",
@@ -729,7 +729,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Sexual Health",
     "concern": "Sexual Health",
     "consultationType": "Confidential Telehealth",
-    "comment": "The free consultation helped us discuss sensitive concerns comfortably. The medication worked reliably from day one and my vitality is back."
+    "comment": "The medication worked reliably right from day one. Saved me months of unnecessary stress."
   },
   {
     "id": "rev-cav-5",
@@ -741,7 +741,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Cavities",
     "concern": "Cavities",
     "consultationType": "Free Dental Review",
-    "comment": "The free consultation helped us protect my enamel when sweets caused sharp twinges. The medication eased the nerve pain quickly."
+    "comment": "Sweet foods used to cause sharp twinges. The medication protected my enamel and the pain vanished."
   },
   {
     "id": "rev-ob-6",
@@ -753,7 +753,7 @@ export const ALL_REVIEWS_DATA = [
     "department": "Obesity",
     "concern": "Obesity",
     "consultationType": "Online Weight Review",
-    "comment": "The consultation helped us tackle 35 lbs of stubborn weight. The medication restarted my fat loss smoothly without feeling hungry or fatigued."
+    "comment": "Was carrying an extra 30 lbs that made walking up stairs wind me. The medication restarted my fat loss and I've dropped 21 lbs steadily."
   },
   {
     "id": "rev-pr-6",
@@ -765,6 +765,6 @@ export const ALL_REVIEWS_DATA = [
     "department": "Prostate Issues",
     "concern": "Prostate Issues",
     "consultationType": "Same-Day Private Video",
-    "comment": "The consultation helped us relieve constant bladder pressure. The medication worked smoothly and nighttime urgency is gone."
+    "comment": "No more planning every road trip around gas station restrooms. The medication worked exactly as described."
   }
 ];
