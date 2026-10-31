@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, ShieldCheck, HeartHandshake, CheckCircle2, MessageSquare, ThumbsUp, PlusCircle, Globe, Filter } from 'lucide-react';
+import { Star, ShieldCheck, HeartHandshake, CheckCircle2, MessageSquare, ThumbsUp, PlusCircle, Globe, Filter, ArrowRight } from 'lucide-react';
 import { getStoredReviews, submitReview, getStoredDoctors } from '../lib/storage';
 
 export function PatientReviewsSection({ onStartBooking }) {
@@ -105,11 +105,11 @@ export function PatientReviewsSection({ onStartBooking }) {
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
-              <span>Zero Wait Times (Same-Day Reply)</span>
+              <span>No Waiting (Same-Day Reply)</span>
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
-              <span>Top-Tier Board-Certified Doctors</span>
+              <span>Board-Certified Doctors</span>
             </div>
             <div className="summary-feature-item">
               <CheckCircle2 size={16} className="feature-icon" />
@@ -122,11 +122,11 @@ export function PatientReviewsSection({ onStartBooking }) {
           <div className="summary-action-box">
             <button
               type="button"
-              className="write-review-btn"
-              onClick={() => setShowReviewModal(true)}
+              className="write-review-btn book-consultation-btn"
+              onClick={() => onStartBooking && onStartBooking()}
             >
-              <PlusCircle size={15} />
-              <span>Share Your Experience</span>
+              <span>Book Your Consultation</span>
+              <ArrowRight size={15} />
             </button>
           </div>
         </div>
